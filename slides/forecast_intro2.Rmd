@@ -1,0 +1,134 @@
+---
+title: "**forecast** Package Crash Course"
+author: "Mario Annau"
+date: "November 21, 2016"
+output: 
+  html_document: 
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(forecast)
+amzn.rev <- ts(read.csv("forecast_intro/amzn_rev.csv")[, 2], start = c(2000, 1), freq = 4)
+```
+
+<!-- ## Contents -->
+
+<!-- - Intro, Influenza (Google Trends) -->
+<!-- - ~~Company Data~~ (Source?) -->
+<!-- - Bike Traffic in Vienna -->
+<!-- - ~~Stock Prices~~, Volatility (GARCH) -->
+<!-- - ~~Birdlife Data~~ -->
+
+## Influenza (Google Trends)
+
+```{r influenza-1, echo = TRUE}
+# from https://www.google.com/trends/explore?cat=45&date=all&geo=AT&q=influenza
+dat.raw <- read.csv("forecast_intro/Influenza.csv", header = TRUE, skip = 1, stringsAsFactors = FALSE)
+dat.ts <- ts(dat.raw[, 2], frequency = 12, start = c(2004, 1))
+plot(dat.ts)
+dat.ts
+```
+
+The time series can be decomposed into three components: seasonal, trend-cycle and a residual component.
+
+$$y_t = S_t + T_t + E_t$$
+
+If seasonal component depends on absolute level of time series we can also use a multiplicative model
+$$y_t = S_t \times T_t \times E_t$$
+By taking the logarithm the additive model can be used.
+
+```{r influenza-2, echo = TRUE}
+dat.ts.decomp <- decompose(dat.ts, type = "additive")
+plot(dat.ts.decomp)
+```
+
+```{r influenza-3, echo = TRUE}
+dat.ts.noseason <- dat.ts - dat.ts.decomp$seasonal
+plot(dat.ts.noseason)
+lines(dat.ts.decomp$trend, col = "red")
+```
+
+$$ARIMA(p,d,q)$$ models can be used and are specified as $$\dots$$
+(p, d, q) are the AR order, the degree of differencing, and the MA order.
+
+First we can check if timeseries is stationary. If not clear on plot or unsure, we can use the Augmented Dickey–Fuller Test or Kwiatkowski-Phillips-Schmidt-Shin (KPSS) test
+
+```{r influenza-df, echo = TRUE}
+tseries::adf.test(dat.ts, alternative = "stationary")
+tseries::kpss.test(dat.ts)
+```
+
+Since no differencing is required, we set $$d=0$$ and check the acf and pacf plots
+```{r influenza-4, echo = TRUE}
+acf(dat.ts, lag.max = 25)
+pacf(dat.ts, lag.max = 25)
+```
+
+The acf plots suggests a second order autoregressive process, we thus set $$p=2$$. Let's check the current model now:
+```{r influenza-5, echo = TRUE}
+pacf(arima(dat.ts, order= c(2, 0, 0))$residuals)
+```
+
+Ups - the pacf plot shows that there is still a seasonal pattern left. We try it with a seasonal order AR of $$p=1$$
+```{r influenza-6, echo = TRUE}
+pacf(arima(dat.ts, order= c(2, 0, 0), seasonal = c(1, 0, 0))$residuals)
+```
+
+And increase to two since we still have a seasonal effect
+```{r influenza-7, echo = TRUE}
+pacf(arima(dat.ts, order= c(2, 0, 0), seasonal = c(2, 0, 0))$residuals)
+```
+
+This is the same model as selected by auto.arima 
+```{r influenza-8, echo = TRUE}
+mod1 <- auto.arima(dat.ts)
+mod1
+fc <- forecast(mod1, 24)
+plot(fc)
+fc
+```
+
+## Company Data (AMZN)
+
+```{r company-1, echo = TRUE, eval=FALSE}
+urls <- paste("http://www.wikinvest.com/stock/Amazon.com_(AMZN)/Data/Revenue", rep(2000:2015, each=4), sprintf("Q%d", 1:4), sep = "/")
+vals <- sapply(urls, function(x) {
+  tree <- htmlTreeParse(x, useInternalNodes = TRUE)
+  xmlValue(getNodeSet(tree, "//div[@id='nv_value']")[[1]])
+})
+matchvals <- gregexpr("[0-9.]+", vals)
+numvals <- as.numeric(sapply(1:length(vals), function(i) substr(vals[i], matchvals[[i]][1], attr(matchvals[[i]], "match.length")[1] + 1)))
+numvals <- ifelse(grepl("billion", vals), numvals * 1000, numvals)
+amzn.rev <- ts(numvals, start = c(2000, 1), frequency = 4)
+```
+
+```{r company-2, echo = TRUE}
+plot(amzn.rev)
+```
+
+We can easily see that should 
+1. Use the log scale or
+2. Differentiate the series.
+```{r company-3, echo = TRUE}
+amzn.rev.log <- log(amzn.rev)
+plot(amzn.rev.log)
+```
+
+Now it's easy to see the trend and the seasonal component. We are now lazy and use auto.arima again:
+```{r company-4, echo = TRUE}
+mod2 <- auto.arima(amzn.rev.log)
+mod2
+plot(forecast(mod2, 12))
+mod3 <- auto.arima(amzn.rev)
+mod3
+fc3 <- forecast(mod3, 12)
+plot(fc3)
+fc3
+```
+
+## Reading Materials
+
+- [Forecasting Principles and Practice](https://www.otexts.org/fpp) by Rob Hyndman and  George Athanasopoulos
+

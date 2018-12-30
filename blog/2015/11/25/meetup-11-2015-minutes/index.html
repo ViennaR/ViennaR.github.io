@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<meta property="og:url" content="http://www.viennar.org/">
+
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Meetup 11-2015 Minutes &middot; Vienna R User Group">
+
+<meta property="og:site_name" content="Vienna R User Group">
+
+<title>
+    
+    Meetup 11-2015 Minutes
+    
+</title>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/github.min.css">
+<link rel="stylesheet" href="http://www.viennar.org//css/styles.css">
+<link rel="stylesheet" href="http://www.viennar.org//css/custom.css">
+
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto' rel='stylesheet' type='text/css'>
+
+
+<link rel="shortcut icon" href="http://www.viennar.org//assets/favicon.ico">
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.viennar.org//index.xml">
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<div class="container">
+    <header class="nav">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="http://www.viennar.org/">Vienna R User Group</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="http://www.viennar.org//post">All Posts</a></li>
+                        <li><a href="http://www.viennar.org//tags">Tags</a></li>
+                        
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        
+                        <li>
+                            <a href="https://www.meetup.com/viennar" target="_blank">
+                                <i class="fa fa-arrows"></i>
+                                Meetup</a>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <a href="https://twitter.com/ViennaR" target="_blank">
+                                <i class="fa fa-twitter-square"></i>
+                                Twitter</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="https://github.com/ViennaR" target="_blank">
+                                <i class="fa fa-github-square"></i>
+                                GitHub
+                            </a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="https://www.linkedin.com/in/viennar" target="_blank">
+                                <i class="fa fa-linkedin-square"></i>
+                                LinkedIn
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="http://www.viennar.org//index.xml" type="application/rss+xml" target="_blank">
+                                <i class="fa fa-rss"></i>
+                                RSS
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+<div class="row">
+    <div class="col-md-8">
+        <article class="post">
+
+            <header>
+                <div class="post-date">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                    <time datetime="Wed, Nov 25, 2015">
+                        Wed, Nov 25, 2015
+                    </time>
+                </div>
+                <h1 class="post-title">
+                    <a href="http://www.viennar.org/blog/2015/11/25/meetup-11-2015-minutes/">Meetup 11-2015 Minutes</a>
+                </h1>
+            </header>
+
+            <div class="post-content">
+                <p>During the last meetup a few interesting ideas/discussions came up like interactive visualizations of <a href="https://github.com/ViennaR/OpenGovernmentVienna">Open Government Data</a>, Geocoding APIs, derstandard.at datasets and Hadoop vs Spark. During the second part of the meetup Mateuz held a great talk covering R-package creation, Github and CI.</p>
+
+<p></p>
+
+<h2 id="projects">Projects</h2>
+
+<p>Even without my full memory capacity I&rsquo;ll try to sum them up by project ;):</p>
+
+<ul>
+<li><a href="https://github.com/ViennaR/OpenGovernmentVienna">Open Government Data Vienna</a>
+
+<ul>
+<li>With the nice visualizations from Christian in mind (<a href="/blog/2015/10/30/population-densities-in-vienna">Population Densities</a> and <a href="/blog/2015/11/08/bike-parking-lots-in-vienna">Bike Parking Lots</a>) it would be nice to make up a list of features to be plotted from <a href="https://www.data.gv.at">https://www.data.gv.at</a> and make this visualization interactive (e.g. using <a href="http://shiny.rstudio.com/">Shiny</a>).</li>
+<li>Mateuz also introduced us to the topic of Geocoding and its numerous APIs (e.g. from <a href="https://developers.google.com/maps/documentation/geocoding/intro">Google</a>) and suggested to write a package for it.</li>
+</ul></li>
+<li><a href="https://github.com/ViennaR/TextMiningVienna">Text Mining Vienna</a>
+
+<ul>
+<li>After the discussion about puclic newspapers in Vienna Bernhard already provided a small <a href="https://github.com/ViennaR/TextMiningVienna/tree/master/NewspapersAustria">dataset</a> to play around with. We&rsquo;ll get our hands dirty and provide ideas (topic modelling, mood index, popular words, etc.) next time!</li>
+<li>Bernhard &amp; Roland mentioned interest to talk about Hadoop -&gt; Spark -&gt; SparkR. How to set things up, integrate R, etc.
+Sounds like a great topic next years first meetup.</li>
+<li>Hillary Clintons E-mails: Some ideas are <a href="https://github.com/ViennaR/TextMiningVienna/tree/master/HillaryClinton">there</a> - focus will be on the newspapers project for now.</li>
+</ul></li>
+<li><a href="https://en.wikipedia.org/wiki/Fantasy_sport">Fantasy Sports</a>, looks abandoned by Daniel?</li>
+</ul>
+
+<h2 id="talk">Talk</h2>
+
+<p>Mateusz covered all important topics about <em>modern</em> R package creation including the following points:</p>
+
+<ul>
+<li>Setting up Github repo for <a href="https://github.com/ViennaR/startupPackage">startup package</a>.</li>
+<li>Create R package skeleton</li>
+<li>Include test cases</li>
+<li>Include continous integration</li>
+<li>Include code coverage</li>
+</ul>
+
+<p>Materials are available at <a href="http://zozlak.org/Setting_up_a_first_R_project.html">http://zozlak.org/Setting_up_a_first_R_project.html</a>.</p>
+
+<h2 id="organisational">Organisational</h2>
+
+<ul>
+<li>If you have any questions, ideas and want to share just drop a message on <a href="http://www.meetup.com/ViennaR">http://www.meetup.com/ViennaR</a> or <a href="mailto:host@viennar.com">host@viennar.org</a>.</li>
+<li>Also just let us know if you need access to a github repo at <a href="https://github.com/ViennaR">https://github.com/ViennaR</a>.</li>
+<li>The next R-meetup will take place directly at the <a href="http://www.artadvent.at">Christkindlmarkt Karlsplatz</a> on 22nd December, 7pm. Meeting point will be in front of <del>Karlskirche</del> <em>Goldenes Lamm</em>.</li>
+</ul>
+
+<p>See you next time for a punchR!</p>
+
+<p>Best,</p>
+
+<p>-ViennaR</p>
+            </div>
+
+            <aside>
+                
+                <ul class="list-inline post-tags">
+                    
+                    <li>
+                        <a href="http://www.viennar.org//tags/meetup">
+                            <i class="fa fa-tags"></i>
+                            Meetup
+                        </a>
+                    </li>
+                    
+                </ul>
+
+                
+                
+                <h3>Related Post</h3>
+                <ul class="post-rels">
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="http://www.viennar.org/blog/2016/11/22/meetup-11-2016-minutes/">Meetup 11-2016 Minutes</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="http://www.viennar.org/blog/2016/10/19/meetup-10-2016-minutes/">Meetup 10-2016 Minutes</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="http://www.viennar.org/blog/2016/09/27/meetup-09-2016-minutes/">Meetup 09-2016 Minutes</a></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="http://www.viennar.org/blog/2016/06/28/meetup-06-2016-minutes/">Meetup 06-2016 Minutes</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="http://www.viennar.org/blog/2016/05/24/meetup-05-2016-minutes/">Meetup 05-2016 Minutes</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="http://www.viennar.org/blog/2016/05/06/meetup-04-2016-minutes/">Meetup 04-2016 Minutes</a></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="http://www.viennar.org/blog/2016/02/22/meetup-02-2016-minutes/">Meetup 02-2016 Minutes</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="http://www.viennar.org/blog/2016/02/03/meetup-01-2016-minutes/">Meetup 01-2016 Minutes</a></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="http://www.viennar.org/blog/2015/11/22/meetup-11-2015/">Meetup 11-2015</a></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="http://www.viennar.org/blog/2015/10/21/meetup-10-2015-minutes-kick-off/">Meetup 10-2015 Minutes, Kick-Off!</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="http://www.viennar.org/blog/2015/10/20/meetup-10-2015/">Meetup 10-2015</a></li>
+                    
+                    
+                </ul>
+            </aside>
+            
+            
+            <footer>
+
+                <nav>
+                    <ul class="pager">
+
+                        
+                        <li class="previous"><a href="http://www.viennar.org/blog/2016/02/03/meetup-01-2016-minutes/"><span aria-hidden="true">&larr;</span> Older</a></li>
+                        
+
+                        <li><a href="http://www.viennar.org//post">All Posts</a></li>
+
+                        
+                        <li class="next"><a href="http://www.viennar.org/blog/2015/11/22/meetup-11-2015/">Newer <span aria-hidden="true">&rarr;</span></a></li>
+                        
+
+                    </ul>
+                </nav>
+
+                
+                
+                
+            </footer>
+
+        </article>
+    </div>
+    <div class="col-md-4">
+        
+<aside>
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-4 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Recent Posts</h2>
+                </div>
+                <div class="list-group">
+                    
+                    <a href="/blog/2016/11/22/meetup-11-2016-minutes/" class="list-group-item">Meetup 11-2016 Minutes</a>
+                    
+                    <a href="/blog/2016/10/19/meetup-10-2016-minutes/" class="list-group-item">Meetup 10-2016 Minutes</a>
+                    
+                    <a href="/blog/2016/09/27/meetup-09-2016-minutes/" class="list-group-item">Meetup 09-2016 Minutes</a>
+                    
+                    <a href="/blog/2016/08/24/igraph-applications-for-transportation-networks/" class="list-group-item">igraph Applications for Transportation Networks</a>
+                    
+                    <a href="/blog/2016/06/28/meetup-06-2016-minutes/" class="list-group-item">Meetup 06-2016 Minutes</a>
+                    
+                    <a href="/blog/2016/05/24/meetup-05-2016-minutes/" class="list-group-item">Meetup 05-2016 Minutes</a>
+                    
+                    <a href="/blog/2016/05/06/meetup-04-2016-minutes/" class="list-group-item">Meetup 04-2016 Minutes</a>
+                    
+                    <a href="/blog/2016/02/24/wordcloud-wienerwald/" class="list-group-item">Wordcloud Wienerwald</a>
+                    
+                    <a href="/blog/2016/02/22/meetup-02-2016-minutes/" class="list-group-item">Meetup 02-2016 Minutes</a>
+                    
+                    <a href="/blog/2016/02/03/meetup-01-2016-minutes/" class="list-group-item">Meetup 01-2016 Minutes</a>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-4 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Tags</h2>
+                </div>
+                <div class="list-group">
+                    
+                    
+                    
+                    <a href="http://www.viennar.org//tags/igraph" class="list-group-item">
+                        <span class="badge">1</span>
+                        igraph
+                    </a>
+                    
+                    
+                    <a href="http://www.viennar.org//tags/meetup" class="list-group-item">
+                        <span class="badge">12</span>
+                        meetup
+                    </a>
+                    
+                    
+                    <a href="http://www.viennar.org//tags/opengovernmentvienna" class="list-group-item">
+                        <span class="badge">2</span>
+                        opengovernmentvienna
+                    </a>
+                    
+                    
+                    <a href="http://www.viennar.org//tags/rstudy" class="list-group-item">
+                        <span class="badge">4</span>
+                        rstudy
+                    </a>
+                    
+                    
+                    <a href="http://www.viennar.org//tags/text-mining" class="list-group-item">
+                        <span class="badge">1</span>
+                        text-mining
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+</aside>
+
+    </div>
+</div>
+
+</div>
+<hr>
+
+<footer class="container copy">
+    <p>&copy; 2016  <a href="mailto:host@viennar.org">Vienna-R</a> </p>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="//yandex.st/highlightjs/8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-69538956-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+<script>
+document.write('<script src="//sharebutton.net/plugin/sharebutton.php?type=horizontal&u=' + encodeURIComponent(document.location.href) + '"></scr' + 'ipt>');
+</script>
+

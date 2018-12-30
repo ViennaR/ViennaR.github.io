@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<meta property="og:url" content="http://www.viennar.org/">
+
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Population Densities in Vienna &middot; Vienna R User Group">
+
+<meta property="og:site_name" content="Vienna R User Group">
+
+<title>
+    
+    Population Densities in Vienna
+    
+</title>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/github.min.css">
+<link rel="stylesheet" href="http://www.viennar.org//css/styles.css">
+<link rel="stylesheet" href="http://www.viennar.org//css/custom.css">
+
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto' rel='stylesheet' type='text/css'>
+
+
+<link rel="shortcut icon" href="http://www.viennar.org//assets/favicon.ico">
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.viennar.org//index.xml">
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<div class="container">
+    <header class="nav">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="http://www.viennar.org/">Vienna R User Group</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="http://www.viennar.org//post">All Posts</a></li>
+                        <li><a href="http://www.viennar.org//tags">Tags</a></li>
+                        
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        
+                        <li>
+                            <a href="https://www.meetup.com/viennar" target="_blank">
+                                <i class="fa fa-arrows"></i>
+                                Meetup</a>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <a href="https://twitter.com/ViennaR" target="_blank">
+                                <i class="fa fa-twitter-square"></i>
+                                Twitter</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="https://github.com/ViennaR" target="_blank">
+                                <i class="fa fa-github-square"></i>
+                                GitHub
+                            </a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="https://www.linkedin.com/in/viennar" target="_blank">
+                                <i class="fa fa-linkedin-square"></i>
+                                LinkedIn
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="http://www.viennar.org//index.xml" type="application/rss+xml" target="_blank">
+                                <i class="fa fa-rss"></i>
+                                RSS
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+<div class="row">
+    <div class="col-md-8">
+        <article class="post">
+
+            <header>
+                <div class="post-date">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                    <time datetime="Fri, Oct 30, 2015">
+                        Fri, Oct 30, 2015
+                    </time>
+                </div>
+                <h1 class="post-title">
+                    <a href="http://www.viennar.org/blog/2015/10/30/population-densities-in-vienna/">Population Densities in Vienna</a>
+                </h1>
+            </header>
+
+            <div class="post-content">
+                <p>The new Github repository <a href="https://github.com/ViennaR/OpenGovernmentVienna">OpenGovernmentVienna</a> has already been created including a very nice addition by Christian.</p>
+
+<p>The script executes the following steps:</p>
+
+<ol>
+<li>Download Vienna map including district boundaries from <a href="http://data.wien.gv.at">http://data.wien.gv.at</a>.</li>
+<li>Download population and district size from <a href="https://www.wien.gv.at/statistik">https://www.wien.gv.at/statistik</a>, calculate population density.</li>
+<li>Plot Vienna map coloured by population density.</li>
+</ol>
+
+<p></p>
+
+<pre><code class="language-r">library(rgdal) 
+library(rgeos) 
+library(XML)
+library(RCurl)
+
+download.vienna.bydistrict &lt;- function(tablename, skip.row = 3) {
+	baseurl &lt;- &quot;https://www.wien.gv.at/statistik&quot;
+	popurl &lt;- sprintf(&quot;%s/%s.html&quot;, baseurl, tablename)
+
+	poptable &lt;- readHTMLTable(getURL(popurl))[[1]]
+	poptable &lt;- poptable[-c(1:skip.row), ]
+	poptable &lt;- poptable[, -1]
+	row.names(poptable) &lt;- NULL
+	poptable &lt;- sapply(poptable, function(x) gsub(&quot;.&quot;, &quot;&quot;, x, fixed = TRUE))
+	poptable &lt;- gsub(&quot;,&quot;, &quot;.&quot;, poptable, fixed = TRUE)
+	poptable &lt;- matrix(as.numeric(poptable), nrow = nrow(poptable))
+	poptable
+}
+
+# Download Data Shape Data District Boundaries
+mapdata &lt;- &quot;http://data.wien.gv.at/daten/geo?service=WFS&amp;request=GetFeature&amp;version=1.1.0&amp;typeName=ogdwien:BEZIRKSGRENZEOGD&amp;srsName=EPSG:4326&amp;outputFormat=shape-zip&quot;
+
+dir.create(&quot;data&quot;, showWarnings = FALSE)
+destfile &lt;- &quot;data/BEZIRKSGRENZEOGD.zip&quot;
+download.file(mapdata, destfile = destfile)
+unzip(destfile, exdir = &quot;data/BEZIRKSGRENZEOGD&quot;)
+file.remove(destfile)
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+<pre><code class="language-r"># Read District Boundaries
+wmap &lt;- readOGR(&quot;data/BEZIRKSGRENZEOGD&quot;, layer=&quot;BEZIRKSGRENZEOGDPolygon&quot;) 
+</code></pre>
+
+<pre><code>## OGR data source with driver: ESRI Shapefile 
+## Source: &quot;data/BEZIRKSGRENZEOGD&quot;, layer: &quot;BEZIRKSGRENZEOGDPolygon&quot;
+## with 23 features
+## It has 15 fields
+</code></pre>
+
+<pre><code class="language-r"># Download Population per district
+distpop &lt;- download.vienna.bydistrict(&quot;bevoelkerung/tabellen/bevoelkerung-alter-geschl-bez&quot;)
+distpopsum &lt;- rowSums(as.matrix(distpop))
+
+# Download Size of Each district
+distsize &lt;- download.vienna.bydistrict(&quot;lebensraum/tabellen/nutzungsklassen-bez&quot;, skip.row = 2)
+distsizekm2 &lt;- distsize[, 1] / 100
+
+wd &lt;- data.frame(distpopsum / distsizekm2)
+
+centroids &lt;- gCentroid(wmap, byid=TRUE) 
+colfunc &lt;- colorRampPalette(c(&quot;lightblue&quot;, &quot;darkred&quot;)) 
+colnames(wd) &lt;- &quot;inh&quot; 
+wd$district &lt;- seq(1,23) 
+anstieg_pop &lt;- wd$district[order(wd$inh)] 
+colsort &lt;- colfunc(23)[order(anstieg_pop)] 
+layout(matrix(c(1,2), byrow = TRUE),height=c(1.3, 0.7)) 
+par(mar=c(0,0,0,0)) 
+plot(wmap,col=colsort[wmap$BEZNR]) 
+text(as.character(wmap$BEZ_RZ), x = centroids@coords[,1], y = centroids@coords[,2],cex=0.8) 
+par(mar=c(3,4,4,2),mgp=c(2,0.7,0)) 
+barplot(wd$inh,main=&quot;Population Density Vienna 2014&quot;,yaxt=&quot;n&quot;,col=colsort,xlab=&quot;District&quot;,beside=T, ylab=expression(paste(&quot;1.000 Inhabitants km&quot;^-2)),names.arg=as.roman(wd$district),las=2) 
+axis(2,labels=c(&quot;0&quot;,&quot;5&quot;,&quot;10&quot;,&quot;15&quot;,&quot;20&quot;),at=c(0,5000,10000,15000,20000),las=1) 
+abline(h=c(5000,10000,15000,20000),lty=2) 
+legend(&quot;topright&quot;,pch=c(15,15),col=c(&quot;darkred&quot;,&quot;lightblue&quot;),c(&quot;high&quot;,&quot;low&quot;),bg=&quot;white&quot;) 
+</code></pre>
+
+<p><img src="/img/popdensity-1.png" style='width:100%;' border="0" alt="Null"></p>
+
+<p>Authors: Christian Brandstaetter with small additions by Mario Annau</p>
+            </div>
+
+            <aside>
+                
+                <ul class="list-inline post-tags">
+                    
+                    <li>
+                        <a href="http://www.viennar.org//tags/opengovernmentvienna">
+                            <i class="fa fa-tags"></i>
+                            OpenGovernmentVienna
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://www.viennar.org//tags/rstudy">
+                            <i class="fa fa-tags"></i>
+                            rstudy
+                        </a>
+                    </li>
+                    
+                </ul>
+
+                
+                
+                <h3>Related Post</h3>
+                <ul class="post-rels">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="http://www.viennar.org/blog/2016/08/24/igraph-applications-for-transportation-networks/">igraph Applications for Transportation Networks</a></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="http://www.viennar.org/blog/2016/02/24/wordcloud-wienerwald/">Wordcloud Wienerwald</a></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="http://www.viennar.org/blog/2015/11/08/bike-parking-lots-in-vienna/">Bike Parking Lots in Vienna</a></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </aside>
+            
+            
+            <footer>
+
+                <nav>
+                    <ul class="pager">
+
+                        
+                        <li class="previous"><a href="http://www.viennar.org/blog/2015/11/08/bike-parking-lots-in-vienna/"><span aria-hidden="true">&larr;</span> Older</a></li>
+                        
+
+                        <li><a href="http://www.viennar.org//post">All Posts</a></li>
+
+                        
+                        <li class="next"><a href="http://www.viennar.org/blog/2015/10/21/meetup-10-2015-minutes-kick-off/">Newer <span aria-hidden="true">&rarr;</span></a></li>
+                        
+
+                    </ul>
+                </nav>
+
+                
+                
+                
+            </footer>
+
+        </article>
+    </div>
+    <div class="col-md-4">
+        
+<aside>
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-4 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Recent Posts</h2>
+                </div>
+                <div class="list-group">
+                    
+                    <a href="/blog/2016/11/22/meetup-11-2016-minutes/" class="list-group-item">Meetup 11-2016 Minutes</a>
+                    
+                    <a href="/blog/2016/10/19/meetup-10-2016-minutes/" class="list-group-item">Meetup 10-2016 Minutes</a>
+                    
+                    <a href="/blog/2016/09/27/meetup-09-2016-minutes/" class="list-group-item">Meetup 09-2016 Minutes</a>
+                    
+                    <a href="/blog/2016/08/24/igraph-applications-for-transportation-networks/" class="list-group-item">igraph Applications for Transportation Networks</a>
+                    
+                    <a href="/blog/2016/06/28/meetup-06-2016-minutes/" class="list-group-item">Meetup 06-2016 Minutes</a>
+                    
+                    <a href="/blog/2016/05/24/meetup-05-2016-minutes/" class="list-group-item">Meetup 05-2016 Minutes</a>
+                    
+                    <a href="/blog/2016/05/06/meetup-04-2016-minutes/" class="list-group-item">Meetup 04-2016 Minutes</a>
+                    
+                    <a href="/blog/2016/02/24/wordcloud-wienerwald/" class="list-group-item">Wordcloud Wienerwald</a>
+                    
+                    <a href="/blog/2016/02/22/meetup-02-2016-minutes/" class="list-group-item">Meetup 02-2016 Minutes</a>
+                    
+                    <a href="/blog/2016/02/03/meetup-01-2016-minutes/" class="list-group-item">Meetup 01-2016 Minutes</a>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-4 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Tags</h2>
+                </div>
+                <div class="list-group">
+                    
+                    
+                    
+                    <a href="http://www.viennar.org//tags/igraph" class="list-group-item">
+                        <span class="badge">1</span>
+                        igraph
+                    </a>
+                    
+                    
+                    <a href="http://www.viennar.org//tags/meetup" class="list-group-item">
+                        <span class="badge">12</span>
+                        meetup
+                    </a>
+                    
+                    
+                    <a href="http://www.viennar.org//tags/opengovernmentvienna" class="list-group-item">
+                        <span class="badge">2</span>
+                        opengovernmentvienna
+                    </a>
+                    
+                    
+                    <a href="http://www.viennar.org//tags/rstudy" class="list-group-item">
+                        <span class="badge">4</span>
+                        rstudy
+                    </a>
+                    
+                    
+                    <a href="http://www.viennar.org//tags/text-mining" class="list-group-item">
+                        <span class="badge">1</span>
+                        text-mining
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+</aside>
+
+    </div>
+</div>
+
+</div>
+<hr>
+
+<footer class="container copy">
+    <p>&copy; 2016  <a href="mailto:host@viennar.org">Vienna-R</a> </p>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="//yandex.st/highlightjs/8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-69538956-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+<script>
+document.write('<script src="//sharebutton.net/plugin/sharebutton.php?type=horizontal&u=' + encodeURIComponent(document.location.href) + '"></scr' + 'ipt>');
+</script>
+

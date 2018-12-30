@@ -1,0 +1,12 @@
+h1, h2, h3, h4 {
+  font-family: 'Roboto Condensed';
+}
+
+body {
+  font-family: 'Roboto';
+  font-size: 160%;
+}
+
+* {
+	text-rendering: optimizeLegibility;
+}
