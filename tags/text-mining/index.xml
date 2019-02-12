@@ -1,100 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Vienna R User Group </title>
-    <link>http://www.viennar.org/tags/text-mining/index.xml</link>
+    <title>Text Mining on Vienna R User Group</title>
+    <link>/tags/text-mining/</link>
+    <description>Recent content in Text Mining on Vienna R User Group</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Vienna-R</author>
-    <rights>(C) 2016</rights>
-    <updated>0001-01-01 00:00:00 &#43;0000 UTC</updated>
-
+    <lastBuildDate>Wed, 24 Feb 2016 22:20:00 +0200</lastBuildDate>
     
+	<atom:link href="/tags/text-mining/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Wordcloud Wienerwald</title>
+      <link>/blog/2016/02/24/wordcloud-wienerwald/</link>
+      <pubDate>Wed, 24 Feb 2016 22:20:00 +0200</pubDate>
       
-        <item>
-          <title>Wordcloud Wienerwald</title>
-          <link>http://www.viennar.org/blog/2016/02/24/wordcloud-wienerwald/</link>
-          <pubDate>Wed, 24 Feb 2016 22:20:00 &#43;0200</pubDate>
-          <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2016/02/24/wordcloud-wienerwald/</guid>
-          <description>&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/wordcloudwienerwald.png&#34; title=&#34;**Wordcloud** \
+      <guid>/blog/2016/02/24/wordcloud-wienerwald/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;/img/wordcloudwienerwald.png&#34; title=&#34;**Wordcloud** \
 *Ödön von Horvath - Geschichten aus dem Wienerwald*&#34; alt=&#34;**Wordcloud** \
-*Ödön von Horvath - Geschichten aus dem Wienerwald*&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
+*Ödön von Horvath - Geschichten aus dem Wienerwald*&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;After a very nice hands-on introduction in yesterday&amp;rsquo;s Vienna R meetup meeting from Mario Annau, I created an example of textmining ending with a wordcloud. As the blog is called ViennaR, I chose to use a play strongly related to Vienna - Ödön von Horváth - Geschichten aus dem Wienerwald.
-&lt;/p&gt;
-
-&lt;p&gt;The code documentation is in German, but with a little R-experience it should be easily understood.
-In a first step all the required libraries are loaded.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(knitr) # Erzeugen eines HTML-Dokument
-library(rvest) # Einlesen von HTML-Dokumenten
-library(tm) # Erzeugen und Manipulieren von Textcorpora 
-library(stringi) # Umwandeln von schlecht kodierten Sonderzeichen 
-library(SnowballC) # Wortstammoperationen 
-library(wordcloud) # Erzeugen der Wordcloud
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;As of next, the textparts are loaded from the project Gutenberg homepage. As the play was divided this had to be repeated four times. A function was defined for the import from each url with the appropriate CSS-node and ideal encoding. However, the forced transformation to UTF-8 did not do anything actually.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Ödön von Horváth - Geschichten aus dem Wienerwald 
-url1 &amp;lt;- &amp;quot;http://gutenberg.spiegel.de/buch/geschichten-aus-dem-wiener-wald-volksstuck-in-drei-teilen-2900/1&amp;quot;
-url2 &amp;lt;- &amp;quot;http://gutenberg.spiegel.de/buch/geschichten-aus-dem-wiener-wald-volksstuck-in-drei-teilen-2900/2&amp;quot;
-url3 &amp;lt;- &amp;quot;http://gutenberg.spiegel.de/buch/geschichten-aus-dem-wiener-wald-volksstuck-in-drei-teilen-2900/3&amp;quot;
-url4 &amp;lt;- &amp;quot;http://gutenberg.spiegel.de/buch/geschichten-aus-dem-wiener-wald-volksstuck-in-drei-teilen-2900/4&amp;quot;
-
-# Einlesefunktion des Textes; Kodierung zu UTF-8
-  gut_les &amp;lt;-   function(x){
-    step1 &amp;lt;- read_html(x, encoding = &amp;quot;ISO-8859-1&amp;quot;)
-    step2 &amp;lt;- html_nodes(step1,&amp;quot;#gutenb&amp;quot;)
-    step3 &amp;lt;- iconv(html_text(step2),from = &amp;quot;ISO-8859-1&amp;quot;, to = &amp;quot;UTF-8&amp;quot;)
-    return(step3)}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Next the four text parts were integrated into one Corpus, a data type used in the tm package. In this case, the corpus was created from four char-vectors. Afterwards steps to clean up the text were performed. As in the presentation from Mario discussed, the order of these operations should be considered thoroughly.
-First, I adapted the wrongly encoded signs with the function stri_replace_all_fixed(). German Umlaute are a real pain, I really can say that, as I have one in my surname. Then the names of the figures had to be removed, otherwise they would have overwhelmed the output.&lt;/p&gt;
-
-&lt;p&gt;Typical steps for allowing for meaningful text operation are alse the removal of Whitespace, unifying to lower cases, removing punctuations, stopwords (&amp;rdquo;&lt;em&gt;meaningless&lt;/em&gt;&amp;rdquo; words as conjunctions) and word endings. All four texts are still in the corpus, which can be adressed like list items. They were though recoded as PlainTextDocument, which was a necessary step for being used in the wordcloud() function.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Verbinden der 4 Texte zu einem Corpus 
-GWW_corp &amp;lt;- Corpus(VectorSource(c(gut_les(url1),gut_les(url2),gut_les(url3),gut_les(url4))))
-
-# Kodierungsfehler 
-sz_fehler &amp;lt;- c(&amp;quot;Ã¼&amp;quot;,&amp;quot;Ã¶&amp;quot;,&amp;quot;Ã¤&amp;quot;,&amp;quot;Ã\u009f&amp;quot;,&amp;quot;â\u0080\u0093&amp;quot;,&amp;quot;Â&amp;quot;)
-sz_korrekt &amp;lt;- c(&amp;quot;ü&amp;quot;,&amp;quot;ö&amp;quot;,&amp;quot;ä&amp;quot;,&amp;quot;ß&amp;quot;,&amp;quot;–&amp;quot;,&amp;quot;&amp;quot;)
-
-# Ersetzen der Kodierungsfehler; deshalb das Stringi Package 
-gwwc0 &amp;lt;- tm_map(GWW_corp, function(x) stri_replace_all_fixed(x, sz_fehler, sz_korrekt, vectorize_all = FALSE))
-
-# Die Personen werden bei einem Theaterstrück sinnvollerweise entfernt. 
-gwwc1 &amp;lt;- tm_map(gwwc0, removeWords, 
-        c(&amp;quot;Alfred&amp;quot;,&amp;quot;Die Mutter&amp;quot;,&amp;quot;Die Großmutter&amp;quot;,&amp;quot;Der Hierlinger Ferdinand&amp;quot;,
-          &amp;quot;Valerie&amp;quot;,&amp;quot;Oskar&amp;quot;,&amp;quot;Ida&amp;quot;,&amp;quot;Havlitschek&amp;quot;,&amp;quot;Rittmeister&amp;quot;,&amp;quot;Eine gnädige Frau&amp;quot;,
-          &amp;quot;Marianne&amp;quot;,&amp;quot;Zauberkönig&amp;quot;,&amp;quot;Zwei Tanten&amp;quot;,&amp;quot;Erich&amp;quot;,&amp;quot;Emma&amp;quot;,&amp;quot;Helene&amp;quot;,
-          &amp;quot;Der Dienstbot&amp;quot;,&amp;quot;Baronin&amp;quot;,&amp;quot;Beichtvater&amp;quot;, &amp;quot;Der Mister&amp;quot;,&amp;quot;Der Conferencier&amp;quot;))
-gwwc2 &amp;lt;- tm_map(gwwc1, stripWhitespace) # Entfernen von Leerzeichen
-gwwc3 &amp;lt;- tm_map(gwwc2, tolower) # Kleinschrift
-gwwc4 &amp;lt;- tm_map(gwwc3, PlainTextDocument) # Umcodierung der Char-Vektoren zu Textdokumenten (für Wordlcloud)
-gwwc5 &amp;lt;- tm_map(gwwc4, removeWords, stopwords(&amp;quot;german&amp;quot;)) # Entfernen von Füllwörtern
-gwwc6 &amp;lt;- tm_map(gwwc5, removePunctuation) # Entfernen von Sonderzeichen 
-gwwc7 &amp;lt;- tm_map(gwwc6, stemDocument) # Entfernen der Endungen 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;After all this cleanup the wordcloud can be drawn. I used a variety of twelve rather light colors with a black background. It is not possible to access the background color inside the wordcloud function, but with the par-options.&lt;/p&gt;
-
-&lt;p&gt;Et voilà - l&amp;rsquo;illustration!&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;farbs &amp;lt;- brewer.pal(12,&amp;quot;Set3&amp;quot;) # Farbpalette für die Wordcloud
-
-par(mar=c(0,0,0,0),bg=&amp;quot;black&amp;quot;) # Ausfüllen des Plotfensters, Hintergrund schwarz
-# Die eigentliche Wordcloud
-wordcloud(gwwc6, max.words=180, 
-          random.order=FALSE,random.color=FALSE, # Farben und Reihenfolge nach Anzahl der Wörter geordnet 
-          rot.per=0.35, # 35 % der Wörter sind senkrecht  
-          colors=(farbs))
-&lt;/code&gt;&lt;/pre&gt;</description>
-        </item>
-      
+&lt;p&gt;After a very nice hands-on introduction in yesterday&amp;rsquo;s Vienna R meetup meeting from Mario Annau, I created an example of textmining ending with a wordcloud. As the blog is called ViennaR, I chose to use a play strongly related to Vienna - Ödön von Horváth - Geschichten aus dem Wienerwald.&lt;/p&gt;</description>
+    </item>
     
-
   </channel>
 </rss>

@@ -1,172 +1,39 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Vienna R User Group </title>
-    <link>http://www.viennar.org/tags/opengovernmentvienna/index.xml</link>
+    <title>Opengovernmentvienna on Vienna R User Group</title>
+    <link>/tags/opengovernmentvienna/</link>
+    <description>Recent content in Opengovernmentvienna on Vienna R User Group</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Vienna-R</author>
-    <rights>(C) 2016</rights>
-    <updated>0001-01-01 00:00:00 &#43;0000 UTC</updated>
-
+    <lastBuildDate>Sun, 08 Nov 2015 22:20:00 +0200</lastBuildDate>
     
+	<atom:link href="/tags/opengovernmentvienna/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bike Parking Lots in Vienna</title>
+      <link>/blog/2015/11/08/bike-parking-lots-in-vienna/</link>
+      <pubDate>Sun, 08 Nov 2015 22:20:00 +0200</pubDate>
       
-        <item>
-          <title>Bike Parking Lots in Vienna</title>
-          <link>http://www.viennar.org/blog/2015/11/08/bike-parking-lots-in-vienna/</link>
-          <pubDate>Sun, 08 Nov 2015 22:20:00 &#43;0200</pubDate>
-          <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2015/11/08/bike-parking-lots-in-vienna/</guid>
-          <description>&lt;p&gt;Another addition to the  &lt;a href=&#34;https://github.com/ViennaR/OpenGovernmentVienna&#34;&gt;OpenGovernmentVienna&lt;/a&gt; repo by Christian Brandstaetter showing the density of bike parking lots in Vienna.&lt;/p&gt;
+      <guid>/blog/2015/11/08/bike-parking-lots-in-vienna/</guid>
+      <description>&lt;p&gt;Another addition to the  &lt;a href=&#34;https://github.com/ViennaR/OpenGovernmentVienna&#34;&gt;OpenGovernmentVienna&lt;/a&gt; repo by Christian Brandstaetter showing the density of bike parking lots in Vienna.&lt;/p&gt;
 
 &lt;p&gt;The script executes the following steps:&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Download Vienna map including district boundaries and bike parking lots from &lt;a href=&#34;http://data.wien.gv.at&#34;&gt;http://data.wien.gv.at&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Plot two Vienna maps showing bike parking lots and density per district.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(rgdal) 
-library(rgeos) 
-library(XML)
-library(RCurl)
-library(ggplot2) 
-library(plotrix) 
-library(maptools)
-
-download.vienna.shape &amp;lt;- function(shapename, outdir = &amp;quot;data&amp;quot;) {
-	baseurl &amp;lt;- &amp;quot;http://data.wien.gv.at/daten/geo?service=WFS&amp;amp;request=GetFeature&amp;amp;version=1.1.0&amp;amp;typeName=ogdwien:&amp;quot;
-	urlparam &amp;lt;- &amp;quot;&amp;amp;srsName=EPSG:4326&amp;amp;outputFormat=shape-zip&amp;quot;	
-	url &amp;lt;- sprintf(&amp;quot;%s%s%s&amp;quot;, baseurl, shapename, urlparam)
-	
-	dir.create(outdir, showWarnings = FALSE)
-	destfile = file.path(outdir, sprintf(&amp;quot;%s.zip&amp;quot;, shapename))
-	download.file(url, destfile = destfile)
-	unzip(destfile, exdir = file.path(outdir, shapename))
-	invisible(file.remove(destfile))
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;retrieve-data&#34;&gt;Retrieve Data&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;## Read District Boundaries
-download.vienna.shape(&amp;quot;BEZIRKSGRENZEOGD&amp;quot;)
-wmap &amp;lt;- readOGR(&amp;quot;data/BEZIRKSGRENZEOGD&amp;quot;, layer=&amp;quot;BEZIRKSGRENZEOGDPolygon&amp;quot;) 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;## OGR data source with driver: ESRI Shapefile 
-## Source: &amp;quot;data/BEZIRKSGRENZEOGD&amp;quot;, layer: &amp;quot;BEZIRKSGRENZEOGDPolygon&amp;quot;
-## with 23 features
-## It has 15 fields
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;## Read Streets
-download.vienna.shape(&amp;quot;STRASSENGRAPHOGD&amp;quot;)
-smap &amp;lt;- readOGR(&amp;quot;data/STRASSENGRAPHOGD&amp;quot;, layer=&amp;quot;STRASSENGRAPHOGD&amp;quot;) 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;## OGR data source with driver: ESRI Shapefile 
-## Source: &amp;quot;data/STRASSENGRAPHOGD&amp;quot;, layer: &amp;quot;STRASSENGRAPHOGD&amp;quot;
-## with 28293 features
-## It has 18 fields
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;## Read bike parking lots
-download.vienna.shape(&amp;quot;FAHRRADABSTELLANLAGEOGD&amp;quot;)
-bmap &amp;lt;- readOGR(&amp;quot;data/FAHRRADABSTELLANLAGEOGD&amp;quot;, layer=&amp;quot;FAHRRADABSTELLANLAGEOGDPoint&amp;quot;) 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;## OGR data source with driver: ESRI Shapefile 
-## Source: &amp;quot;data/FAHRRADABSTELLANLAGEOGD&amp;quot;, layer: &amp;quot;FAHRRADABSTELLANLAGEOGDPoint&amp;quot;
-## with 4061 features
-## It has 5 fields
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;## Download Size of Each district
-distsize &amp;lt;- download.vienna.bydistrict(&amp;quot;lebensraum/tabellen/nutzungsklassen-bez&amp;quot;, skip.row = 2)
-distsizekm2 &amp;lt;- distsize[, 1] / 100
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;calculate-stuff&#34;&gt;Calculate stuff&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;## Number of bike parking lots per district
-bikelotsperdistrict &amp;lt;- table(bmap$BEZIRK)
-lotdensity &amp;lt;- bikelotsperdistrict / distsizekm2
-
-## Normalization of Colour Scaling
-normdichte &amp;lt;- round(lotdensity/max(lotdensity)*50,digits=0) 
-colfunc &amp;lt;- colorRampPalette(c(&amp;quot;lightblue&amp;quot;, &amp;quot;darkgreen&amp;quot;)) 
-colfunc100 &amp;lt;- colfunc(100) 
-bezirksfarben &amp;lt;- colfunc100[normdichte]
-
-# Transformations  111.1 
-# km to degree (einfache Umrechnung) 
-hundm &amp;lt;- (1/111.1)/10 
-# 100 m for Radius of Punkte  
-centroids &amp;lt;- gCentroid(wmap, byid=TRUE) # Mittelpunkt/Bezirk
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;plots&#34;&gt;Plots&lt;/h1&gt;
-
-&lt;h2 id=&#34;plot-1-vienna-map-with-bike-parking-lots-discrete-density&#34;&gt;Plot 1 - Vienna Map with Bike Parking Lots (Discrete Density)&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;layout(1:2, heights=c(5,1)) 
-par(mar=c(0.5,0.5,1,0.5), oma=rep(3, 4), las=1) 
-plot(wmap, main=&amp;quot;Bike Parking Lots in Vienna&amp;quot;, col=bezirksfarben[wmap$BEZNR]) 
-
-# add bike parking lots
-plot(smap, add=TRUE, col = &amp;quot;grey&amp;quot;)
-draw.circle(coordinates(bmap)[,1], coordinates(bmap)[,2],hundm,border=rgb(255,255,0,maxColorValue=255),col=rgb(255,255,0,maxColorValue=255))
-text(as.character(wmap$BEZ_RZ), x = centroids@coords[,1], y = centroids@coords[,2], col=&amp;quot;orangered&amp;quot;,cex=0.8,font=2)
-
-# Legend
-par(mar=c(1,0.5,3,0.5)) 
-colseq &amp;lt;- seq(range(lotdensity)[1],range(lotdensity)[2],20) 
-image(x=colseq,y=1,z=matrix(seq_along(colseq)), col=colfunc(10), main=expression(paste(&amp;quot;Bike parking lot density per district km&amp;quot;^-2)),axes=F) 
-axis(1)  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/bikedensity-plot1-1.png&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;plot-2-vienna-map-with-bike-parking-lots-continous-density&#34;&gt;Plot 2 - Vienna Map with Bike Parking Lots (Continous Density)&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Transformation of bike parking lots shape to data.frame for ggplot2
-RK &amp;lt;- data.frame(coordinates(bmap)) 
-colnames(RK) &amp;lt;- c(&amp;quot;long&amp;quot;,&amp;quot;lat&amp;quot;) 
-ws2 &amp;lt;- fortify(smap,region=&amp;quot;OBJECTID&amp;quot;)  
-wmap2 &amp;lt;- wmap 
-# assign ID
-wmap2@data$id &amp;lt;- rownames(wmap2@data) 
-# transform to data.frame  
-test1 &amp;lt;- fortify(wmap2, region=&amp;quot;id&amp;quot;)   
-# This may take a while...
-ggplot(data=test1) + 
-  aes(x=long,y=lat) + 
-  geom_polygon(aes(group=group),col=&amp;quot;black&amp;quot;,fill=NA) + 
-  geom_point(data=RK,aes(x=long,y=lat)) + 
-  geom_line(data=ws2,aes(group=group))+ xlab(&amp;quot;longitude&amp;quot;)+ylab(&amp;quot;latitude&amp;quot;) + 
-  stat_density2d(data=RK,aes(fill = ..level..),size=1,bins=200,alpha=0.1, geom=&amp;quot;polygon&amp;quot;,n=100) +  
-  ggtitle(&amp;quot;Bike Parking Lots in Vienna 2015&amp;quot;)+ scale_fill_continuous(name = &amp;quot;Kernel Density&amp;quot;) + 
-  theme_bw() 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/bikedensity-plot2-1.png&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;Comments/Pull Requests welcome!&lt;/p&gt;
-
-&lt;p&gt;Authors: Christian Brandstaetter with minor modifications by Mario Annau&lt;/p&gt;</description>
-        </item>
-      
+&lt;/ol&gt;</description>
+    </item>
     
+    <item>
+      <title>Population Densities in Vienna</title>
+      <link>/blog/2015/10/30/population-densities-in-vienna/</link>
+      <pubDate>Fri, 30 Oct 2015 22:20:00 +0200</pubDate>
       
-        <item>
-          <title>Population Densities in Vienna</title>
-          <link>http://www.viennar.org/blog/2015/10/30/population-densities-in-vienna/</link>
-          <pubDate>Fri, 30 Oct 2015 22:20:00 &#43;0200</pubDate>
-          <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2015/10/30/population-densities-in-vienna/</guid>
-          <description>&lt;p&gt;The new Github repository &lt;a href=&#34;https://github.com/ViennaR/OpenGovernmentVienna&#34;&gt;OpenGovernmentVienna&lt;/a&gt; has already been created including a very nice addition by Christian.&lt;/p&gt;
+      <guid>/blog/2015/10/30/population-densities-in-vienna/</guid>
+      <description>&lt;p&gt;The new Github repository &lt;a href=&#34;https://github.com/ViennaR/OpenGovernmentVienna&#34;&gt;OpenGovernmentVienna&lt;/a&gt; has already been created including a very nice addition by Christian.&lt;/p&gt;
 
 &lt;p&gt;The script executes the following steps:&lt;/p&gt;
 
@@ -174,85 +41,8 @@ ggplot(data=test1) +
 &lt;li&gt;Download Vienna map including district boundaries from &lt;a href=&#34;http://data.wien.gv.at&#34;&gt;http://data.wien.gv.at&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Download population and district size from &lt;a href=&#34;https://www.wien.gv.at/statistik&#34;&gt;https://www.wien.gv.at/statistik&lt;/a&gt;, calculate population density.&lt;/li&gt;
 &lt;li&gt;Plot Vienna map coloured by population density.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(rgdal) 
-library(rgeos) 
-library(XML)
-library(RCurl)
-
-download.vienna.bydistrict &amp;lt;- function(tablename, skip.row = 3) {
-	baseurl &amp;lt;- &amp;quot;https://www.wien.gv.at/statistik&amp;quot;
-	popurl &amp;lt;- sprintf(&amp;quot;%s/%s.html&amp;quot;, baseurl, tablename)
-
-	poptable &amp;lt;- readHTMLTable(getURL(popurl))[[1]]
-	poptable &amp;lt;- poptable[-c(1:skip.row), ]
-	poptable &amp;lt;- poptable[, -1]
-	row.names(poptable) &amp;lt;- NULL
-	poptable &amp;lt;- sapply(poptable, function(x) gsub(&amp;quot;.&amp;quot;, &amp;quot;&amp;quot;, x, fixed = TRUE))
-	poptable &amp;lt;- gsub(&amp;quot;,&amp;quot;, &amp;quot;.&amp;quot;, poptable, fixed = TRUE)
-	poptable &amp;lt;- matrix(as.numeric(poptable), nrow = nrow(poptable))
-	poptable
-}
-
-# Download Data Shape Data District Boundaries
-mapdata &amp;lt;- &amp;quot;http://data.wien.gv.at/daten/geo?service=WFS&amp;amp;request=GetFeature&amp;amp;version=1.1.0&amp;amp;typeName=ogdwien:BEZIRKSGRENZEOGD&amp;amp;srsName=EPSG:4326&amp;amp;outputFormat=shape-zip&amp;quot;
-
-dir.create(&amp;quot;data&amp;quot;, showWarnings = FALSE)
-destfile &amp;lt;- &amp;quot;data/BEZIRKSGRENZEOGD.zip&amp;quot;
-download.file(mapdata, destfile = destfile)
-unzip(destfile, exdir = &amp;quot;data/BEZIRKSGRENZEOGD&amp;quot;)
-file.remove(destfile)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;## [1] TRUE
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Read District Boundaries
-wmap &amp;lt;- readOGR(&amp;quot;data/BEZIRKSGRENZEOGD&amp;quot;, layer=&amp;quot;BEZIRKSGRENZEOGDPolygon&amp;quot;) 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;## OGR data source with driver: ESRI Shapefile 
-## Source: &amp;quot;data/BEZIRKSGRENZEOGD&amp;quot;, layer: &amp;quot;BEZIRKSGRENZEOGDPolygon&amp;quot;
-## with 23 features
-## It has 15 fields
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Download Population per district
-distpop &amp;lt;- download.vienna.bydistrict(&amp;quot;bevoelkerung/tabellen/bevoelkerung-alter-geschl-bez&amp;quot;)
-distpopsum &amp;lt;- rowSums(as.matrix(distpop))
-
-# Download Size of Each district
-distsize &amp;lt;- download.vienna.bydistrict(&amp;quot;lebensraum/tabellen/nutzungsklassen-bez&amp;quot;, skip.row = 2)
-distsizekm2 &amp;lt;- distsize[, 1] / 100
-
-wd &amp;lt;- data.frame(distpopsum / distsizekm2)
-
-centroids &amp;lt;- gCentroid(wmap, byid=TRUE) 
-colfunc &amp;lt;- colorRampPalette(c(&amp;quot;lightblue&amp;quot;, &amp;quot;darkred&amp;quot;)) 
-colnames(wd) &amp;lt;- &amp;quot;inh&amp;quot; 
-wd$district &amp;lt;- seq(1,23) 
-anstieg_pop &amp;lt;- wd$district[order(wd$inh)] 
-colsort &amp;lt;- colfunc(23)[order(anstieg_pop)] 
-layout(matrix(c(1,2), byrow = TRUE),height=c(1.3, 0.7)) 
-par(mar=c(0,0,0,0)) 
-plot(wmap,col=colsort[wmap$BEZNR]) 
-text(as.character(wmap$BEZ_RZ), x = centroids@coords[,1], y = centroids@coords[,2],cex=0.8) 
-par(mar=c(3,4,4,2),mgp=c(2,0.7,0)) 
-barplot(wd$inh,main=&amp;quot;Population Density Vienna 2014&amp;quot;,yaxt=&amp;quot;n&amp;quot;,col=colsort,xlab=&amp;quot;District&amp;quot;,beside=T, ylab=expression(paste(&amp;quot;1.000 Inhabitants km&amp;quot;^-2)),names.arg=as.roman(wd$district),las=2) 
-axis(2,labels=c(&amp;quot;0&amp;quot;,&amp;quot;5&amp;quot;,&amp;quot;10&amp;quot;,&amp;quot;15&amp;quot;,&amp;quot;20&amp;quot;),at=c(0,5000,10000,15000,20000),las=1) 
-abline(h=c(5000,10000,15000,20000),lty=2) 
-legend(&amp;quot;topright&amp;quot;,pch=c(15,15),col=c(&amp;quot;darkred&amp;quot;,&amp;quot;lightblue&amp;quot;),c(&amp;quot;high&amp;quot;,&amp;quot;low&amp;quot;),bg=&amp;quot;white&amp;quot;) 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/popdensity-1.png&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;Authors: Christian Brandstaetter with small additions by Mario Annau&lt;/p&gt;</description>
-        </item>
-      
+&lt;/ol&gt;</description>
+    </item>
     
-
   </channel>
 </rss>

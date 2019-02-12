@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Vienna R User Group</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on Vienna R User Group</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 24 Aug 2016 22:20:00 +0200</lastBuildDate>
+    
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Igraph</title>
+      <link>/tags/igraph/</link>
+      <pubDate>Wed, 24 Aug 2016 22:20:00 +0200</pubDate>
+      
+      <guid>/tags/igraph/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Meetup</title>
+      <link>/tags/meetup/</link>
+      <pubDate>Tue, 22 Nov 2016 13:00:00 +0200</pubDate>
+      
+      <guid>/tags/meetup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Opengovernmentvienna</title>
+      <link>/tags/opengovernmentvienna/</link>
+      <pubDate>Sun, 08 Nov 2015 22:20:00 +0200</pubDate>
+      
+      <guid>/tags/opengovernmentvienna/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rstudy</title>
+      <link>/tags/rstudy/</link>
+      <pubDate>Wed, 24 Aug 2016 22:20:00 +0200</pubDate>
+      
+      <guid>/tags/rstudy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Serverless</title>
+      <link>/tags/serverless/</link>
+      <pubDate>Tue, 12 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/serverless/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Text Mining</title>
+      <link>/tags/text-mining/</link>
+      <pubDate>Wed, 24 Feb 2016 22:20:00 +0200</pubDate>
+      
+      <guid>/tags/text-mining/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tools</title>
+      <link>/tags/tools/</link>
+      <pubDate>Tue, 12 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/tools/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

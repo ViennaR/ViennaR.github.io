@@ -1,0 +1,78 @@
+---
+title: February 2019 Meetup
+author: Mario
+date: '2019-02-12'
+slug: february-2019-meetup
+categories: []
+tags:
+  - serverless
+  - tools
+---
+
+## Peter Jeitschko: Self Service Data Preparation und Data Science
+
+Peter presented Alteryx, a platform built for Business Analysts to master tasks like data management, data cleaning and modelling. 
+
+- Windows only -> will Linux
+- Connect to multiple data sources
+- Problem to deploy models in production...
+
+### DEMO
+
+- Showing data ingestion
+- Facebook Face API
+- Showing Community Features
+
+### Questions:
+
+- Do you have scheduling capabilities (for metadata, e.g. [Atlas](https://atlas.apache.org/))?
+Yes - Alteryx has scheduling capabilites server side and on the desktop.
+
+- Who is the target audience?
+Business Analysts, business users?
+
+**How does it scale to millions of rows? Does it run in parallel?**
+Yes, to many CPUs -> Large Server
+
+- Which language is behind Alteryx/ what is running behind the scenes?
+C++
+
+- How much?
+€5195 per user per year
+
+- Competition
+
+Knime (Open Source), Data Iku
+
+
+## Florian Schwendinger: grpc + xmlrpc in R
+
+Reason: gRPC faster than REST APIs
+
+- https://github.com/nfultz/grpc
+- http://dirk.eddelbuettel.com/blog/code/rprotobuf
+
+
+## Christoph Bodner + Thomas Laber: Serverless computing with AWS for data science
+
+Serverless lambda
+
+- Deployment of models
+
+Why lambda?
+
+- no admin
+- scalability
+- pay per user, faster turnaround
+
+https://medium.com/bakdata/running-r-on-aws-lambda-9d40643551a6
+
+
+
+
+
+
+
+
+
+

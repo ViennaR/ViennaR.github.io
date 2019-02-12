@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<meta property="og:url" content="/">
+
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="igraph Applications for Transportation Networks &middot; Vienna R User Group">
+
+<meta property="og:site_name" content="Vienna R User Group">
+
+<title>
+    
+    igraph Applications for Transportation Networks
+    
+</title>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/solarized_dark.min.css">
+<link rel="stylesheet" href="//css/styles.css">
+<link rel="stylesheet" href="//css/custom.css">
+
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto' rel='stylesheet' type='text/css'>
+
+
+<link rel="shortcut icon" href="//assets/favicon.ico">
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="//index.xml">
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<div class="container">
+    <header class="nav">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Vienna R User Group</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="//post">All Posts</a></li>
+                        <li><a href="//tags">Tags</a></li>
+                        
+                        <li><a href="/about/">About</a></li>
+                        
+                        <li><a href="/">Vienna R User Group</a></li>
+                        
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        
+                        
+                        
+                        
+                        
+                        <li>
+                            <a href="//index.xml" type="application/rss+xml" target="_blank">
+                                <i class="fa fa-rss"></i>
+                                RSS
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+<div class="row">
+    <div class="col-md-8">
+        <article class="post">
+
+            <header>
+                <div class="post-date">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                    <time datetime="Wed, Aug 24, 2016">
+                        Wed, Aug 24, 2016
+                    </time>
+                </div>
+                <h1 class="post-title">
+                    <a href="/2016/08/24/igraph-applications-for-transportation-networks/">igraph Applications for Transportation Networks</a>
+                </h1>
+            </header>
+
+            <div class="post-content">
+                
+
+
+<p>Materials from Max Leodolters talk in May covering the <strong>igraph</strong> package.</p>
+<pre class="r"><code>require(igraph)
+require(data.table)
+require(ggplot2)</code></pre>
+<div id="centrality---what-is-it" class="section level1">
+<h1>Centrality - What is it?</h1>
+<p>Network Centrality gives you an idea of how important a vertex/node and edge/link in your network/graph <span class="math inline">\(N(V,E)\)</span> respectively <span class="math inline">\(G(N,L)\)</span> is. Examples:</p>
+<ul>
+<li>Closeness</li>
+<li>Betweenness</li>
+<li>Eigenvalue</li>
+<li>degree</li>
+<li>…</li>
+</ul>
+<p>Some formulas:</p>
+<ul>
+<li>Closeness Centrality <span class="math display">\[ C^{node}(n) = \frac{1}{\sum_{m \in N \setminus \{n\}}d(n,m)} \]</span></li>
+<li>Betweenness centrality <span class="math display">\[ B^{node}(n) = \sum_{m\neq o \in N\backslash \{n\} } \frac{\sigma_{mo}(n)}{\sigma_{mo}} \]</span></li>
+<li>Node-based Closeness for a link <span class="math display">\[ \ddot{C}^{link}(l_{n,m}) = \frac{C^{node}(n) + C^{node}(m)}{2} \]</span></li>
+<li>Node-based Betweenness for a link <span class="math display">\[ \ddot{B}^{link}(l_{n,m}) = \frac{B^{node}(n) + B^{node}(m)}{2} \]</span></li>
+<li>Link-based Betweenness for a link <span class="math display">\[ B^{link}(l) = \sum_{n \neq m \in N } \frac{\sigma_{nm}(l)}{\sigma_{nm}} \]</span> *<span class="math inline">\(\sigma\)</span> is the number of traversing OD relations, and <span class="math inline">\(d(n,m)\)</span> is the distance of the shortest route from <span class="math inline">\(n\)</span> to <span class="math inline">\(m\)</span></li>
+</ul>
+<p>What to select, <span class="math inline">\(\ddot{B}^{link}(l_{n,m})\)</span> or <span class="math inline">\(B^{link}(l)\)</span>?</p>
+</div>
+<div id="igraph-for-centralities" class="section level1">
+<h1>igraph for centralities</h1>
+<div id="node-betweenness" class="section level2">
+<h2>Node Betweenness</h2>
+<pre class="r"><code>g &lt;- make_star(5, mode = &quot;undirected&quot;, center=3)
+V(g)$name &lt;- letters[1:length(V(g))]
+plot(g)</code></pre>
+<p><img src="/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<pre class="r"><code>g &lt;- set.edge.attribute(g, &quot;weight&quot;,  value= 1)
+b &lt;- betweenness(g, directed=F)
+V(g)$name &lt;- b
+plot(g)</code></pre>
+<p><img src="/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-2-2.png" width="672" /></p>
+<p>Edge Betweenness:</p>
+<pre class="r"><code>g &lt;- make_star(5, mode = &quot;undirected&quot;, center=3)
+V(g)$name &lt;- letters[1:length(V(g))]
+g &lt;- set.edge.attribute(g, &quot;weight&quot;,  value= 1)
+
+bg &lt;- edge_betweenness(g, directed=F)
+plot(g, edge.label = bg)</code></pre>
+<p><img src="/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+<div id="local-vs.global" class="section level2">
+<h2>Local vs. Global</h2>
+<pre class="r"><code>g &lt;- make_graph(c(1, 2, 2, 3,#horizontal connections
+                  4,5,5,6,6,7,
+                  1,6,#vertical connections
+                  2,7), directed = FALSE)
+#g &lt;- make_star(10, mode = &quot;undirected&quot;, center=3)
+V(g)$name &lt;- letters[1:length(V(g))]
+g &lt;- set.edge.attribute(g, &quot;weight&quot;,  value= 1)
+set.seed(2)
+lay &lt;- layout.auto(g)
+bl &lt;- estimate_edge_betweenness(g, cutoff = 1.5, directed=F);bl</code></pre>
+<pre><code>## [1] 3 3 2 4 3 3 3</code></pre>
+<pre class="r"><code>bg &lt;- edge_betweenness(g, directed=F)
+
+
+# set plotting parameters
+vs &lt;- 15# vertex.size
+ec &lt;- gray(0.8)#edge.color
+elx &lt;- 2# edge.label.cex
+elc &lt;- &quot;black&quot;#,edge.label.color
+vlc &lt;- 2#vertex.label.cex
+ew &lt;- 2#edge.width
+hd &lt;- paste(rep(&quot; &quot;,0), collapse=&quot;&quot;)
+cm &lt;- 3
+vc &lt;- &quot;orange&quot;#gray(0.8)#palette(&quot;default&quot;)#&quot;grey&quot;#vertex.color
+
+#windows(width = 18, height=6)
+#par(mfrow=c(1,3))
+
+plot(g, edge.label=paste(hd, round(E(g)$weight,1)), layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&quot;(a) Weights&quot;, cex.main = cm)</code></pre>
+<p><img src="/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<pre class="r"><code>plot(g, edge.label=paste(hd, round(bl,1)),          layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&quot;(b) Local Betweenness&quot;, cex.main = cm)</code></pre>
+<p><img src="/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-4-2.png" width="672" /></p>
+<pre class="r"><code>plot(g, edge.label=paste(hd, round(bg,1)),          layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&quot;(c) Global Betweenness&quot;, cex.main = cm)</code></pre>
+<p><img src="/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-4-3.png" width="672" /></p>
+</div>
+<div id="node-based-vs.link-based-betweenness-for-links" class="section level2">
+<h2>Node-based vs. link-based Betweenness for Links</h2>
+<pre class="r"><code>g &lt;- make_graph(c(1,2, 2,3, 3,4, 4,5,#horizontal connections
+                  6,7, 7,8, 8,9, 9,10,
+                  2,7,#vertical connections
+                  3,8,
+                  4,9), directed = FALSE)
+
+V(g)$name &lt;- letters[1:length(V(g))]
+set.seed(1210)
+g &lt;- set.edge.attribute(g, &quot;weight&quot;,  value= 1)
+g &lt;- set.edge.attribute(g, &quot;weight&quot;, index= c(10), value= 2)
+#plot(g,edge.label=paste(hd, round(E(g)$weight,1)))
+lay &lt;- layout.auto(g)
+eb &lt;- edge_betweenness(g, directed=F)
+vb &lt;- betweenness(g, directed=F)
+
+tmp1 &lt;- as.data.table(as.data.frame(cbind(get.edgelist(g))))
+tmp1[,id:=1:.N]
+tmp2 &lt;- as.data.table(data.frame(value=vb, name=names(vb)))
+setnames(tmp1, &quot;V1&quot;, &quot;name&quot;)
+tmp3 &lt;- merge(tmp1, tmp2, by =&quot;name&quot;)
+setnames(tmp3, &quot;name&quot;, &quot;V1&quot;)
+setnames(tmp3, &quot;V2&quot;, &quot;name&quot;)
+tmp4 &lt;- merge(tmp3, tmp2, by =&quot;name&quot;)
+setnames(tmp4,  &quot;name&quot;, &quot;V2&quot;)
+tmp4[,m:=mean(c(value.x, value.y)) , by=c(&quot;V2&quot;,&quot;V1&quot;)]
+evb &lt;- tmp4[order(id),list(V1,V2,m)]$m
+
+
+# set plotting parameters
+vs &lt;- 15# vertex.size
+ec &lt;- &quot;grey&quot;#edge.color
+elx &lt;- 2# edge.label.cex
+elc &lt;- &quot;black&quot;#edge.label.color
+vlc &lt;- 2#vertex.label.cex
+ew &lt;- 2#edge.width
+hd &lt;- paste(rep(&quot; &quot;,0), collapse=&quot;&quot;)
+cm &lt;- 3
+vc &lt;- &quot;orange&quot;# vertex.color
+
+X11(width = 18, height=6)
+#par(mfrow=c(1,3))
+
+plot(g, edge.label=paste(hd, round(E(g)$weight,1)), layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&quot;(a) Weights&quot;,cex.main=cm)</code></pre>
+<p><img src="/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<pre class="r"><code>plot(g, edge.label=paste(hd, round(eb,1)),          layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&quot;(b) Link based Betweenness&quot;,cex.main=cm)</code></pre>
+<p><img src="/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-5-2.png" width="672" /></p>
+<pre class="r"><code>V(g)$name &lt;- paste(vb)
+
+plot(g, edge.label=paste(hd, round(evb,1)),          layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&quot;(c) Node based Betweenness&quot; ,cex.main=cm)</code></pre>
+<p><img src="/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-5-3.png" width="672" /></p>
+</div>
+<div id="bugsfeaturesspecial-experiences" class="section level2">
+<h2>Bugs/Features/Special experiences</h2>
+<ul>
+<li>demonstrate the parameter ‘lay’ with setting it NULL</li>
+<li>cutoff parameter</li>
+<li>nodes need to be named for using induced.subgraph(), otherwise problems in matching results</li>
+</ul>
+<div id="cutoff" class="section level3">
+<h3>cutoff</h3>
+<p>stackoverflow: <a href="http://stackoverflow.com/questions/34180036/how-does-the-cutoff-parameter-influence-betweenness-calculation" class="uri">http://stackoverflow.com/questions/34180036/how-does-the-cutoff-parameter-influence-betweenness-calculation</a></p>
+<p>discussion: <a href="https://lists.nongnu.org/archive/html/igraph-help/2012-11/msg00083.html" class="uri">https://lists.nongnu.org/archive/html/igraph-help/2012-11/msg00083.html</a></p>
+<p>github project: <a href="https://github.com/maxar/igraph_testing/blob/master/test_vertex_betweenness_local.R" class="uri">https://github.com/maxar/igraph_testing/blob/master/test_vertex_betweenness_local.R</a></p>
+<pre class="r"><code>require(igraph)
+packageVersion(&quot;igraph&quot;) # my installed version is 1.0.1</code></pre>
+<pre><code>## [1] &#39;1.2.2&#39;</code></pre>
+<pre class="r"><code>#----------------------------------------------------------------------------------------
+#---------------    EXAMPLE 1    --------------------------------------------------------
+#----------------------------------------------------------------------------------------
+
+#--- set plotting parameters
+vs &lt;- 25# vertex.size
+ec &lt;- gray(0.8)#edge.color
+elx &lt;- 2# edge.label.cex
+elc &lt;- &quot;black&quot;#,edge.label.color
+vlc &lt;- 2#vertex.label.cex
+ew &lt;- 2#edge.width
+cm &lt;- 2
+vc &lt;- &quot;orange&quot;
+
+
+g &lt;- make_graph(c(1, 2, 2, 3, 3, 4, 4,5, 5, 6, 6, 7) , directed = FALSE)
+
+set.seed(1210)
+lay &lt;- layout.auto(g)
+
+graphics.off()
+X11(width = 30, height=10)
+#par(mfrow=c(1,3))
+
+V(g)$name &lt;- letters[1:length(V(g))]
+g &lt;- set.edge.attribute(g, &quot;weight&quot;,  value= c(2,3,5,5,3,2))
+plot(g, edge.label=round(E(g)$weight,1), layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&quot;(a) Weights&quot;, cex.main = cm)</code></pre>
+<p><img src="/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<pre class="r"><code>bl.1 &lt;- estimate_betweenness(g, cutoff=10)
+V(g)$name &lt;- bl.1
+plot(g,        layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&quot;(b) Local Betweenness\ncutoff 10&quot;, cex.main = cm)</code></pre>
+<p><img src="/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-6-2.png" width="672" /></p>
+<pre class="r"><code>bl.2 &lt;- estimate_betweenness(g, cutoff=Inf)
+V(g)$name &lt;- bl.2
+plot(g,        layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&quot;(b) Global Betweenness\ncutoff Inf&quot;, cex.main = cm)</code></pre>
+<p><img src="/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-6-3.png" width="672" /></p>
+<pre class="r"><code># Comments and Discussion:
+# This simple example illustrates, why it is questionable
+# that the cutoff parameter actually measures distance independent of the edge weights
+#
+# 1. define edge weights as in plot (a)
+# 2. calculate vertex betweenness with cutoff 10 (b)
+# 3. calculate vertex betweenness with cutoff Inf (c)
+
+
+
+
+
+
+#----------------------------------------------------------------------------------------
+#---------------    EXAMPLE 2    --------------------------------------------------------
+#----------------------------------------------------------------------------------------
+
+#--- set plotting parameters
+vs &lt;- 25# vertex.size
+ec &lt;- gray(0.8)#edge.color
+elx &lt;- 2# edge.label.cex
+elc &lt;- &quot;black&quot;#,edge.label.color
+vlc &lt;- 2#vertex.label.cex
+ew &lt;- 2#edge.width
+cm &lt;- 2
+vc &lt;- &quot;orange&quot;
+
+
+set.seed(1210)
+g &lt;- make_ring(8)
+lay &lt;- layout.auto(g)
+
+graphics.off()
+X11(width = 12, height=12)
+par(mfrow=c(2,2))
+
+V(g)$name &lt;- letters[1:length(V(g))]
+g &lt;- set.edge.attribute(g, &quot;weight&quot;, value= c(.1 , .2, rep(.1, 2), rep(0.2,4)))
+plot(g, edge.label=round(E(g)$weight,1), layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&quot;(a) Weights&quot;, cex.main = cm)
+
+bl.1 &lt;- estimate_betweenness(g, cutoff=0.29)
+V(g)$name &lt;- bl.1
+plot(g,        layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&quot;(b) Local Betweenness\ncutoff 0.29&quot;, cex.main = cm)
+
+V(g)$name &lt;- letters[1:length(V(g))]
+g &lt;- set.edge.attribute(g, &quot;weight&quot;, value=.2)
+plot(g, edge.label=round(E(g)$weight,1), layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&quot;(c) new weights&quot;, cex.main = cm)
+
+bl.2 &lt;- estimate_betweenness(g, cutoff=0.29)
+V(g)$name &lt;- bl.2
+plot(g,          layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&quot;(d) Local Betweenness\ncutoff 0.29&quot;, cex.main = cm)</code></pre>
+<p><img src="/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-6-4.png" width="672" /></p>
+<pre class="r"><code># Comments and Discussion:
+# This simple example illustrates, that vertex betweenness values change,
+# if the edge weights are changed and the cutoff parameters are chosen constant.
+# Ring shape to reconstruct the calculation easier;
+#
+# 1. define edge weights as in plot (a)
+# 2. calculate vertex betweenness with cutoff 0.29 (b)
+# 3. define new edge weights as in plot (c)
+# 4. calculate vertex betweenness with cutoff 0.29 (d)
+
+
+
+
+
+#----------------------------------------------------------------------------------------
+#---------------    EXAMPLE 3    --------------------------------------------------------
+#----------------------------------------------------------------------------------------
+
+#--- set plotting parameters
+vs &lt;- 20# vertex.size
+ec &lt;- gray(0.8)#edge.color
+elx &lt;- 1# edge.label.cex
+elc &lt;- &quot;black&quot;#,edge.label.color
+vlc &lt;- 1#vertex.label.cex
+ew &lt;- 2#edge.width
+cm &lt;- 2
+vc &lt;- &quot;orange&quot;
+
+
+set.seed(1210)
+g &lt;- make_ring(20)
+lay &lt;- layout.auto(g)
+
+graphics.off()
+#windows(width = 30, height=30)
+#par(mfrow=c(2,2))
+
+V(g)$name &lt;- letters[1:length(V(g))]
+g &lt;- set.edge.attribute(g, &quot;weight&quot;, value= c(rep(2:3,10)))
+plot(g, edge.label=round(E(g)$weight,1), layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&quot;(a) Weights&quot;, cex.main = cm)
+
+bl.1 &lt;- estimate_betweenness(g, cutoff=6)
+V(g)$name &lt;- bl.1
+plot(g,        layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&quot;(b) Local Betweenness\ncutoff 6&quot;, cex.main = cm)
+
+bl.2 &lt;- estimate_betweenness(g, cutoff=9)
+V(g)$name &lt;- bl.2
+plot(g,        layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&quot;(c) Local Betweenness\ncutoff 9&quot;, cex.main = cm)
+
+bl.3 &lt;- estimate_betweenness(g, cutoff=Inf)
+V(g)$name &lt;- bl.3
+plot(g,          layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&quot;(d) Global Betweenness\ncutoff Inf&quot;, cex.main = cm)
+
+
+# Comments and Discussion:
+# This simple example illustrates, that vertex betweenness values change,
+# if the edge weights are constant and the cutoff parameters change.
+# Ring shape to reconstruct the calculation easier;
+#
+# 1. define edge weights as in plot (a)
+# 2. calculate vertex betweenness with cutoff 6 (b)
+# 3. calculate vertex betweenness with cutoff 9 (c)
+# 4. calculate vertex betweenness with cutoff Inf (d)</code></pre>
+</div>
+<div id="normalization" class="section level3">
+<h3>normalization</h3>
+<p>stackoverflow: <a href="http://stackoverflow.com/questions/34000326/normalized-local-closeness-centrality-in-r-igraphestimate-closeness" class="uri">http://stackoverflow.com/questions/34000326/normalized-local-closeness-centrality-in-r-igraphestimate-closeness</a></p>
+<p>I am trying to calculate a normalized local closeness centrality. But setting the parameter ‘normalized = T’ for igraph::estimate_closeness() only multiplies the results with (N-1). Is it possible to define N_i for vertex i individually by it’s neighborhood, that is determined by the cut-off parameter (and of course by the graph itself)?</p>
+<p>The mini example demonstrates, that setting the parameter ‘normalized=T’ does not work for this purpose. It normalizes with one and the same (N-1) for all vertices.</p>
+<p>Thanks for help.</p>
+<pre class="r"><code>set.seed(1210)
+require(&#39;igraph&#39;)
+g &lt;- random.graph.game(20,3/10)
+g &lt;- set.edge.attribute(g, &quot;weight&quot;,  value= 1)
+cnt &lt;- estimate_closeness(g, cutoff = 3, normalized = T );cnt</code></pre>
+<pre><code>## Warning in estimate_closeness(g, cutoff = 3, normalized = T): At
+## centrality.c:2617 :closeness centrality is not well-defined for
+## disconnected graphs</code></pre>
+<pre><code>##  [1] 0.6333333 0.2467532 0.3220339 0.5000000 0.5277778 0.5588235 0.6129032
+##  [8] 0.5135135 0.5428571 0.5588235 0.4634146 0.5277778 0.6129032 0.5000000
+## [15] 0.6333333 0.5000000 0.3392857 0.5135135 0.5135135 0.5135135</code></pre>
+<pre class="r"><code>cnf &lt;- estimate_closeness(g, cutoff = 3, normalized = F );cnf</code></pre>
+<pre><code>## Warning in estimate_closeness(g, cutoff = 3, normalized = F): At
+## centrality.c:2617 :closeness centrality is not well-defined for
+## disconnected graphs</code></pre>
+<pre><code>##  [1] 0.03333333 0.01298701 0.01694915 0.02631579 0.02777778 0.02941176
+##  [7] 0.03225806 0.02702703 0.02857143 0.02941176 0.02439024 0.02777778
+## [13] 0.03225806 0.02631579 0.03333333 0.02631579 0.01785714 0.02702703
+## [19] 0.02702703 0.02702703</code></pre>
+<pre class="r"><code>#print results
+cbind(cnf * (length(V(g))-1), cnt)</code></pre>
+<pre><code>##                       cnt
+##  [1,] 0.6333333 0.6333333
+##  [2,] 0.2467532 0.2467532
+##  [3,] 0.3220339 0.3220339
+##  [4,] 0.5000000 0.5000000
+##  [5,] 0.5277778 0.5277778
+##  [6,] 0.5588235 0.5588235
+##  [7,] 0.6129032 0.6129032
+##  [8,] 0.5135135 0.5135135
+##  [9,] 0.5428571 0.5428571
+## [10,] 0.5588235 0.5588235
+## [11,] 0.4634146 0.4634146
+## [12,] 0.5277778 0.5277778
+## [13,] 0.6129032 0.6129032
+## [14,] 0.5000000 0.5000000
+## [15,] 0.6333333 0.6333333
+## [16,] 0.5000000 0.5000000
+## [17,] 0.3392857 0.3392857
+## [18,] 0.5135135 0.5135135
+## [19,] 0.5135135 0.5135135
+## [20,] 0.5135135 0.5135135</code></pre>
+<pre class="r"><code>sum(abs(cnf * (length(V(g))-1) - cnt))</code></pre>
+<pre><code>## [1] 8.326673e-17</code></pre>
+<pre class="r"><code>#for visualization
+V(g)$name &lt;- paste(&quot;v&quot;, 1:length(V(g)), sep=&quot;&quot;)#letters[1:length(V(g))]
+set.seed(2)
+lay &lt;- layout.auto(g)
+
+## set plotting parameters
+vs &lt;- 15# vertex.size
+ec &lt;- gray(0.8)#edge.color
+elx &lt;- 2# edge.label.cex
+elc &lt;- &quot;black&quot;#,edge.label.color
+vlc &lt;- 2#vertex.label.cex
+ew &lt;- 2#edge.width
+hd &lt;- paste(rep(&quot; &quot;,0), collapse=&quot;&quot;)
+cm &lt;- 3
+vc &lt;- &quot;orange&quot;#gray(0.8)#palette(&quot;default&quot;)#&quot;grey&quot;#vertex.color
+
+X11(width = 18, height=6)
+#par(mfrow=c(1,3))
+
+plot(g, edge.label=paste(hd, round(E(g)$weight,1)), layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&quot;(a) Weights&quot;, cex.main = cm)</code></pre>
+<p><img src="/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<pre class="r"><code>V(g)$name &lt;- paste(round(cnt,3))
+plot(g,          layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&quot;(b) local closeness normalized&quot;, cex.main = cm)</code></pre>
+<p><img src="/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-7-2.png" width="672" /></p>
+<pre class="r"><code>V(g)$name &lt;- paste(round(cnf,3))
+plot(g,          layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&quot;(c) local closeness&quot;, cex.main = cm)</code></pre>
+<p><img src="/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-7-3.png" width="672" /></p>
+<div id="my-solution" class="section level4">
+<h4>My solution</h4>
+<p>easy workaround for local centralities: define neighborhood for each node, calcualte ‘global’ centralities for these neighborhoods and normalize it individually.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="what-for-did-we-use-centralities" class="section level1">
+<h1>What for did we use centralities?</h1>
+<p>Thanks to Anita Graser for the beautiful plots!</p>
+<p><span class="math display">\[\hat{y}_{t,\gamma}(s,b,c) = \beta_t  + \beta_{\gamma,s} \cdot s  + \beta_{\gamma,b} \cdot b + \beta_{\gamma,c} \cdot c + \beta_{\gamma,bc} \cdot b \cdot c\]</span></p>
+<p>some plots:</p>
+<div id="global-betweenness" class="section level2">
+<h2>Global Betweenness</h2>
+<p><img src="/img/20160524_igraph_applications_files/figure-markdown_strict/pic1.png" title="**Global Betweenness** \
+*Global Betweenness*" alt="**Global Betweenness** \
+*Global Betweenness*" style='width:100%;' border="0" /></p>
+</div>
+<div id="local-betweenness" class="section level2">
+<h2>Local Betweenness</h2>
+<p><img src="/img/20160524_igraph_applications_files/figure-markdown_strict/pic2.png" title="**Local Betweenness** \
+*Local Betweenness*" alt="**Local Betweenness** \
+*Local Betweenness*" style='width:100%;' border="0" /></p>
+</div>
+<div id="global-closeness" class="section level2">
+<h2>Global Closeness</h2>
+<p><img src="/img/20160524_igraph_applications_files/figure-markdown_strict/pic3.png" title="**Global Closeness** \
+*Global Closeness*" alt="**Global Closeness** \
+*Global Closeness*" style='width:100%;' border="0" /></p>
+</div>
+<div id="local-closeness" class="section level2">
+<h2>Local Closeness</h2>
+<p><img src="/img/20160524_igraph_applications_files/figure-markdown_strict/pic4.png" title="**Local Closeness** \
+*Local Closeness*" alt="**Local Closeness** \
+*Local Closeness*" style='width:100%;' border="0" /></p>
+</div>
+<div id="real-world-difference-of-node-based-and-link-based-betweenness-for-a-link" class="section level2">
+<h2>Real world difference of node-based and link-based Betweenness for a link</h2>
+<p><img src="/img/20160524_igraph_applications_files/figure-markdown_strict/pic5.png" title="**Real world difference 1** \
+*Real world difference 1*" alt="**Real world difference 1** \
+*Real world difference 1*" style='width:100%;' border="0" /></p>
+<p><img src="/img/20160524_igraph_applications_files/figure-markdown_strict/pic6.png" title="**Real world difference 2** \
+*Real world difference 2*" alt="**Real world difference 2** \
+*Real world difference 2*" style='width:100%;' border="0" /></p>
+</div>
+<div id="improvement-travel-time-model" class="section level2">
+<h2>Improvement travel time model</h2>
+<div id="mape-difference-global-minus-local" class="section level3">
+<h3>MAPE Difference Global minus local</h3>
+<p><img src="/img/20160524_igraph_applications_files/figure-markdown_strict/pic7.png" title="**MAPE Difference** \
+*MAPE Difference*" alt="**MAPE Difference** \
+*MAPE Difference*" style='width:100%;' border="0" /></p>
+</div>
+<div id="detail-mape-base" class="section level3">
+<h3>Detail MAPE base</h3>
+<p><img src="/img/20160524_igraph_applications_files/figure-markdown_strict/pic8.png" title="**MAPE base** \
+*MAPE base*" alt="**MAPE base** \
+*MAPE base*" style='width:100%;' border="0" /></p>
+</div>
+<div id="detail-mape-with-local-centralities" class="section level3">
+<h3>Detail MAPE with local centralities</h3>
+<p><img src="/img/20160524_igraph_applications_files/figure-markdown_strict/pic9.png" title="**MAPE local** \
+*MAPE local*" alt="**MAPE local** \ *MAPE local*" style='width:100%;' border="0" /></p>
+</div>
+</div>
+</div>
+
+            </div>
+
+            <aside>
+                
+                <ul class="list-inline post-tags">
+                    
+                </ul>
+
+                
+                
+                <h3>Related Post</h3>
+                <ul class="post-rels">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </aside>
+            
+            
+            <footer>
+
+                <nav>
+                    <ul class="pager">
+
+                        
+                        <li class="previous"><a href="/2016/09/27/meetup-09-2016-minutes/"><span aria-hidden="true">&larr;</span> Older</a></li>
+                        
+
+                        <li><a href="//post">All Posts</a></li>
+
+                        
+                        <li class="next"><a href="/2016/08/24/igraph-applications-for-transportation-networks/">Newer <span aria-hidden="true">&rarr;</span></a></li>
+                        
+
+                    </ul>
+                </nav>
+
+                
+            </footer>
+
+        </article>
+    </div>
+    <div class="col-md-4">
+        
+<aside>
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-4 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Recent Posts</h2>
+                </div>
+                <div class="list-group">
+                    
+                    <a href="/2019/02/12/february-2019-meetup/" class="list-group-item">Meetup 02-2019 Minutes</a>
+                    
+                    <a href="/2016/11/22/meetup-11-2016-minutes/" class="list-group-item">Meetup 11-2016 Minutes</a>
+                    
+                    <a href="/2016/10/19/meetup-10-2016-minutes/" class="list-group-item">Meetup 10-2016 Minutes</a>
+                    
+                    <a href="/2016/09/27/meetup-09-2016-minutes/" class="list-group-item">Meetup 09-2016 Minutes</a>
+                    
+                    <a href="/2016/08/24/igraph-applications-for-transportation-networks/" class="list-group-item">igraph Applications for Transportation Networks</a>
+                    
+                    <a href="/2016/08/24/igraph-applications-for-transportation-networks/" class="list-group-item">igraph Applications for Transportation Networks</a>
+                    
+                    <a href="/2016/06/28/meetup-06-2016-minutes/" class="list-group-item">Meetup 06-2016 Minutes</a>
+                    
+                    <a href="/2016/05/24/meetup-05-2016-minutes/" class="list-group-item">Meetup 05-2016 Minutes</a>
+                    
+                    <a href="/2016/05/06/meetup-04-2016-minutes/" class="list-group-item">Meetup 04-2016 Minutes</a>
+                    
+                    <a href="/about/" class="list-group-item">About</a>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-4 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Tags</h2>
+                </div>
+                <div class="list-group">
+                    
+                    
+                    
+                    <a href="//tags/igraph" class="list-group-item">
+                        <span class="badge">1</span>
+                        igraph
+                    </a>
+                    
+                    
+                    <a href="//tags/meetup" class="list-group-item">
+                        <span class="badge">12</span>
+                        meetup
+                    </a>
+                    
+                    
+                    <a href="//tags/opengovernmentvienna" class="list-group-item">
+                        <span class="badge">2</span>
+                        opengovernmentvienna
+                    </a>
+                    
+                    
+                    <a href="//tags/rstudy" class="list-group-item">
+                        <span class="badge">4</span>
+                        rstudy
+                    </a>
+                    
+                    
+                    <a href="//tags/serverless" class="list-group-item">
+                        <span class="badge">1</span>
+                        serverless
+                    </a>
+                    
+                    
+                    <a href="//tags/text-mining" class="list-group-item">
+                        <span class="badge">1</span>
+                        text-mining
+                    </a>
+                    
+                    
+                    <a href="//tags/tools" class="list-group-item">
+                        <span class="badge">1</span>
+                        tools
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+</aside>
+
+    </div>
+</div>
+
+</div>
+<hr>
+
+<footer class="container copy">
+    <p>&copy; 2019  Vienna R User Group </p>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="//yandex.st/highlightjs/8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'Your ID.', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+<script>
+document.write('<script src="//sharebutton.net/plugin/sharebutton.php?type=horizontal&u=' + encodeURIComponent(document.location.href) + '"></scr' + 'ipt>');
+</script>
+

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Opengovernmentvienna on Vienna R User Group</title>
+    <link>/categories/opengovernmentvienna/</link>
+    <description>Recent content in Opengovernmentvienna on Vienna R User Group</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 08 Nov 2015 22:20:00 +0200</lastBuildDate>
+    
+	<atom:link href="/categories/opengovernmentvienna/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bike Parking Lots in Vienna</title>
+      <link>/2015/11/08/bike-parking-lots-in-vienna/</link>
+      <pubDate>Sun, 08 Nov 2015 22:20:00 +0200</pubDate>
+      
+      <guid>/2015/11/08/bike-parking-lots-in-vienna/</guid>
+      <description>&lt;p&gt;Another addition to the  &lt;a href=&#34;https://github.com/ViennaR/OpenGovernmentVienna&#34;&gt;OpenGovernmentVienna&lt;/a&gt; repo by Christian Brandstaetter showing the density of bike parking lots in Vienna.&lt;/p&gt;
+
+&lt;p&gt;The script executes the following steps:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Download Vienna map including district boundaries and bike parking lots from &lt;a href=&#34;http://data.wien.gv.at&#34;&gt;http://data.wien.gv.at&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Plot two Vienna maps showing bike parking lots and density per district.&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>Population Densities in Vienna</title>
+      <link>/2015/10/30/population-densities-in-vienna/</link>
+      <pubDate>Fri, 30 Oct 2015 22:20:00 +0200</pubDate>
+      
+      <guid>/2015/10/30/population-densities-in-vienna/</guid>
+      <description>&lt;p&gt;The new Github repository &lt;a href=&#34;https://github.com/ViennaR/OpenGovernmentVienna&#34;&gt;OpenGovernmentVienna&lt;/a&gt; has already been created including a very nice addition by Christian.&lt;/p&gt;
+
+&lt;p&gt;The script executes the following steps:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Download Vienna map including district boundaries from &lt;a href=&#34;http://data.wien.gv.at&#34;&gt;http://data.wien.gv.at&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Download population and district size from &lt;a href=&#34;https://www.wien.gv.at/statistik&#34;&gt;https://www.wien.gv.at/statistik&lt;/a&gt;, calculate population density.&lt;/li&gt;
+&lt;li&gt;Plot Vienna map coloured by population density.&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

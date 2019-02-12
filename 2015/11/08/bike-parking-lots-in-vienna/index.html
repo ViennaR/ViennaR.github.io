@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<meta property="og:url" content="/">
+
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bike Parking Lots in Vienna &middot; Vienna R User Group">
+
+<meta property="og:site_name" content="Vienna R User Group">
+
+<title>
+    
+    Bike Parking Lots in Vienna
+    
+</title>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/solarized_dark.min.css">
+<link rel="stylesheet" href="//css/styles.css">
+<link rel="stylesheet" href="//css/custom.css">
+
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto' rel='stylesheet' type='text/css'>
+
+
+<link rel="shortcut icon" href="//assets/favicon.ico">
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="//index.xml">
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<div class="container">
+    <header class="nav">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Vienna R User Group</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="//post">All Posts</a></li>
+                        <li><a href="//tags">Tags</a></li>
+                        
+                        <li><a href="/about/">About</a></li>
+                        
+                        <li><a href="/">Vienna R User Group</a></li>
+                        
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        
+                        
+                        
+                        
+                        
+                        <li>
+                            <a href="//index.xml" type="application/rss+xml" target="_blank">
+                                <i class="fa fa-rss"></i>
+                                RSS
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+<div class="row">
+    <div class="col-md-8">
+        <article class="post">
+
+            <header>
+                <div class="post-date">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                    <time datetime="Sun, Nov 8, 2015">
+                        Sun, Nov 8, 2015
+                    </time>
+                </div>
+                <h1 class="post-title">
+                    <a href="/2015/11/08/bike-parking-lots-in-vienna/">Bike Parking Lots in Vienna</a>
+                </h1>
+            </header>
+
+            <div class="post-content">
+                <p>Another addition to the  <a href="https://github.com/ViennaR/OpenGovernmentVienna">OpenGovernmentVienna</a> repo by Christian Brandstaetter showing the density of bike parking lots in Vienna.</p>
+
+<p>The script executes the following steps:</p>
+
+<ol>
+<li>Download Vienna map including district boundaries and bike parking lots from <a href="http://data.wien.gv.at">http://data.wien.gv.at</a>.</li>
+<li>Plot two Vienna maps showing bike parking lots and density per district.</li>
+</ol>
+
+<pre><code class="language-r">library(rgdal) 
+library(rgeos) 
+library(XML)
+library(RCurl)
+library(ggplot2) 
+library(plotrix) 
+library(maptools)
+
+download.vienna.shape &lt;- function(shapename, outdir = &quot;data&quot;) {
+	baseurl &lt;- &quot;http://data.wien.gv.at/daten/geo?service=WFS&amp;request=GetFeature&amp;version=1.1.0&amp;typeName=ogdwien:&quot;
+	urlparam &lt;- &quot;&amp;srsName=EPSG:4326&amp;outputFormat=shape-zip&quot;	
+	url &lt;- sprintf(&quot;%s%s%s&quot;, baseurl, shapename, urlparam)
+	
+	dir.create(outdir, showWarnings = FALSE)
+	destfile = file.path(outdir, sprintf(&quot;%s.zip&quot;, shapename))
+	download.file(url, destfile = destfile)
+	unzip(destfile, exdir = file.path(outdir, shapename))
+	invisible(file.remove(destfile))
+}
+</code></pre>
+
+<h1 id="retrieve-data">Retrieve Data</h1>
+
+<pre><code class="language-r">## Read District Boundaries
+download.vienna.shape(&quot;BEZIRKSGRENZEOGD&quot;)
+wmap &lt;- readOGR(&quot;data/BEZIRKSGRENZEOGD&quot;, layer=&quot;BEZIRKSGRENZEOGDPolygon&quot;) 
+</code></pre>
+
+<pre><code>## OGR data source with driver: ESRI Shapefile 
+## Source: &quot;data/BEZIRKSGRENZEOGD&quot;, layer: &quot;BEZIRKSGRENZEOGDPolygon&quot;
+## with 23 features
+## It has 15 fields
+</code></pre>
+
+<pre><code class="language-r">## Read Streets
+download.vienna.shape(&quot;STRASSENGRAPHOGD&quot;)
+smap &lt;- readOGR(&quot;data/STRASSENGRAPHOGD&quot;, layer=&quot;STRASSENGRAPHOGD&quot;) 
+</code></pre>
+
+<pre><code>## OGR data source with driver: ESRI Shapefile 
+## Source: &quot;data/STRASSENGRAPHOGD&quot;, layer: &quot;STRASSENGRAPHOGD&quot;
+## with 28293 features
+## It has 18 fields
+</code></pre>
+
+<pre><code class="language-r">## Read bike parking lots
+download.vienna.shape(&quot;FAHRRADABSTELLANLAGEOGD&quot;)
+bmap &lt;- readOGR(&quot;data/FAHRRADABSTELLANLAGEOGD&quot;, layer=&quot;FAHRRADABSTELLANLAGEOGDPoint&quot;) 
+</code></pre>
+
+<pre><code>## OGR data source with driver: ESRI Shapefile 
+## Source: &quot;data/FAHRRADABSTELLANLAGEOGD&quot;, layer: &quot;FAHRRADABSTELLANLAGEOGDPoint&quot;
+## with 4061 features
+## It has 5 fields
+</code></pre>
+
+<pre><code class="language-r">## Download Size of Each district
+distsize &lt;- download.vienna.bydistrict(&quot;lebensraum/tabellen/nutzungsklassen-bez&quot;, skip.row = 2)
+distsizekm2 &lt;- distsize[, 1] / 100
+</code></pre>
+
+<h1 id="calculate-stuff">Calculate stuff</h1>
+
+<pre><code class="language-r">## Number of bike parking lots per district
+bikelotsperdistrict &lt;- table(bmap$BEZIRK)
+lotdensity &lt;- bikelotsperdistrict / distsizekm2
+
+## Normalization of Colour Scaling
+normdichte &lt;- round(lotdensity/max(lotdensity)*50,digits=0) 
+colfunc &lt;- colorRampPalette(c(&quot;lightblue&quot;, &quot;darkgreen&quot;)) 
+colfunc100 &lt;- colfunc(100) 
+bezirksfarben &lt;- colfunc100[normdichte]
+
+# Transformations  111.1 
+# km to degree (einfache Umrechnung) 
+hundm &lt;- (1/111.1)/10 
+# 100 m for Radius of Punkte  
+centroids &lt;- gCentroid(wmap, byid=TRUE) # Mittelpunkt/Bezirk
+</code></pre>
+
+<h1 id="plots">Plots</h1>
+
+<h2 id="plot-1-vienna-map-with-bike-parking-lots-discrete-density">Plot 1 - Vienna Map with Bike Parking Lots (Discrete Density)</h2>
+
+<pre><code class="language-r">layout(1:2, heights=c(5,1)) 
+par(mar=c(0.5,0.5,1,0.5), oma=rep(3, 4), las=1) 
+plot(wmap, main=&quot;Bike Parking Lots in Vienna&quot;, col=bezirksfarben[wmap$BEZNR]) 
+
+# add bike parking lots
+plot(smap, add=TRUE, col = &quot;grey&quot;)
+draw.circle(coordinates(bmap)[,1], coordinates(bmap)[,2],hundm,border=rgb(255,255,0,maxColorValue=255),col=rgb(255,255,0,maxColorValue=255))
+text(as.character(wmap$BEZ_RZ), x = centroids@coords[,1], y = centroids@coords[,2], col=&quot;orangered&quot;,cex=0.8,font=2)
+
+# Legend
+par(mar=c(1,0.5,3,0.5)) 
+colseq &lt;- seq(range(lotdensity)[1],range(lotdensity)[2],20) 
+image(x=colseq,y=1,z=matrix(seq_along(colseq)), col=colfunc(10), main=expression(paste(&quot;Bike parking lot density per district km&quot;^-2)),axes=F) 
+axis(1)  
+</code></pre>
+
+<p><img src="/img/bikedensity-plot1-1.png" style='width:100%;' border="0" alt="Null"></p>
+
+<h1 id="plot-2-vienna-map-with-bike-parking-lots-continous-density">Plot 2 - Vienna Map with Bike Parking Lots (Continous Density)</h1>
+
+<pre><code class="language-r"># Transformation of bike parking lots shape to data.frame for ggplot2
+RK &lt;- data.frame(coordinates(bmap)) 
+colnames(RK) &lt;- c(&quot;long&quot;,&quot;lat&quot;) 
+ws2 &lt;- fortify(smap,region=&quot;OBJECTID&quot;)  
+wmap2 &lt;- wmap 
+# assign ID
+wmap2@data$id &lt;- rownames(wmap2@data) 
+# transform to data.frame  
+test1 &lt;- fortify(wmap2, region=&quot;id&quot;)   
+# This may take a while...
+ggplot(data=test1) + 
+  aes(x=long,y=lat) + 
+  geom_polygon(aes(group=group),col=&quot;black&quot;,fill=NA) + 
+  geom_point(data=RK,aes(x=long,y=lat)) + 
+  geom_line(data=ws2,aes(group=group))+ xlab(&quot;longitude&quot;)+ylab(&quot;latitude&quot;) + 
+  stat_density2d(data=RK,aes(fill = ..level..),size=1,bins=200,alpha=0.1, geom=&quot;polygon&quot;,n=100) +  
+  ggtitle(&quot;Bike Parking Lots in Vienna 2015&quot;)+ scale_fill_continuous(name = &quot;Kernel Density&quot;) + 
+  theme_bw() 
+</code></pre>
+
+<p><img src="/img/bikedensity-plot2-1.png" style='width:100%;' border="0" alt="Null"></p>
+
+<p>Comments/Pull Requests welcome!</p>
+
+<p>Authors: Christian Brandstaetter with minor modifications by Mario Annau</p>
+            </div>
+
+            <aside>
+                
+                <ul class="list-inline post-tags">
+                    
+                    <li>
+                        <a href="//tags/opengovernmentvienna">
+                            <i class="fa fa-tags"></i>
+                            OpenGovernmentVienna
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="//tags/rstudy">
+                            <i class="fa fa-tags"></i>
+                            rstudy
+                        </a>
+                    </li>
+                    
+                </ul>
+
+                
+                
+                <h3>Related Post</h3>
+                <ul class="post-rels">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="/2016/08/24/igraph-applications-for-transportation-networks/">igraph Applications for Transportation Networks</a></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="/2016/02/24/wordcloud-wienerwald/">Wordcloud Wienerwald</a></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="/2015/10/30/population-densities-in-vienna/">Population Densities in Vienna</a></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </aside>
+            
+            
+            <footer>
+
+                <nav>
+                    <ul class="pager">
+
+                        
+                        <li class="previous"><a href="/2015/11/22/meetup-11-2015/"><span aria-hidden="true">&larr;</span> Older</a></li>
+                        
+
+                        <li><a href="//post">All Posts</a></li>
+
+                        
+                        <li class="next"><a href="/2015/10/30/population-densities-in-vienna/">Newer <span aria-hidden="true">&rarr;</span></a></li>
+                        
+
+                    </ul>
+                </nav>
+
+                
+            </footer>
+
+        </article>
+    </div>
+    <div class="col-md-4">
+        
+<aside>
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-4 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Recent Posts</h2>
+                </div>
+                <div class="list-group">
+                    
+                    <a href="/2019/02/12/february-2019-meetup/" class="list-group-item">Meetup 02-2019 Minutes</a>
+                    
+                    <a href="/2016/11/22/meetup-11-2016-minutes/" class="list-group-item">Meetup 11-2016 Minutes</a>
+                    
+                    <a href="/2016/10/19/meetup-10-2016-minutes/" class="list-group-item">Meetup 10-2016 Minutes</a>
+                    
+                    <a href="/2016/09/27/meetup-09-2016-minutes/" class="list-group-item">Meetup 09-2016 Minutes</a>
+                    
+                    <a href="/2016/08/24/igraph-applications-for-transportation-networks/" class="list-group-item">igraph Applications for Transportation Networks</a>
+                    
+                    <a href="/2016/08/24/igraph-applications-for-transportation-networks/" class="list-group-item">igraph Applications for Transportation Networks</a>
+                    
+                    <a href="/2016/06/28/meetup-06-2016-minutes/" class="list-group-item">Meetup 06-2016 Minutes</a>
+                    
+                    <a href="/2016/05/24/meetup-05-2016-minutes/" class="list-group-item">Meetup 05-2016 Minutes</a>
+                    
+                    <a href="/2016/05/06/meetup-04-2016-minutes/" class="list-group-item">Meetup 04-2016 Minutes</a>
+                    
+                    <a href="/about/" class="list-group-item">About</a>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-4 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Tags</h2>
+                </div>
+                <div class="list-group">
+                    
+                    
+                    
+                    <a href="//tags/igraph" class="list-group-item">
+                        <span class="badge">1</span>
+                        igraph
+                    </a>
+                    
+                    
+                    <a href="//tags/meetup" class="list-group-item">
+                        <span class="badge">12</span>
+                        meetup
+                    </a>
+                    
+                    
+                    <a href="//tags/opengovernmentvienna" class="list-group-item">
+                        <span class="badge">2</span>
+                        opengovernmentvienna
+                    </a>
+                    
+                    
+                    <a href="//tags/rstudy" class="list-group-item">
+                        <span class="badge">4</span>
+                        rstudy
+                    </a>
+                    
+                    
+                    <a href="//tags/serverless" class="list-group-item">
+                        <span class="badge">1</span>
+                        serverless
+                    </a>
+                    
+                    
+                    <a href="//tags/text-mining" class="list-group-item">
+                        <span class="badge">1</span>
+                        text-mining
+                    </a>
+                    
+                    
+                    <a href="//tags/tools" class="list-group-item">
+                        <span class="badge">1</span>
+                        tools
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+</aside>
+
+    </div>
+</div>
+
+</div>
+<hr>
+
+<footer class="container copy">
+    <p>&copy; 2019  Vienna R User Group </p>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="//yandex.st/highlightjs/8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'Your ID.', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+<script>
+document.write('<script src="//sharebutton.net/plugin/sharebutton.php?type=horizontal&u=' + encodeURIComponent(document.location.href) + '"></scr' + 'ipt>');
+</script>
+

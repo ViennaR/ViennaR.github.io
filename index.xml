@@ -2,26 +2,87 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vienna R User Group </title>
-    <link>http://www.viennar.org/index.xml</link>
+    <link>/</link>
     <language>en-us</language>
     <author>Vienna-R</author>
-    <rights>(C) 2016</rights>
-    <updated>2016-11-22 13:00:00 &#43;0200 &#43;0200</updated>
+    <rights>(C) 2019</rights>
+    <updated>2019-02-12 00:00:00 &#43;0000 UTC</updated>
 
     
       
         <item>
+          <title>Meetup 02-2019 Minutes</title>
+          <link>/blog/2019/02/12/february-2019-meetup/</link>
+          <pubDate>Tue, 12 Feb 2019 00:00:00 UTC</pubDate>
+          <author>Vienna-R</author>
+          <guid>/blog/2019/02/12/february-2019-meetup/</guid>
+          <description>
+
+&lt;h2 id=&#34;self-service-data-preparation-und-data-science&#34;&gt;Self Service Data Preparation und Data Science&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.linkedin.com/in/peter-jeitschko-3aa02179&#34;&gt;&lt;strong&gt;Peter Jeitschko&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Peter presented Alteryx, a platform built for Business Analysts to master tasks like data management, data cleaning and modelling. The tool is windows only and will be ported to Linux soon. It can connect to multiple data sources and helps Business Analysts to deploy models in production. Finally, Peter also showed a Demo including data ingestion, an example of the Facebook Face API and some community features.&lt;/p&gt;
+
+&lt;p&gt;You can find the &lt;strong&gt;slides&lt;/strong&gt; of his presentation &lt;a href=&#34;/slides/Alteryx Corporate Intro Presentation.pptx&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;questions&#34;&gt;Questions&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Do you have scheduling capabilities (for metadata, e.g. &lt;a href=&#34;https://atlas.apache.org/&#34;&gt;Atlas&lt;/a&gt;)?&lt;/strong&gt;&lt;br&gt;
+Yes - Alteryx has scheduling capabilities server side and on the desktop.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Who is the target audience?&lt;/strong&gt;&lt;br&gt;
+Business Analysts, business users?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How does it scale to millions of rows? Does it run in parallel?&lt;/strong&gt;&lt;br&gt;
+Yes, to many CPU&amp;rsquo;s -&amp;gt; Large Server&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Which language is behind Alteryx/ what is running behind the scenes?&lt;/strong&gt;&lt;br&gt;
+C++?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How much?&lt;/strong&gt;&lt;br&gt;
+€5195 per user per year, see also&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Who are the competitors?&lt;/strong&gt;&lt;br&gt;
+Knime (Open Source), Data Iku&lt;/p&gt;
+
+&lt;h2 id=&#34;grpc-xmlrpc-in-r&#34;&gt;grpc + xmlrpc in R&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.wu.ac.at/statmath/faculty-staff/faculty/fschwendinger&#34;&gt;&lt;strong&gt;Florian Schwendinger&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Florian presented the package gRPC to interface the popular RPC framework, see also &lt;a href=&#34;https://github.com/nfultz/grpc&#34;&gt;https://github.com/nfultz/grpc&lt;/a&gt;. The reason to use gRPC instead of REST APIs is performance since messages are sent via &lt;a href=&#34;http://dirk.eddelbuettel.com/code/rprotobuf.html&#34;&gt;protobuf&lt;/a&gt; instead of JSON.&lt;/p&gt;
+
+&lt;p&gt;You can find the &lt;strong&gt;slides&lt;/strong&gt; &lt;a href=&#34;/slides/grpc.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;serverless-computing-with-aws-for-data-science&#34;&gt;Serverless Computing with AWS for data science&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.linkedin.com/in/christoph-bodner&#34;&gt;&lt;strong&gt;Christoph Bodner&lt;/strong&gt;&lt;/a&gt; and &lt;a href=&#34;https://www.linkedin.com/in/thomas-laber&#34;&gt;&lt;strong&gt;Thomas Laber&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Christoph and Thomas presented a way to use R within AWS lambda functions for model deployment - thus making R functions serverless. The reasons for using lambda functions is no administration, scalability and pay per user schemes (GB/secs) allowing for fast turnarounds.&lt;/p&gt;
+
+&lt;p&gt;However, they also mentioned limitations and challenges deploying R as lambda functions including memory and space limits and suggested using managed container services as alternatives.&lt;/p&gt;
+
+&lt;p&gt;Below the materials of their presentation:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Slides&lt;/strong&gt;: &lt;a href=&#34;/slides/Serverless Computing.pdf&#34;&gt;Serverless Computing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Article&lt;/strong&gt;: &lt;a href=&#34;https://medium.com/bakdata/running-r-on-aws-lambda-9d40643551a6&#34;&gt;https://medium.com/bakdata/running-r-on-aws-lambda-9d40643551a6&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
           <title>Meetup 11-2016 Minutes</title>
-          <link>http://www.viennar.org/blog/2016/11/22/meetup-11-2016-minutes/</link>
+          <link>/blog/2016/11/22/meetup-11-2016-minutes/</link>
           <pubDate>Tue, 22 Nov 2016 13:00:00 &#43;0200</pubDate>
           <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2016/11/22/meetup-11-2016-minutes/</guid>
-          <description>&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/deepnet.png&#34; title=&#34;**Deep Neural Network**&#34; \
+          <guid>/blog/2016/11/22/meetup-11-2016-minutes/</guid>
+          <description>&lt;p&gt;&lt;img src=&#34;/img/deepnet.png&#34; title=&#34;**Deep Neural Network**&#34; \
 alt=&#34;**Deep Neural Network**&#34; border=&#34;0&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Deep learning with R using &lt;strong&gt;mxnet&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;During the November ViennaR Meetup Klaudius Kalcher gave an excellent talk about the &lt;strong&gt;mxnet&lt;/strong&gt; package. After covering some theoretical background he included examples to build deep neural networks from scratch.
 Finally, Mario showed some time series forecasting examples already discussing during the October Meetup using the &lt;strong&gt;forecast&lt;/strong&gt; package.&lt;/p&gt;
@@ -32,14 +93,14 @@ Finally, Mario showed some time series forecasting examples already discussing d
 &lt;li&gt;&lt;strong&gt;mxnet&lt;/strong&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.viennar.org/slides/kalcher_deeplearning.pdf&#34;&gt;Slides&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/slides/kalcher_deeplearning.pdf&#34;&gt;Slides&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;mxnet&lt;/strong&gt; R-package: &lt;a href=&#34;https://github.com/dmlc/mxnet/tree/master/R-package&#34;&gt;https://github.com/dmlc/mxnet/tree/master/R-package&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;dmlc mxnet for Deep Learning: &lt;a href=&#34;http://mxnet.io&#34;&gt;http://mxnet.io&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;forecast&lt;/strong&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.viennar.org/slides/forecast_intro2.html&#34;&gt;Forecasting Crashcourse&lt;/a&gt; (&lt;a href=&#34;http://www.viennar.org/slides/forecast_intro2.Rmd&#34;&gt;src&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/slides/forecast_intro2.html&#34;&gt;Forecasting Crashcourse&lt;/a&gt; (&lt;a href=&#34;/slides/forecast_intro2.Rmd&#34;&gt;src&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;forecast&lt;/strong&gt; package: &lt;a href=&#34;https://CRAN.R-project.org/package=forecast&#34;&gt;https://CRAN.R-project.org/package=forecast&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Forecasting: principles and practice book: &lt;a href=&#34;https://www.otexts.org/fpp&#34;&gt;https://www.otexts.org/fpp&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
@@ -56,23 +117,21 @@ Finally, Mario showed some time series forecasting examples already discussing d
       
         <item>
           <title>Meetup 10-2016 Minutes</title>
-          <link>http://www.viennar.org/blog/2016/10/19/meetup-10-2016-minutes/</link>
-          <pubDate>Wed, 19 Oct 2016 13:00:00 &#43;0200</pubDate>
+          <link>/blog/2016/10/19/meetup-10-2016-minutes/</link>
+          <pubDate>Wed, 19 Oct 2016 13:00:00 CEST</pubDate>
           <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2016/10/19/meetup-10-2016-minutes/</guid>
-          <description>&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/meetup_201610_small.jpg&#34; title=&#34;**sparklyr**&#34; \
-alt=&#34;**sparklyr**&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
+          <guid>/blog/2016/10/19/meetup-10-2016-minutes/</guid>
+          <description>&lt;p&gt;&lt;img src=&#34;/img/meetup_201610_small.jpg&#34; title=&#34;**sparklyr**&#34; \
+alt=&#34;**sparklyr**&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;A &lt;strong&gt;sparklyr&lt;/strong&gt; introduction by Roland Boubela.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;The October Meetup was hosted by Roland Boubela who gave an excellent talk about the new &lt;strong&gt;sparklyr&lt;/strong&gt; package. &lt;strong&gt;sparklyr&lt;/strong&gt; provides an easy-to-use interface to Apache Spark and can even be accessed using the latest and greatest version of RStudio (&lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/preview&#34;&gt;preview release&lt;/a&gt;). It also covered a comparison with the existing &lt;strong&gt;SparkR&lt;/strong&gt; package.&lt;/p&gt;
 
 &lt;h2 id=&#34;links&#34;&gt;Links&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.viennar.org/slides/boubela_sparklyr.pdf&#34;&gt;Slides&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/slides/boubela_sparklyr.pdf&#34;&gt;Slides&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;sparklyr&lt;/strong&gt;: &lt;a href=&#34;http://spark.rstudio.com&#34;&gt;http://spark.rstudio.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;SparkR&lt;/strong&gt;: &lt;a href=&#34;http://spark.apache.org/docs/latest/sparkr.html&#34;&gt;http://spark.apache.org/docs/latest/sparkr.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;RStudio Preview: &lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/preview&#34;&gt;https://www.rstudio.com/products/rstudio/download/preview&lt;/a&gt;&lt;/li&gt;
@@ -88,16 +147,14 @@ alt=&#34;**sparklyr**&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; /&gt;&
       
         <item>
           <title>Meetup 09-2016 Minutes</title>
-          <link>http://www.viennar.org/blog/2016/09/27/meetup-09-2016-minutes/</link>
-          <pubDate>Tue, 27 Sep 2016 13:00:00 &#43;0200</pubDate>
+          <link>/blog/2016/09/27/meetup-09-2016-minutes/</link>
+          <pubDate>Tue, 27 Sep 2016 13:00:00 CEST</pubDate>
           <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2016/09/27/meetup-09-2016-minutes/</guid>
-          <description>&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/meetup_201609_small.jpg&#34; title=&#34;**Brainstorm Forecasting**&#34; \
-alt=&#34;**Brainstorm Forecasting**&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
+          <guid>/blog/2016/09/27/meetup-09-2016-minutes/</guid>
+          <description>&lt;p&gt;&lt;img src=&#34;/img/meetup_201609_small.jpg&#34; title=&#34;**Brainstorm Forecasting**&#34; \
+alt=&#34;**Brainstorm Forecasting**&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;A brainstorming session about forecasting time series in R.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;First we discussed the topic data structures. Regular time series data can be represented using the &lt;em&gt;ts&lt;/em&gt; class which is already included in the basic R installation (as part of the &lt;strong&gt;stats&lt;/strong&gt; package). By contrast, irregular time series data can be represented by the popular &lt;strong&gt;zoo&lt;/strong&gt; objects (or &lt;strong&gt;xts&lt;/strong&gt;). Most (ARIMA-)forecasting methods require regular time series.&lt;/p&gt;
 
@@ -145,10 +202,490 @@ alt=&#34;**Brainstorm Forecasting**&#34; style=&#39;width:100%;&#39; border=&#34
       
         <item>
           <title>igraph Applications for Transportation Networks</title>
-          <link>http://www.viennar.org/blog/2016/08/24/igraph-applications-for-transportation-networks/</link>
-          <pubDate>Wed, 24 Aug 2016 22:20:00 &#43;0200</pubDate>
+          <link>/blog/2016/08/24/igraph-applications-for-transportation-networks/</link>
+          <pubDate>Wed, 24 Aug 2016 22:20:00 CEST</pubDate>
           <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2016/08/24/igraph-applications-for-transportation-networks/</guid>
+          <guid>/blog/2016/08/24/igraph-applications-for-transportation-networks/</guid>
+          <description>
+
+
+&lt;p&gt;Materials from Max Leodolters talk in May covering the &lt;strong&gt;igraph&lt;/strong&gt; package.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;require(igraph)
+require(data.table)
+require(ggplot2)&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;centrality---what-is-it&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Centrality - What is it?&lt;/h1&gt;
+&lt;p&gt;Network Centrality gives you an idea of how important a vertex/node and edge/link in your network/graph &lt;span class=&#34;math inline&#34;&gt;\(N(V,E)\)&lt;/span&gt; respectively &lt;span class=&#34;math inline&#34;&gt;\(G(N,L)\)&lt;/span&gt; is. Examples:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Closeness&lt;/li&gt;
+&lt;li&gt;Betweenness&lt;/li&gt;
+&lt;li&gt;Eigenvalue&lt;/li&gt;
+&lt;li&gt;degree&lt;/li&gt;
+&lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Some formulas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Closeness Centrality &lt;span class=&#34;math display&#34;&gt;\[ C^{node}(n) = \frac{1}{\sum_{m \in N \setminus \{n\}}d(n,m)} \]&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Betweenness centrality &lt;span class=&#34;math display&#34;&gt;\[ B^{node}(n) = \sum_{m\neq o \in N\backslash \{n\} } \frac{\sigma_{mo}(n)}{\sigma_{mo}} \]&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Node-based Closeness for a link &lt;span class=&#34;math display&#34;&gt;\[ \ddot{C}^{link}(l_{n,m}) = \frac{C^{node}(n) + C^{node}(m)}{2} \]&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Node-based Betweenness for a link &lt;span class=&#34;math display&#34;&gt;\[ \ddot{B}^{link}(l_{n,m}) = \frac{B^{node}(n) + B^{node}(m)}{2} \]&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Link-based Betweenness for a link &lt;span class=&#34;math display&#34;&gt;\[ B^{link}(l) = \sum_{n \neq m \in N } \frac{\sigma_{nm}(l)}{\sigma_{nm}} \]&lt;/span&gt; *&lt;span class=&#34;math inline&#34;&gt;\(\sigma\)&lt;/span&gt; is the number of traversing OD relations, and &lt;span class=&#34;math inline&#34;&gt;\(d(n,m)\)&lt;/span&gt; is the distance of the shortest route from &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\(m\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;What to select, &lt;span class=&#34;math inline&#34;&gt;\(\ddot{B}^{link}(l_{n,m})\)&lt;/span&gt; or &lt;span class=&#34;math inline&#34;&gt;\(B^{link}(l)\)&lt;/span&gt;?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;igraph-for-centralities&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;igraph for centralities&lt;/h1&gt;
+&lt;div id=&#34;node-betweenness&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Node Betweenness&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;g &amp;lt;- make_star(5, mode = &amp;quot;undirected&amp;quot;, center=3)
+V(g)$name &amp;lt;- letters[1:length(V(g))]
+plot(g)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;g &amp;lt;- set.edge.attribute(g, &amp;quot;weight&amp;quot;,  value= 1)
+b &amp;lt;- betweenness(g, directed=F)
+V(g)$name &amp;lt;- b
+plot(g)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-2-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Edge Betweenness:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;g &amp;lt;- make_star(5, mode = &amp;quot;undirected&amp;quot;, center=3)
+V(g)$name &amp;lt;- letters[1:length(V(g))]
+g &amp;lt;- set.edge.attribute(g, &amp;quot;weight&amp;quot;,  value= 1)
+
+bg &amp;lt;- edge_betweenness(g, directed=F)
+plot(g, edge.label = bg)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;local-vs.global&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Local vs. Global&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;g &amp;lt;- make_graph(c(1, 2, 2, 3,#horizontal connections
+                  4,5,5,6,6,7,
+                  1,6,#vertical connections
+                  2,7), directed = FALSE)
+#g &amp;lt;- make_star(10, mode = &amp;quot;undirected&amp;quot;, center=3)
+V(g)$name &amp;lt;- letters[1:length(V(g))]
+g &amp;lt;- set.edge.attribute(g, &amp;quot;weight&amp;quot;,  value= 1)
+set.seed(2)
+lay &amp;lt;- layout.auto(g)
+bl &amp;lt;- estimate_edge_betweenness(g, cutoff = 1.5, directed=F);bl&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 3 3 2 4 3 3 3&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;bg &amp;lt;- edge_betweenness(g, directed=F)
+
+
+# set plotting parameters
+vs &amp;lt;- 15# vertex.size
+ec &amp;lt;- gray(0.8)#edge.color
+elx &amp;lt;- 2# edge.label.cex
+elc &amp;lt;- &amp;quot;black&amp;quot;#,edge.label.color
+vlc &amp;lt;- 2#vertex.label.cex
+ew &amp;lt;- 2#edge.width
+hd &amp;lt;- paste(rep(&amp;quot; &amp;quot;,0), collapse=&amp;quot;&amp;quot;)
+cm &amp;lt;- 3
+vc &amp;lt;- &amp;quot;orange&amp;quot;#gray(0.8)#palette(&amp;quot;default&amp;quot;)#&amp;quot;grey&amp;quot;#vertex.color
+
+#windows(width = 18, height=6)
+#par(mfrow=c(1,3))
+
+plot(g, edge.label=paste(hd, round(E(g)$weight,1)), layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&amp;quot;(a) Weights&amp;quot;, cex.main = cm)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(g, edge.label=paste(hd, round(bl,1)),          layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&amp;quot;(b) Local Betweenness&amp;quot;, cex.main = cm)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-4-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(g, edge.label=paste(hd, round(bg,1)),          layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&amp;quot;(c) Global Betweenness&amp;quot;, cex.main = cm)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-4-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;node-based-vs.link-based-betweenness-for-links&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Node-based vs. link-based Betweenness for Links&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;g &amp;lt;- make_graph(c(1,2, 2,3, 3,4, 4,5,#horizontal connections
+                  6,7, 7,8, 8,9, 9,10,
+                  2,7,#vertical connections
+                  3,8,
+                  4,9), directed = FALSE)
+
+V(g)$name &amp;lt;- letters[1:length(V(g))]
+set.seed(1210)
+g &amp;lt;- set.edge.attribute(g, &amp;quot;weight&amp;quot;,  value= 1)
+g &amp;lt;- set.edge.attribute(g, &amp;quot;weight&amp;quot;, index= c(10), value= 2)
+#plot(g,edge.label=paste(hd, round(E(g)$weight,1)))
+lay &amp;lt;- layout.auto(g)
+eb &amp;lt;- edge_betweenness(g, directed=F)
+vb &amp;lt;- betweenness(g, directed=F)
+
+tmp1 &amp;lt;- as.data.table(as.data.frame(cbind(get.edgelist(g))))
+tmp1[,id:=1:.N]
+tmp2 &amp;lt;- as.data.table(data.frame(value=vb, name=names(vb)))
+setnames(tmp1, &amp;quot;V1&amp;quot;, &amp;quot;name&amp;quot;)
+tmp3 &amp;lt;- merge(tmp1, tmp2, by =&amp;quot;name&amp;quot;)
+setnames(tmp3, &amp;quot;name&amp;quot;, &amp;quot;V1&amp;quot;)
+setnames(tmp3, &amp;quot;V2&amp;quot;, &amp;quot;name&amp;quot;)
+tmp4 &amp;lt;- merge(tmp3, tmp2, by =&amp;quot;name&amp;quot;)
+setnames(tmp4,  &amp;quot;name&amp;quot;, &amp;quot;V2&amp;quot;)
+tmp4[,m:=mean(c(value.x, value.y)) , by=c(&amp;quot;V2&amp;quot;,&amp;quot;V1&amp;quot;)]
+evb &amp;lt;- tmp4[order(id),list(V1,V2,m)]$m
+
+
+# set plotting parameters
+vs &amp;lt;- 15# vertex.size
+ec &amp;lt;- &amp;quot;grey&amp;quot;#edge.color
+elx &amp;lt;- 2# edge.label.cex
+elc &amp;lt;- &amp;quot;black&amp;quot;#edge.label.color
+vlc &amp;lt;- 2#vertex.label.cex
+ew &amp;lt;- 2#edge.width
+hd &amp;lt;- paste(rep(&amp;quot; &amp;quot;,0), collapse=&amp;quot;&amp;quot;)
+cm &amp;lt;- 3
+vc &amp;lt;- &amp;quot;orange&amp;quot;# vertex.color
+
+X11(width = 18, height=6)
+#par(mfrow=c(1,3))
+
+plot(g, edge.label=paste(hd, round(E(g)$weight,1)), layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&amp;quot;(a) Weights&amp;quot;,cex.main=cm)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(g, edge.label=paste(hd, round(eb,1)),          layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&amp;quot;(b) Link based Betweenness&amp;quot;,cex.main=cm)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-5-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;V(g)$name &amp;lt;- paste(vb)
+
+plot(g, edge.label=paste(hd, round(evb,1)),          layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&amp;quot;(c) Node based Betweenness&amp;quot; ,cex.main=cm)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-5-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;bugsfeaturesspecial-experiences&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Bugs/Features/Special experiences&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;demonstrate the parameter ‘lay’ with setting it NULL&lt;/li&gt;
+&lt;li&gt;cutoff parameter&lt;/li&gt;
+&lt;li&gt;nodes need to be named for using induced.subgraph(), otherwise problems in matching results&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;cutoff&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;cutoff&lt;/h3&gt;
+&lt;p&gt;stackoverflow: &lt;a href=&#34;http://stackoverflow.com/questions/34180036/how-does-the-cutoff-parameter-influence-betweenness-calculation&#34; class=&#34;uri&#34;&gt;http://stackoverflow.com/questions/34180036/how-does-the-cutoff-parameter-influence-betweenness-calculation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;discussion: &lt;a href=&#34;https://lists.nongnu.org/archive/html/igraph-help/2012-11/msg00083.html&#34; class=&#34;uri&#34;&gt;https://lists.nongnu.org/archive/html/igraph-help/2012-11/msg00083.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;github project: &lt;a href=&#34;https://github.com/maxar/igraph_testing/blob/master/test_vertex_betweenness_local.R&#34; class=&#34;uri&#34;&gt;https://github.com/maxar/igraph_testing/blob/master/test_vertex_betweenness_local.R&lt;/a&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;require(igraph)
+packageVersion(&amp;quot;igraph&amp;quot;) # my installed version is 1.0.1&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;#39;1.2.2&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#----------------------------------------------------------------------------------------
+#---------------    EXAMPLE 1    --------------------------------------------------------
+#----------------------------------------------------------------------------------------
+
+#--- set plotting parameters
+vs &amp;lt;- 25# vertex.size
+ec &amp;lt;- gray(0.8)#edge.color
+elx &amp;lt;- 2# edge.label.cex
+elc &amp;lt;- &amp;quot;black&amp;quot;#,edge.label.color
+vlc &amp;lt;- 2#vertex.label.cex
+ew &amp;lt;- 2#edge.width
+cm &amp;lt;- 2
+vc &amp;lt;- &amp;quot;orange&amp;quot;
+
+
+g &amp;lt;- make_graph(c(1, 2, 2, 3, 3, 4, 4,5, 5, 6, 6, 7) , directed = FALSE)
+
+set.seed(1210)
+lay &amp;lt;- layout.auto(g)
+
+graphics.off()
+X11(width = 30, height=10)
+#par(mfrow=c(1,3))
+
+V(g)$name &amp;lt;- letters[1:length(V(g))]
+g &amp;lt;- set.edge.attribute(g, &amp;quot;weight&amp;quot;,  value= c(2,3,5,5,3,2))
+plot(g, edge.label=round(E(g)$weight,1), layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&amp;quot;(a) Weights&amp;quot;, cex.main = cm)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;bl.1 &amp;lt;- estimate_betweenness(g, cutoff=10)
+V(g)$name &amp;lt;- bl.1
+plot(g,        layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&amp;quot;(b) Local Betweenness\ncutoff 10&amp;quot;, cex.main = cm)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-6-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;bl.2 &amp;lt;- estimate_betweenness(g, cutoff=Inf)
+V(g)$name &amp;lt;- bl.2
+plot(g,        layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&amp;quot;(b) Global Betweenness\ncutoff Inf&amp;quot;, cex.main = cm)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-6-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Comments and Discussion:
+# This simple example illustrates, why it is questionable
+# that the cutoff parameter actually measures distance independent of the edge weights
+#
+# 1. define edge weights as in plot (a)
+# 2. calculate vertex betweenness with cutoff 10 (b)
+# 3. calculate vertex betweenness with cutoff Inf (c)
+
+
+
+
+
+
+#----------------------------------------------------------------------------------------
+#---------------    EXAMPLE 2    --------------------------------------------------------
+#----------------------------------------------------------------------------------------
+
+#--- set plotting parameters
+vs &amp;lt;- 25# vertex.size
+ec &amp;lt;- gray(0.8)#edge.color
+elx &amp;lt;- 2# edge.label.cex
+elc &amp;lt;- &amp;quot;black&amp;quot;#,edge.label.color
+vlc &amp;lt;- 2#vertex.label.cex
+ew &amp;lt;- 2#edge.width
+cm &amp;lt;- 2
+vc &amp;lt;- &amp;quot;orange&amp;quot;
+
+
+set.seed(1210)
+g &amp;lt;- make_ring(8)
+lay &amp;lt;- layout.auto(g)
+
+graphics.off()
+X11(width = 12, height=12)
+par(mfrow=c(2,2))
+
+V(g)$name &amp;lt;- letters[1:length(V(g))]
+g &amp;lt;- set.edge.attribute(g, &amp;quot;weight&amp;quot;, value= c(.1 , .2, rep(.1, 2), rep(0.2,4)))
+plot(g, edge.label=round(E(g)$weight,1), layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&amp;quot;(a) Weights&amp;quot;, cex.main = cm)
+
+bl.1 &amp;lt;- estimate_betweenness(g, cutoff=0.29)
+V(g)$name &amp;lt;- bl.1
+plot(g,        layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&amp;quot;(b) Local Betweenness\ncutoff 0.29&amp;quot;, cex.main = cm)
+
+V(g)$name &amp;lt;- letters[1:length(V(g))]
+g &amp;lt;- set.edge.attribute(g, &amp;quot;weight&amp;quot;, value=.2)
+plot(g, edge.label=round(E(g)$weight,1), layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&amp;quot;(c) new weights&amp;quot;, cex.main = cm)
+
+bl.2 &amp;lt;- estimate_betweenness(g, cutoff=0.29)
+V(g)$name &amp;lt;- bl.2
+plot(g,          layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&amp;quot;(d) Local Betweenness\ncutoff 0.29&amp;quot;, cex.main = cm)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-6-4.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Comments and Discussion:
+# This simple example illustrates, that vertex betweenness values change,
+# if the edge weights are changed and the cutoff parameters are chosen constant.
+# Ring shape to reconstruct the calculation easier;
+#
+# 1. define edge weights as in plot (a)
+# 2. calculate vertex betweenness with cutoff 0.29 (b)
+# 3. define new edge weights as in plot (c)
+# 4. calculate vertex betweenness with cutoff 0.29 (d)
+
+
+
+
+
+#----------------------------------------------------------------------------------------
+#---------------    EXAMPLE 3    --------------------------------------------------------
+#----------------------------------------------------------------------------------------
+
+#--- set plotting parameters
+vs &amp;lt;- 20# vertex.size
+ec &amp;lt;- gray(0.8)#edge.color
+elx &amp;lt;- 1# edge.label.cex
+elc &amp;lt;- &amp;quot;black&amp;quot;#,edge.label.color
+vlc &amp;lt;- 1#vertex.label.cex
+ew &amp;lt;- 2#edge.width
+cm &amp;lt;- 2
+vc &amp;lt;- &amp;quot;orange&amp;quot;
+
+
+set.seed(1210)
+g &amp;lt;- make_ring(20)
+lay &amp;lt;- layout.auto(g)
+
+graphics.off()
+#windows(width = 30, height=30)
+#par(mfrow=c(2,2))
+
+V(g)$name &amp;lt;- letters[1:length(V(g))]
+g &amp;lt;- set.edge.attribute(g, &amp;quot;weight&amp;quot;, value= c(rep(2:3,10)))
+plot(g, edge.label=round(E(g)$weight,1), layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&amp;quot;(a) Weights&amp;quot;, cex.main = cm)
+
+bl.1 &amp;lt;- estimate_betweenness(g, cutoff=6)
+V(g)$name &amp;lt;- bl.1
+plot(g,        layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&amp;quot;(b) Local Betweenness\ncutoff 6&amp;quot;, cex.main = cm)
+
+bl.2 &amp;lt;- estimate_betweenness(g, cutoff=9)
+V(g)$name &amp;lt;- bl.2
+plot(g,        layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&amp;quot;(c) Local Betweenness\ncutoff 9&amp;quot;, cex.main = cm)
+
+bl.3 &amp;lt;- estimate_betweenness(g, cutoff=Inf)
+V(g)$name &amp;lt;- bl.3
+plot(g,          layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&amp;quot;(d) Global Betweenness\ncutoff Inf&amp;quot;, cex.main = cm)
+
+
+# Comments and Discussion:
+# This simple example illustrates, that vertex betweenness values change,
+# if the edge weights are constant and the cutoff parameters change.
+# Ring shape to reconstruct the calculation easier;
+#
+# 1. define edge weights as in plot (a)
+# 2. calculate vertex betweenness with cutoff 6 (b)
+# 3. calculate vertex betweenness with cutoff 9 (c)
+# 4. calculate vertex betweenness with cutoff Inf (d)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;normalization&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;normalization&lt;/h3&gt;
+&lt;p&gt;stackoverflow: &lt;a href=&#34;http://stackoverflow.com/questions/34000326/normalized-local-closeness-centrality-in-r-igraphestimate-closeness&#34; class=&#34;uri&#34;&gt;http://stackoverflow.com/questions/34000326/normalized-local-closeness-centrality-in-r-igraphestimate-closeness&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I am trying to calculate a normalized local closeness centrality. But setting the parameter ‘normalized = T’ for igraph::estimate_closeness() only multiplies the results with (N-1). Is it possible to define N_i for vertex i individually by it’s neighborhood, that is determined by the cut-off parameter (and of course by the graph itself)?&lt;/p&gt;
+&lt;p&gt;The mini example demonstrates, that setting the parameter ‘normalized=T’ does not work for this purpose. It normalizes with one and the same (N-1) for all vertices.&lt;/p&gt;
+&lt;p&gt;Thanks for help.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;set.seed(1210)
+require(&amp;#39;igraph&amp;#39;)
+g &amp;lt;- random.graph.game(20,3/10)
+g &amp;lt;- set.edge.attribute(g, &amp;quot;weight&amp;quot;,  value= 1)
+cnt &amp;lt;- estimate_closeness(g, cutoff = 3, normalized = T );cnt&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in estimate_closeness(g, cutoff = 3, normalized = T): At
+## centrality.c:2617 :closeness centrality is not well-defined for
+## disconnected graphs&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##  [1] 0.6333333 0.2467532 0.3220339 0.5000000 0.5277778 0.5588235 0.6129032
+##  [8] 0.5135135 0.5428571 0.5588235 0.4634146 0.5277778 0.6129032 0.5000000
+## [15] 0.6333333 0.5000000 0.3392857 0.5135135 0.5135135 0.5135135&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;cnf &amp;lt;- estimate_closeness(g, cutoff = 3, normalized = F );cnf&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in estimate_closeness(g, cutoff = 3, normalized = F): At
+## centrality.c:2617 :closeness centrality is not well-defined for
+## disconnected graphs&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##  [1] 0.03333333 0.01298701 0.01694915 0.02631579 0.02777778 0.02941176
+##  [7] 0.03225806 0.02702703 0.02857143 0.02941176 0.02439024 0.02777778
+## [13] 0.03225806 0.02631579 0.03333333 0.02631579 0.01785714 0.02702703
+## [19] 0.02702703 0.02702703&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#print results
+cbind(cnf * (length(V(g))-1), cnt)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##                       cnt
+##  [1,] 0.6333333 0.6333333
+##  [2,] 0.2467532 0.2467532
+##  [3,] 0.3220339 0.3220339
+##  [4,] 0.5000000 0.5000000
+##  [5,] 0.5277778 0.5277778
+##  [6,] 0.5588235 0.5588235
+##  [7,] 0.6129032 0.6129032
+##  [8,] 0.5135135 0.5135135
+##  [9,] 0.5428571 0.5428571
+## [10,] 0.5588235 0.5588235
+## [11,] 0.4634146 0.4634146
+## [12,] 0.5277778 0.5277778
+## [13,] 0.6129032 0.6129032
+## [14,] 0.5000000 0.5000000
+## [15,] 0.6333333 0.6333333
+## [16,] 0.5000000 0.5000000
+## [17,] 0.3392857 0.3392857
+## [18,] 0.5135135 0.5135135
+## [19,] 0.5135135 0.5135135
+## [20,] 0.5135135 0.5135135&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sum(abs(cnf * (length(V(g))-1) - cnt))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 8.326673e-17&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#for visualization
+V(g)$name &amp;lt;- paste(&amp;quot;v&amp;quot;, 1:length(V(g)), sep=&amp;quot;&amp;quot;)#letters[1:length(V(g))]
+set.seed(2)
+lay &amp;lt;- layout.auto(g)
+
+## set plotting parameters
+vs &amp;lt;- 15# vertex.size
+ec &amp;lt;- gray(0.8)#edge.color
+elx &amp;lt;- 2# edge.label.cex
+elc &amp;lt;- &amp;quot;black&amp;quot;#,edge.label.color
+vlc &amp;lt;- 2#vertex.label.cex
+ew &amp;lt;- 2#edge.width
+hd &amp;lt;- paste(rep(&amp;quot; &amp;quot;,0), collapse=&amp;quot;&amp;quot;)
+cm &amp;lt;- 3
+vc &amp;lt;- &amp;quot;orange&amp;quot;#gray(0.8)#palette(&amp;quot;default&amp;quot;)#&amp;quot;grey&amp;quot;#vertex.color
+
+X11(width = 18, height=6)
+#par(mfrow=c(1,3))
+
+plot(g, edge.label=paste(hd, round(E(g)$weight,1)), layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&amp;quot;(a) Weights&amp;quot;, cex.main = cm)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;V(g)$name &amp;lt;- paste(round(cnt,3))
+plot(g,          layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&amp;quot;(b) local closeness normalized&amp;quot;, cex.main = cm)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-7-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;V(g)$name &amp;lt;- paste(round(cnf,3))
+plot(g,          layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
+title(&amp;quot;(c) local closeness&amp;quot;, cex.main = cm)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/20160524_igraph_applications_files/figure-html/unnamed-chunk-7-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;div id=&#34;my-solution&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;My solution&lt;/h4&gt;
+&lt;p&gt;easy workaround for local centralities: define neighborhood for each node, calcualte ‘global’ centralities for these neighborhoods and normalize it individually.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;what-for-did-we-use-centralities&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;What for did we use centralities?&lt;/h1&gt;
+&lt;p&gt;Thanks to Anita Graser for the beautiful plots!&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\hat{y}_{t,\gamma}(s,b,c) = \beta_t  + \beta_{\gamma,s} \cdot s  + \beta_{\gamma,b} \cdot b + \beta_{\gamma,c} \cdot c + \beta_{\gamma,bc} \cdot b \cdot c\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;some plots:&lt;/p&gt;
+&lt;div id=&#34;global-betweenness&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Global Betweenness&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/pic1.png&#34; title=&#34;**Global Betweenness** \
+*Global Betweenness*&#34; alt=&#34;**Global Betweenness** \
+*Global Betweenness*&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;local-betweenness&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Local Betweenness&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/pic2.png&#34; title=&#34;**Local Betweenness** \
+*Local Betweenness*&#34; alt=&#34;**Local Betweenness** \
+*Local Betweenness*&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;global-closeness&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Global Closeness&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/pic3.png&#34; title=&#34;**Global Closeness** \
+*Global Closeness*&#34; alt=&#34;**Global Closeness** \
+*Global Closeness*&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;local-closeness&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Local Closeness&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/pic4.png&#34; title=&#34;**Local Closeness** \
+*Local Closeness*&#34; alt=&#34;**Local Closeness** \
+*Local Closeness*&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;real-world-difference-of-node-based-and-link-based-betweenness-for-a-link&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Real world difference of node-based and link-based Betweenness for a link&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/pic5.png&#34; title=&#34;**Real world difference 1** \
+*Real world difference 1*&#34; alt=&#34;**Real world difference 1** \
+*Real world difference 1*&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/pic6.png&#34; title=&#34;**Real world difference 2** \
+*Real world difference 2*&#34; alt=&#34;**Real world difference 2** \
+*Real world difference 2*&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;improvement-travel-time-model&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Improvement travel time model&lt;/h2&gt;
+&lt;div id=&#34;mape-difference-global-minus-local&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;MAPE Difference Global minus local&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/pic7.png&#34; title=&#34;**MAPE Difference** \
+*MAPE Difference*&#34; alt=&#34;**MAPE Difference** \
+*MAPE Difference*&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;detail-mape-base&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Detail MAPE base&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/pic8.png&#34; title=&#34;**MAPE base** \
+*MAPE base*&#34; alt=&#34;**MAPE base** \
+*MAPE base*&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;detail-mape-with-local-centralities&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Detail MAPE with local centralities&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/pic9.png&#34; title=&#34;**MAPE local** \
+*MAPE local*&#34; alt=&#34;**MAPE local** \ *MAPE local*&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>igraph Applications for Transportation Networks</title>
+          <link>/blog/2016/08/24/igraph-applications-for-transportation-networks/</link>
+          <pubDate>Wed, 24 Aug 2016 22:20:00 CEST</pubDate>
+          <author>Vienna-R</author>
+          <guid>/blog/2016/08/24/igraph-applications-for-transportation-networks/</guid>
           <description>&lt;p&gt;Materials from Max Leodolters talk in May covering the &lt;strong&gt;igraph&lt;/strong&gt;
 package.&lt;/p&gt;
 
@@ -156,8 +693,6 @@ package.&lt;/p&gt;
 require(data.table)
 require(ggplot2)
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#centrality---what-is-it&#34;&gt;Centrality - What is it?&lt;/a&gt;&lt;/li&gt;
@@ -228,7 +763,7 @@ V(g)$name &amp;lt;- letters[1:length(V(g))]
 plot(g)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-2-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-2-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;g &amp;lt;- set.edge.attribute(g, &amp;quot;weight&amp;quot;,  value= 1)
 b &amp;lt;- betweenness(g, directed=F)
@@ -236,7 +771,7 @@ V(g)$name &amp;lt;- b
 plot(g)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-2-2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-2-2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Edge Betweenness:&lt;/p&gt;
 
@@ -248,7 +783,7 @@ bg &amp;lt;- edge_betweenness(g, directed=F)
 plot(g, edge.label = bg)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-3-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-3-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;local-vs-global&#34;&gt;Local vs. Global&lt;/h2&gt;
 
@@ -286,19 +821,19 @@ plot(g, edge.label=paste(hd, round(E(g)$weight,1)), layout=lay, vertex.size=vs, 
 title(&amp;quot;(a) Weights&amp;quot;, cex.main = cm)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-4-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-4-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;plot(g, edge.label=paste(hd, round(bl,1)),          layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
 title(&amp;quot;(b) Local Betweenness&amp;quot;, cex.main = cm)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-4-2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-4-2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;plot(g, edge.label=paste(hd, round(bg,1)),          layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
 title(&amp;quot;(c) Global Betweenness&amp;quot;, cex.main = cm)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-4-3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-4-3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;node-based-vs-link-based-betweenness-for-links&#34;&gt;Node-based vs. link-based Betweenness for Links&lt;/h2&gt;
 
@@ -348,13 +883,13 @@ plot(g, edge.label=paste(hd, round(E(g)$weight,1)), layout=lay, vertex.size=vs, 
 title(&amp;quot;(a) Weights&amp;quot;,cex.main=cm)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-5-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-5-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;plot(g, edge.label=paste(hd, round(eb,1)),          layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
 title(&amp;quot;(b) Link based Betweenness&amp;quot;,cex.main=cm)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-5-2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-5-2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;V(g)$name &amp;lt;- paste(vb)
 
@@ -362,7 +897,7 @@ plot(g, edge.label=paste(hd, round(evb,1)),          layout=lay, vertex.size=vs,
 title(&amp;quot;(c) Node based Betweenness&amp;quot; ,cex.main=cm)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-5-3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-5-3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;bugs-features-special-experiences&#34;&gt;Bugs/Features/Special experiences&lt;/h2&gt;
 
@@ -419,7 +954,7 @@ plot(g, edge.label=round(E(g)$weight,1), layout=lay, vertex.size=vs, edge.color=
 title(&amp;quot;(a) Weights&amp;quot;, cex.main = cm)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-6-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-6-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;bl.1 &amp;lt;- estimate_betweenness(g, cutoff=10)
 V(g)$name &amp;lt;- bl.1
@@ -427,7 +962,7 @@ plot(g,        layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, ve
 title(&amp;quot;(b) Local Betweenness\ncutoff 10&amp;quot;, cex.main = cm)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-6-2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-6-2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;bl.2 &amp;lt;- estimate_betweenness(g, cutoff=Inf)
 V(g)$name &amp;lt;- bl.2
@@ -435,7 +970,7 @@ plot(g,        layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, ve
 title(&amp;quot;(b) Global Betweenness\ncutoff Inf&amp;quot;, cex.main = cm)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-6-3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-6-3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;# Comments and Discussion:
 # This simple example illustrates, why it is questionable
@@ -494,7 +1029,7 @@ plot(g,          layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, 
 title(&amp;quot;(d) Local Betweenness\ncutoff 0.29&amp;quot;, cex.main = cm)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-6-4.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-6-4.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;# Comments and Discussion:
 # This simple example illustrates, that vertex betweenness values change,
@@ -651,21 +1186,21 @@ plot(g, edge.label=paste(hd, round(E(g)$weight,1)), layout=lay, vertex.size=vs, 
 title(&amp;quot;(a) Weights&amp;quot;, cex.main = cm)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-7-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-7-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;V(g)$name &amp;lt;- paste(round(cnt,3))
 plot(g,          layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
 title(&amp;quot;(b) local closeness normalized&amp;quot;, cex.main = cm)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-7-2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-7-2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;V(g)$name &amp;lt;- paste(round(cnf,3))
 plot(g,          layout=lay, vertex.size=vs, edge.color=ec, edge.label.cex=elx, vertex.label.cex=vlc, edge.width=ew, edge.label.color=elc, vertex.color=vc)
 title(&amp;quot;(c) local closeness&amp;quot;, cex.main = cm)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-7-3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/unnamed-chunk-7-3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&#34;my-solution&#34;&gt;My solution&lt;/h4&gt;
 
@@ -683,35 +1218,35 @@ normalize it individually.&lt;/p&gt;
 
 &lt;h2 id=&#34;global-betweenness&#34;&gt;Global Betweenness&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/20160524_igraph_applications_files/figure-markdown_strict/pic1.png&#34; title=&#34;**Global Betweenness** \
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/pic1.png&#34; title=&#34;**Global Betweenness** \
 *Global Betweenness*&#34; alt=&#34;**Global Betweenness** \
 *Global Betweenness*&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;local-betweenness&#34;&gt;Local Betweenness&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/20160524_igraph_applications_files/figure-markdown_strict/pic2.png&#34; title=&#34;**Local Betweenness** \
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/pic2.png&#34; title=&#34;**Local Betweenness** \
 *Local Betweenness*&#34; alt=&#34;**Local Betweenness** \
 *Local Betweenness*&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;global-closeness&#34;&gt;Global Closeness&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/20160524_igraph_applications_files/figure-markdown_strict/pic3.png&#34; title=&#34;**Global Closeness** \
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/pic3.png&#34; title=&#34;**Global Closeness** \
 *Global Closeness*&#34; alt=&#34;**Global Closeness** \
 *Global Closeness*&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;local-closeness&#34;&gt;Local Closeness&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/20160524_igraph_applications_files/figure-markdown_strict/pic4.png&#34; title=&#34;**Local Closeness** \
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/pic4.png&#34; title=&#34;**Local Closeness** \
 *Local Closeness*&#34; alt=&#34;**Local Closeness** \
 *Local Closeness*&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;real-world-difference-of-node-based-and-link-based-betweenness-for-a-link&#34;&gt;Real world difference of node-based and link-based Betweenness for a link&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/20160524_igraph_applications_files/figure-markdown_strict/pic5.png&#34; title=&#34;**Real world difference 1** \
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/pic5.png&#34; title=&#34;**Real world difference 1** \
 *Real world difference 1*&#34; alt=&#34;**Real world difference 1** \
 *Real world difference 1*&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/20160524_igraph_applications_files/figure-markdown_strict/pic6.png&#34; title=&#34;**Real world difference 2** \
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/pic6.png&#34; title=&#34;**Real world difference 2** \
 *Real world difference 2*&#34; alt=&#34;**Real world difference 2** \
 *Real world difference 2*&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
 
@@ -719,19 +1254,19 @@ normalize it individually.&lt;/p&gt;
 
 &lt;h3 id=&#34;mape-difference-global-minus-local&#34;&gt;MAPE Difference Global minus local&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/20160524_igraph_applications_files/figure-markdown_strict/pic7.png&#34; title=&#34;**MAPE Difference** \
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/pic7.png&#34; title=&#34;**MAPE Difference** \
 *MAPE Difference*&#34; alt=&#34;**MAPE Difference** \
 *MAPE Difference*&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;detail-mape-base&#34;&gt;Detail MAPE base&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/20160524_igraph_applications_files/figure-markdown_strict/pic8.png&#34; title=&#34;**MAPE base** \
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/pic8.png&#34; title=&#34;**MAPE base** \
 *MAPE base*&#34; alt=&#34;**MAPE base** \
 *MAPE base*&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;detail-mape-with-local-centralities&#34;&gt;Detail MAPE with local centralities&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/20160524_igraph_applications_files/figure-markdown_strict/pic9.png&#34; title=&#34;**MAPE local** \
+&lt;p&gt;&lt;img src=&#34;/img/20160524_igraph_applications_files/figure-markdown_strict/pic9.png&#34; title=&#34;**MAPE local** \
 *MAPE local*&#34; alt=&#34;**MAPE local** \ *MAPE local*&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;</description>
         </item>
       
@@ -739,15 +1274,13 @@ normalize it individually.&lt;/p&gt;
       
         <item>
           <title>Meetup 06-2016 Minutes</title>
-          <link>http://www.viennar.org/blog/2016/06/28/meetup-06-2016-minutes/</link>
-          <pubDate>Tue, 28 Jun 2016 13:00:00 &#43;0200</pubDate>
+          <link>/blog/2016/06/28/meetup-06-2016-minutes/</link>
+          <pubDate>Tue, 28 Jun 2016 13:00:00 CEST</pubDate>
           <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2016/06/28/meetup-06-2016-minutes/</guid>
-          <description>&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/sun.png&#34; alt=&#34;SummerOfCode&#34; /&gt;&lt;/p&gt;
+          <guid>/blog/2016/06/28/meetup-06-2016-minutes/</guid>
+          <description>&lt;p&gt;&lt;img src=&#34;/img/sun.png&#34; alt=&#34;SummerOfCode&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The last meetup before the summer break concluded the igraph session with a talk by Rainer. Mario summed up his impressions from the R/Finance 2016 conference.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;rainer-stuetz-igraph-applications&#34;&gt;Rainer Stuetz: igraph Applications&lt;/h2&gt;
 
@@ -755,7 +1288,7 @@ normalize it individually.&lt;/p&gt;
 
 &lt;h2 id=&#34;mario-annau-r-finance-2016-impressions&#34;&gt;Mario Annau: R/Finance 2016 Impressions&lt;/h2&gt;
 
-&lt;p&gt;Mario summed up his impressions on the last &lt;a href=&#34;http://www.rinfinance.com/agenda&#34;&gt;R/Finance conference&lt;/a&gt; including a small &lt;em&gt;mashup&lt;/em&gt; &lt;a href=&#34;http://www.viennar.org/slides/rfinance2016_mashup.pdf&#34;&gt;presentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Mario summed up his impressions on the last &lt;a href=&#34;http://www.rinfinance.com/agenda&#34;&gt;R/Finance conference&lt;/a&gt; including a small &lt;em&gt;mashup&lt;/em&gt; &lt;a href=&#34;/slides/rfinance2016_mashup.pdf&#34;&gt;presentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&#34;organizational&#34;&gt;Organizational&lt;/h2&gt;
 
@@ -786,21 +1319,19 @@ normalize it individually.&lt;/p&gt;
       
         <item>
           <title>Meetup 05-2016 Minutes</title>
-          <link>http://www.viennar.org/blog/2016/05/24/meetup-05-2016-minutes/</link>
-          <pubDate>Tue, 24 May 2016 13:00:00 &#43;0200</pubDate>
+          <link>/blog/2016/05/24/meetup-05-2016-minutes/</link>
+          <pubDate>Tue, 24 May 2016 13:00:00 CEST</pubDate>
           <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2016/05/24/meetup-05-2016-minutes/</guid>
-          <description>&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/igraph.jpeg&#34; alt=&#34;IGraph&#34; /&gt;&lt;/p&gt;
+          <guid>/blog/2016/05/24/meetup-05-2016-minutes/</guid>
+          <description>&lt;p&gt;&lt;img src=&#34;/img/igraph.jpeg&#34; alt=&#34;IGraph&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This meetup extensively covered the &lt;strong&gt;igraph&lt;/strong&gt; package with talks by Florian Sobieczky and Max Leodolter.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;florian-sobieczky-igraph-visualising-random-walks-on-graphs&#34;&gt;Florian Sobieczky: igraph - Visualising Random Walks on Graphs.&lt;/h2&gt;
 
 &lt;p&gt;The igraph package for examples from the theory of randomly generated graphs. Questions from percolation theory and random walks such as connectivity, isoperimetry, amenability and phase transitions have been discussed in the framework of the routines from igraph. Examples from social network theory, traffic networks, and production environments have been presented.&lt;/p&gt;
 
-&lt;p&gt;You can check out the code &lt;a href=&#34;http://www.viennar.org/code/igraph_randomwalks.R&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can check out the code &lt;a href=&#34;/code/igraph_randomwalks.R&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&#34;max-leodolter-igraph-applications-for-transportation-networks&#34;&gt;Max Leodolter: igraph Applications for Transportation Networks&lt;/h2&gt;
 
@@ -815,15 +1346,13 @@ normalize it individually.&lt;/p&gt;
       
         <item>
           <title>Meetup 04-2016 Minutes</title>
-          <link>http://www.viennar.org/blog/2016/05/06/meetup-04-2016-minutes/</link>
-          <pubDate>Fri, 06 May 2016 13:00:00 &#43;0200</pubDate>
+          <link>/blog/2016/05/06/meetup-04-2016-minutes/</link>
+          <pubDate>Fri, 06 May 2016 13:00:00 CEST</pubDate>
           <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2016/05/06/meetup-04-2016-minutes/</guid>
-          <description>&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/wordcloudtm.png&#34; alt=&#34;Wordcloud&#34; /&gt;&lt;/p&gt;
+          <guid>/blog/2016/05/06/meetup-04-2016-minutes/</guid>
+          <description>&lt;p&gt;&lt;img src=&#34;/img/wordcloudtm.png&#34; alt=&#34;Wordcloud&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This meetup included an extensive Text Mining in R session with an &lt;em&gt;Introduction to&lt;/em&gt; &lt;strong&gt;tm&lt;/strong&gt;  by Ingo Feinerer and a talk about &lt;em&gt;Text Mining with Hadoop&lt;/em&gt; by Stefan Theussl.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;After a creative break for the last month Ingo and Stefan gave great talks covering &lt;strong&gt;tm&lt;/strong&gt; in greater detail after the brief introduction in February.&lt;/p&gt;
 
@@ -873,18 +1402,19 @@ wordcloud(vigclean)
       
     
       
+    
+      
         <item>
           <title>Wordcloud Wienerwald</title>
-          <link>http://www.viennar.org/blog/2016/02/24/wordcloud-wienerwald/</link>
+          <link>/blog/2016/02/24/wordcloud-wienerwald/</link>
           <pubDate>Wed, 24 Feb 2016 22:20:00 &#43;0200</pubDate>
           <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2016/02/24/wordcloud-wienerwald/</guid>
-          <description>&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/wordcloudwienerwald.png&#34; title=&#34;**Wordcloud** \
+          <guid>/blog/2016/02/24/wordcloud-wienerwald/</guid>
+          <description>&lt;p&gt;&lt;img src=&#34;/img/wordcloudwienerwald.png&#34; title=&#34;**Wordcloud** \
 *Ödön von Horvath - Geschichten aus dem Wienerwald*&#34; alt=&#34;**Wordcloud** \
-*Ödön von Horvath - Geschichten aus dem Wienerwald*&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
+*Ödön von Horvath - Geschichten aus dem Wienerwald*&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;After a very nice hands-on introduction in yesterday&amp;rsquo;s Vienna R meetup meeting from Mario Annau, I created an example of textmining ending with a wordcloud. As the blog is called ViennaR, I chose to use a play strongly related to Vienna - Ödön von Horváth - Geschichten aus dem Wienerwald.
-&lt;/p&gt;
+&lt;p&gt;After a very nice hands-on introduction in yesterday&amp;rsquo;s Vienna R meetup meeting from Mario Annau, I created an example of textmining ending with a wordcloud. As the blog is called ViennaR, I chose to use a play strongly related to Vienna - Ödön von Horváth - Geschichten aus dem Wienerwald.&lt;/p&gt;
 
 &lt;p&gt;The code documentation is in German, but with a little R-experience it should be easily understood.
 In a first step all the required libraries are loaded.&lt;/p&gt;
@@ -961,15 +1491,13 @@ wordcloud(gwwc6, max.words=180,
       
         <item>
           <title>Meetup 02-2016 Minutes</title>
-          <link>http://www.viennar.org/blog/2016/02/22/meetup-02-2016-minutes/</link>
+          <link>/blog/2016/02/22/meetup-02-2016-minutes/</link>
           <pubDate>Mon, 22 Feb 2016 13:00:00 &#43;0200</pubDate>
           <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2016/02/22/meetup-02-2016-minutes/</guid>
-          <description>&lt;p&gt;This meeting included an introductory tutorial by Mario covering &lt;strong&gt;tm&lt;/strong&gt; and sentiment anaylsis. The slides are available &lt;a href=&#34;http://www.viennar.org/slides/tm101_slides.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+          <guid>/blog/2016/02/22/meetup-02-2016-minutes/</guid>
+          <description>&lt;p&gt;This meeting included an introductory tutorial by Mario covering &lt;strong&gt;tm&lt;/strong&gt; and sentiment anaylsis. The slides are available &lt;a href=&#34;/slides/tm101_slides.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;The &lt;a href=&#34;http://www.viennar.org/slides/tm101_slides.pdf&#34;&gt;tutorial&lt;/a&gt; was structured as follows:&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;/slides/tm101_slides.pdf&#34;&gt;tutorial&lt;/a&gt; was structured as follows:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Data Reading&lt;/li&gt;
@@ -992,13 +1520,11 @@ wordcloud(gwwc6, max.words=180,
       
         <item>
           <title>Meetup 01-2016 Minutes</title>
-          <link>http://www.viennar.org/blog/2016/02/03/meetup-01-2016-minutes/</link>
+          <link>/blog/2016/02/03/meetup-01-2016-minutes/</link>
           <pubDate>Wed, 03 Feb 2016 13:00:00 &#43;0200</pubDate>
           <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2016/02/03/meetup-01-2016-minutes/</guid>
-          <description>&lt;p&gt;The goal of this tutorial was to demonstrate how to use Apache &lt;a href=&#34;https://spark.apache.org/docs/1.5.2/sparkr.html&#34;&gt;SparkR&lt;/a&gt; for analyzing large-scale datasets in R. For demo purposes data extracted from the Bitcoin blockchain were used to produce a time series plot similar to &lt;a href=&#34;http://www.viennar.org/img/blockchain_transactions.png&#34;&gt;this&lt;/a&gt; one.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
+          <guid>/blog/2016/02/03/meetup-01-2016-minutes/</guid>
+          <description>&lt;p&gt;The goal of this tutorial was to demonstrate how to use Apache &lt;a href=&#34;https://spark.apache.org/docs/1.5.2/sparkr.html&#34;&gt;SparkR&lt;/a&gt; for analyzing large-scale datasets in R. For demo purposes data extracted from the Bitcoin blockchain were used to produce a time series plot similar to &lt;a href=&#34;/img/blockchain_transactions.png&#34;&gt;this&lt;/a&gt; one.&lt;/p&gt;
 
 &lt;p&gt;The talk was structured as follows:&lt;/p&gt;
 
@@ -1021,13 +1547,11 @@ wordcloud(gwwc6, max.words=180,
       
         <item>
           <title>Meetup 11-2015 Minutes</title>
-          <link>http://www.viennar.org/blog/2015/11/25/meetup-11-2015-minutes/</link>
+          <link>/blog/2015/11/25/meetup-11-2015-minutes/</link>
           <pubDate>Wed, 25 Nov 2015 21:00:00 &#43;0200</pubDate>
           <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2015/11/25/meetup-11-2015-minutes/</guid>
+          <guid>/blog/2015/11/25/meetup-11-2015-minutes/</guid>
           <description>&lt;p&gt;During the last meetup a few interesting ideas/discussions came up like interactive visualizations of &lt;a href=&#34;https://github.com/ViennaR/OpenGovernmentVienna&#34;&gt;Open Government Data&lt;/a&gt;, Geocoding APIs, derstandard.at datasets and Hadoop vs Spark. During the second part of the meetup Mateuz held a great talk covering R-package creation, Github and CI.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;projects&#34;&gt;Projects&lt;/h2&gt;
 
@@ -1037,7 +1561,7 @@ wordcloud(gwwc6, max.words=180,
 &lt;li&gt;&lt;a href=&#34;https://github.com/ViennaR/OpenGovernmentVienna&#34;&gt;Open Government Data Vienna&lt;/a&gt;
 
 &lt;ul&gt;
-&lt;li&gt;With the nice visualizations from Christian in mind (&lt;a href=&#34;http://www.viennar.org/blog/2015/10/30/population-densities-in-vienna&#34;&gt;Population Densities&lt;/a&gt; and &lt;a href=&#34;http://www.viennar.org/blog/2015/11/08/bike-parking-lots-in-vienna&#34;&gt;Bike Parking Lots&lt;/a&gt;) it would be nice to make up a list of features to be plotted from &lt;a href=&#34;https://www.data.gv.at&#34;&gt;https://www.data.gv.at&lt;/a&gt; and make this visualization interactive (e.g. using &lt;a href=&#34;http://shiny.rstudio.com/&#34;&gt;Shiny&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;With the nice visualizations from Christian in mind (&lt;a href=&#34;/blog/2015/10/30/population-densities-in-vienna&#34;&gt;Population Densities&lt;/a&gt; and &lt;a href=&#34;/blog/2015/11/08/bike-parking-lots-in-vienna&#34;&gt;Bike Parking Lots&lt;/a&gt;) it would be nice to make up a list of features to be plotted from &lt;a href=&#34;https://www.data.gv.at&#34;&gt;https://www.data.gv.at&lt;/a&gt; and make this visualization interactive (e.g. using &lt;a href=&#34;http://shiny.rstudio.com/&#34;&gt;Shiny&lt;/a&gt;).&lt;/li&gt;
 &lt;li&gt;Mateuz also introduced us to the topic of Geocoding and its numerous APIs (e.g. from &lt;a href=&#34;https://developers.google.com/maps/documentation/geocoding/intro&#34;&gt;Google&lt;/a&gt;) and suggested to write a package for it.&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/ViennaR/TextMiningVienna&#34;&gt;Text Mining Vienna&lt;/a&gt;
@@ -1084,13 +1608,11 @@ Sounds like a great topic next years first meetup.&lt;/li&gt;
       
         <item>
           <title>Meetup 11-2015</title>
-          <link>http://www.viennar.org/blog/2015/11/22/meetup-11-2015/</link>
+          <link>/blog/2015/11/22/meetup-11-2015/</link>
           <pubDate>Sun, 22 Nov 2015 21:00:00 &#43;0200</pubDate>
           <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2015/11/22/meetup-11-2015/</guid>
+          <guid>/blog/2015/11/22/meetup-11-2015/</guid>
           <description>&lt;p&gt;The next R-meetup is around the corner on Tuesday 24th (currently 6 spots left) at &lt;em&gt;Goldenes Lamm&lt;/em&gt; with a presentation of a few project ideas and first results. Finally we will have a nice talk about setting up R-packages on Github by Mateusz Zoltak.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;projects&#34;&gt;Projects&lt;/h2&gt;
 
@@ -1100,7 +1622,7 @@ Sounds like a great topic next years first meetup.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/ViennaR/OpenGovernmentVienna&#34;&gt;Open Government Data Vienna&lt;/a&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Show &lt;a href=&#34;http://www.viennar.org/blog/2015/10/30/population-densities-in-vienna&#34;&gt;Population Densities&lt;/a&gt; and &lt;a href=&#34;http://www.viennar.org/blog/2015/11/08/bike-parking-lots-in-vienna&#34;&gt;Bike Parking Lots&lt;/a&gt; in Vienna with nice visualisations (Christian).&lt;/li&gt;
+&lt;li&gt;Show &lt;a href=&#34;/blog/2015/10/30/population-densities-in-vienna&#34;&gt;Population Densities&lt;/a&gt; and &lt;a href=&#34;/blog/2015/11/08/bike-parking-lots-in-vienna&#34;&gt;Bike Parking Lots&lt;/a&gt; in Vienna with nice visualisations (Christian).&lt;/li&gt;
 &lt;li&gt;Parliamentary voting results (input from Mateusz)
 
 &lt;ul&gt;
@@ -1170,10 +1692,10 @@ Just let us know!&lt;/p&gt;
       
         <item>
           <title>Bike Parking Lots in Vienna</title>
-          <link>http://www.viennar.org/blog/2015/11/08/bike-parking-lots-in-vienna/</link>
+          <link>/blog/2015/11/08/bike-parking-lots-in-vienna/</link>
           <pubDate>Sun, 08 Nov 2015 22:20:00 &#43;0200</pubDate>
           <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2015/11/08/bike-parking-lots-in-vienna/</guid>
+          <guid>/blog/2015/11/08/bike-parking-lots-in-vienna/</guid>
           <description>&lt;p&gt;Another addition to the  &lt;a href=&#34;https://github.com/ViennaR/OpenGovernmentVienna&#34;&gt;OpenGovernmentVienna&lt;/a&gt; repo by Christian Brandstaetter showing the density of bike parking lots in Vienna.&lt;/p&gt;
 
 &lt;p&gt;The script executes the following steps:&lt;/p&gt;
@@ -1182,8 +1704,6 @@ Just let us know!&lt;/p&gt;
 &lt;li&gt;Download Vienna map including district boundaries and bike parking lots from &lt;a href=&#34;http://data.wien.gv.at&#34;&gt;http://data.wien.gv.at&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Plot two Vienna maps showing bike parking lots and density per district.&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;p&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(rgdal) 
 library(rgeos) 
@@ -1285,7 +1805,7 @@ image(x=colseq,y=1,z=matrix(seq_along(colseq)), col=colfunc(10), main=expression
 axis(1)  
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/bikedensity-plot1-1.png&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/bikedensity-plot1-1.png&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;plot-2-vienna-map-with-bike-parking-lots-continous-density&#34;&gt;Plot 2 - Vienna Map with Bike Parking Lots (Continous Density)&lt;/h1&gt;
 
@@ -1309,7 +1829,7 @@ ggplot(data=test1) +
   theme_bw() 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/bikedensity-plot2-1.png&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/bikedensity-plot2-1.png&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;Comments/Pull Requests welcome!&lt;/p&gt;
 
@@ -1320,10 +1840,10 @@ ggplot(data=test1) +
       
         <item>
           <title>Population Densities in Vienna</title>
-          <link>http://www.viennar.org/blog/2015/10/30/population-densities-in-vienna/</link>
+          <link>/blog/2015/10/30/population-densities-in-vienna/</link>
           <pubDate>Fri, 30 Oct 2015 22:20:00 &#43;0200</pubDate>
           <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2015/10/30/population-densities-in-vienna/</guid>
+          <guid>/blog/2015/10/30/population-densities-in-vienna/</guid>
           <description>&lt;p&gt;The new Github repository &lt;a href=&#34;https://github.com/ViennaR/OpenGovernmentVienna&#34;&gt;OpenGovernmentVienna&lt;/a&gt; has already been created including a very nice addition by Christian.&lt;/p&gt;
 
 &lt;p&gt;The script executes the following steps:&lt;/p&gt;
@@ -1333,8 +1853,6 @@ ggplot(data=test1) +
 &lt;li&gt;Download population and district size from &lt;a href=&#34;https://www.wien.gv.at/statistik&#34;&gt;https://www.wien.gv.at/statistik&lt;/a&gt;, calculate population density.&lt;/li&gt;
 &lt;li&gt;Plot Vienna map coloured by population density.&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;p&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(rgdal) 
 library(rgeos) 
@@ -1405,7 +1923,7 @@ abline(h=c(5000,10000,15000,20000),lty=2)
 legend(&amp;quot;topright&amp;quot;,pch=c(15,15),col=c(&amp;quot;darkred&amp;quot;,&amp;quot;lightblue&amp;quot;),c(&amp;quot;high&amp;quot;,&amp;quot;low&amp;quot;),bg=&amp;quot;white&amp;quot;) 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/popdensity-1.png&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/popdensity-1.png&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;Authors: Christian Brandstaetter with small additions by Mario Annau&lt;/p&gt;</description>
         </item>
@@ -1414,15 +1932,13 @@ legend(&amp;quot;topright&amp;quot;,pch=c(15,15),col=c(&amp;quot;darkred&amp;quo
       
         <item>
           <title>Meetup 10-2015 Minutes, Kick-Off!</title>
-          <link>http://www.viennar.org/blog/2015/10/21/meetup-10-2015-minutes-kick-off/</link>
-          <pubDate>Wed, 21 Oct 2015 21:00:00 &#43;0200</pubDate>
+          <link>/blog/2015/10/21/meetup-10-2015-minutes-kick-off/</link>
+          <pubDate>Wed, 21 Oct 2015 21:00:00 CEST</pubDate>
           <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2015/10/21/meetup-10-2015-minutes-kick-off/</guid>
-          <description>&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/Kickoff-Charlie-Brown.gif&#34; alt=&#34;Kick-Off&#34; /&gt;&lt;/p&gt;
+          <guid>/blog/2015/10/21/meetup-10-2015-minutes-kick-off/</guid>
+          <description>&lt;p&gt;&lt;img src=&#34;/img/Kickoff-Charlie-Brown.gif&#34; alt=&#34;Kick-Off&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;After a fruitful discussion regarding the future direction of the R User Group just a little summary of the &lt;strong&gt;HOT&lt;/strong&gt; topics. The discussion started  with a very nice and detailed introduction of new &lt;em&gt;ViennaR&lt;/em&gt; participants and was followed by an interesting and&amp;mdash;as expected and encouraged&amp;mdash;controversial discussion about project goals, project management and topics.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;organisation&#34;&gt;Organisation&lt;/h2&gt;
 
@@ -1489,10 +2005,10 @@ Just let us know!&lt;/p&gt;
       
         <item>
           <title>Meetup 10-2015</title>
-          <link>http://www.viennar.org/blog/2015/10/20/meetup-10-2015/</link>
-          <pubDate>Tue, 20 Oct 2015 21:31:57 &#43;0200</pubDate>
+          <link>/blog/2015/10/20/meetup-10-2015/</link>
+          <pubDate>Tue, 20 Oct 2015 21:31:57 CEST</pubDate>
           <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2015/10/20/meetup-10-2015/</guid>
+          <guid>/blog/2015/10/20/meetup-10-2015/</guid>
           <description>&lt;p&gt;Main focus this time will be to discuss future directions/projects for ViennaR:&lt;/p&gt;
 
 &lt;ol&gt;
@@ -1505,8 +2021,6 @@ Just let us know!&lt;/p&gt;
 &lt;li&gt;&lt;p&gt;Evaluate interest in active preparation of short analytical topics  (monthly or bi-monthly) to be worked off individually or in groups (alternative: as a hackathon)&lt;br /&gt;
 e.g. run a short analysis on some topic based on publicly available data;  present these @ meetup, compare approaches to project solution.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;Example topics could cover&lt;/p&gt;
 

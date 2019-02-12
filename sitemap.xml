@@ -1,89 +1,160 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://www.viennar.org/</loc>
+    <loc>/blog/2019/02/12/february-2019-meetup/</loc>
+    <lastmod>2019-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/2016/11/22/meetup-11-2016-minutes/</loc>
     <lastmod>2016-11-22T13:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.viennar.org/blog/2016/11/22/meetup-11-2016-minutes/</loc>
-    <lastmod>2016-11-22T13:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.viennar.org/blog/2016/10/19/meetup-10-2016-minutes/</loc>
+    <loc>/blog/2016/10/19/meetup-10-2016-minutes/</loc>
     <lastmod>2016-10-19T13:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.viennar.org/blog/2016/09/27/meetup-09-2016-minutes/</loc>
+    <loc>/blog/2016/09/27/meetup-09-2016-minutes/</loc>
     <lastmod>2016-09-27T13:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.viennar.org/blog/2016/08/24/igraph-applications-for-transportation-networks/</loc>
+    <loc>/blog/2016/08/24/igraph-applications-for-transportation-networks/</loc>
     <lastmod>2016-08-24T22:20:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.viennar.org/blog/2016/06/28/meetup-06-2016-minutes/</loc>
+    <loc>/blog/2016/08/24/igraph-applications-for-transportation-networks/</loc>
+    <lastmod>2016-08-24T22:20:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/2016/06/28/meetup-06-2016-minutes/</loc>
     <lastmod>2016-06-28T13:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.viennar.org/blog/2016/05/24/meetup-05-2016-minutes/</loc>
+    <loc>/blog/2016/05/24/meetup-05-2016-minutes/</loc>
     <lastmod>2016-05-24T13:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.viennar.org/blog/2016/05/06/meetup-04-2016-minutes/</loc>
+    <loc>/blog/2016/05/06/meetup-04-2016-minutes/</loc>
     <lastmod>2016-05-06T13:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.viennar.org/blog/2016/02/24/wordcloud-wienerwald/</loc>
+    <loc>/about/</loc>
+    <lastmod>2016-05-05T21:48:51-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/2016/02/24/wordcloud-wienerwald/</loc>
     <lastmod>2016-02-24T22:20:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.viennar.org/blog/2016/02/22/meetup-02-2016-minutes/</loc>
+    <loc>/blog/2016/02/22/meetup-02-2016-minutes/</loc>
     <lastmod>2016-02-22T13:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.viennar.org/blog/2016/02/03/meetup-01-2016-minutes/</loc>
+    <loc>/blog/2016/02/03/meetup-01-2016-minutes/</loc>
     <lastmod>2016-02-03T13:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.viennar.org/blog/2015/11/25/meetup-11-2015-minutes/</loc>
+    <loc>/blog/2015/11/25/meetup-11-2015-minutes/</loc>
     <lastmod>2015-11-25T21:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.viennar.org/blog/2015/11/22/meetup-11-2015/</loc>
+    <loc>/blog/2015/11/22/meetup-11-2015/</loc>
     <lastmod>2015-11-22T21:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.viennar.org/blog/2015/11/08/bike-parking-lots-in-vienna/</loc>
+    <loc>/blog/2015/11/08/bike-parking-lots-in-vienna/</loc>
     <lastmod>2015-11-08T22:20:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.viennar.org/blog/2015/10/30/population-densities-in-vienna/</loc>
+    <loc>/blog/2015/10/30/population-densities-in-vienna/</loc>
     <lastmod>2015-10-30T22:20:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.viennar.org/blog/2015/10/21/meetup-10-2015-minutes-kick-off/</loc>
+    <loc>/blog/2015/10/21/meetup-10-2015-minutes-kick-off/</loc>
     <lastmod>2015-10-21T21:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.viennar.org/blog/2015/10/20/meetup-10-2015/</loc>
+    <loc>/blog/2015/10/20/meetup-10-2015/</loc>
     <lastmod>2015-10-20T21:31:57+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/igraph/</loc>
+    <lastmod>2016-08-24T22:20:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/meetup/</loc>
+    <lastmod>2016-11-22T13:00:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/opengovernmentvienna/</loc>
+    <lastmod>2015-11-08T22:20:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2019-02-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/rstudy/</loc>
+    <lastmod>2016-08-24T22:20:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/serverless/</loc>
+    <lastmod>2019-02-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2016-08-24T22:20:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/text-mining/</loc>
+    <lastmod>2016-02-24T22:20:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/tools/</loc>
+    <lastmod>2019-02-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2019-02-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<meta property="og:url" content="/">
+
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Meetup 11-2015 &middot; Vienna R User Group">
+
+<meta property="og:site_name" content="Vienna R User Group">
+
+<title>
+    
+    Meetup 11-2015
+    
+</title>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/solarized_dark.min.css">
+<link rel="stylesheet" href="//css/styles.css">
+<link rel="stylesheet" href="//css/custom.css">
+
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto' rel='stylesheet' type='text/css'>
+
+
+<link rel="shortcut icon" href="//assets/favicon.ico">
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="//index.xml">
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<div class="container">
+    <header class="nav">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Vienna R User Group</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="//post">All Posts</a></li>
+                        <li><a href="//tags">Tags</a></li>
+                        
+                        <li><a href="/about/">About</a></li>
+                        
+                        <li><a href="/">Vienna R User Group</a></li>
+                        
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        
+                        
+                        
+                        
+                        
+                        <li>
+                            <a href="//index.xml" type="application/rss+xml" target="_blank">
+                                <i class="fa fa-rss"></i>
+                                RSS
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+<div class="row">
+    <div class="col-md-8">
+        <article class="post">
+
+            <header>
+                <div class="post-date">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                    <time datetime="Sun, Nov 22, 2015">
+                        Sun, Nov 22, 2015
+                    </time>
+                </div>
+                <h1 class="post-title">
+                    <a href="/meetup/201511_announcement/">Meetup 11-2015</a>
+                </h1>
+            </header>
+
+            <div class="post-content">
+                <p>The next R-meetup is around the corner on Tuesday 24th (currently 6 spots left) at <em>Goldenes Lamm</em> with a presentation of a few project ideas and first results. Finally we will have a nice talk about setting up R-packages on Github by Mateusz Zoltak.</p>
+
+<h2 id="projects">Projects</h2>
+
+<p>The following project streams have been selected and coordinators assigned:</p>
+
+<ul>
+<li><a href="https://github.com/ViennaR/OpenGovernmentVienna">Open Government Data Vienna</a>
+
+<ul>
+<li>Show <a href="/blog/2015/10/30/population-densities-in-vienna">Population Densities</a> and <a href="/blog/2015/11/08/bike-parking-lots-in-vienna">Bike Parking Lots</a> in Vienna with nice visualisations (Christian).</li>
+<li>Parliamentary voting results (input from Mateusz)
+
+<ul>
+<li>Harvesting data, e.g. <a href="https://www.data.gv.at/katalog/dataset/1a3c44a8-7361-4dc7-ac0d-6ec19ddba191">Beschlüsse des Nationalrats</a> from <a href="https://www.data.gv.at">https://www.data.gv.at</a></li>
+<li>Visualization</li>
+</ul></li>
+</ul></li>
+<li><a href="https://github.com/ViennaR/TextMiningVienna">Text Mining Vienna</a>
+
+<ul>
+<li>Text mining (Mario)
+
+<ul>
+<li>Public newspapers</li>
+<li>Most popular words in Newspapers</li>
+<li>HC Strache Posts on Facebook</li>
+</ul></li>
+<li>Use Kaggle as an Inspiration (Walter, Mario)
+
+<ul>
+<li>Hillary Clintons E-mails</li>
+</ul></li>
+</ul></li>
+<li><a href="https://en.wikipedia.org/wiki/Fantasy_sport">Fantasy Sports</a>, e.g. from Yahoo (short intro/write&ndash;up by Daniel)
+
+<ul>
+<li>Put team together based on statistics, e.g. Baseball</li>
+<li>References:
+
+<ul>
+<li>Book: <a href="http://www.amazon.com/Analyzing-Baseball-Data-Chapman-Series/dp/1466570229">Analyzing Baseball data in R</a></li>
+<li><a href="http://fantasyfootballanalytics.net/2014/06/scraping-fantasy-football-projections.html">Scraping Fantasy Football Projections from the Web</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="presentation-r-package-setup-on-github">Presentation R-Package Setup on Github</h2>
+
+<p>Mateusz will give us an interesting introduction on Git(hub) and how to create and manage R-packages.
+The talk will cover the following points:</p>
+
+<ol>
+<li>How to set up a git repository.</li>
+<li>How create a basic R-package (or <code>package.skeleton</code>).</li>
+<li>Set up continous integration using platforms like <a href="https://travis-ci.org/">Travis</a>, <a href="http://www.appveyor.com/">Appveyor</a> or <a href="http://wercker.com/">Wercker</a>.</li>
+<li>Set up code coverage using <a href="https://codecov.io">Codecov</a>, <a href="https://coveralls.io">Coveralls</a>.</li>
+<li>Explain all those colourful badges ;)</li>
+</ol>
+
+<h2 id="organisational">Organisational</h2>
+
+<ul>
+<li>Determine next dates (with Matthias)</li>
+<li>Manage user access, contributions to Blog</li>
+</ul>
+
+<p>Like in previous Meetups we are happy to have some presentations of <em>ViennaR</em> participants. Just drop us a mail that you are planning a presentation during one of the next meetups.
+Any suggestions like fixed discussion topics, e.g. book presentations, new R packages around, etc. are highly welcome.
+Just let us know!</p>
+
+<p>Best,</p>
+
+<p>-ViennaR</p>
+            </div>
+
+            <aside>
+                
+                <ul class="list-inline post-tags">
+                    
+                    <li>
+                        <a href="//tags/meetup">
+                            <i class="fa fa-tags"></i>
+                            Meetup
+                        </a>
+                    </li>
+                    
+                </ul>
+
+                
+                
+                <h3>Related Post</h3>
+                <ul class="post-rels">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="/meetup/201611_minutes/">Meetup 11-2016 Minutes</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="/meetup/201610_minutes/">Meetup 10-2016 Minutes</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="/meetup/201609_minutes/">Meetup 09-2016 Minutes</a></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="/meetup/201606_minutes/">Meetup 06-2016 Minutes</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="/meetup/201605_minutes/">Meetup 05-2016 Minutes</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="/meetup/201604_minutes/">Meetup 04-2016 Minutes</a></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="/meetup/201602_minutes/">Meetup 02-2016 Minutes</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="/meetup/201601_minutes/">Meetup 01-2016 Minutes</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="/meetup/201511_minutes/">Meetup 11-2015 Minutes</a></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="/meetup/201510_minutes/">Meetup 10-2015 Minutes, Kick-Off!</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="/meetup/201510_announcement/">Meetup 10-2015</a></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </aside>
+            
+            
+            <footer>
+
+                <nav>
+                    <ul class="pager">
+
+                        
+                        <li class="previous"><a href="/meetup/201511_minutes/"><span aria-hidden="true">&larr;</span> Older</a></li>
+                        
+
+                        <li><a href="//post">All Posts</a></li>
+
+                        
+                        <li class="next"><a href="/2015/11/08/bike-parking-lots-in-vienna/">Newer <span aria-hidden="true">&rarr;</span></a></li>
+                        
+
+                    </ul>
+                </nav>
+
+                
+            </footer>
+
+        </article>
+    </div>
+    <div class="col-md-4">
+        
+<aside>
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-4 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Recent Posts</h2>
+                </div>
+                <div class="list-group">
+                    
+                    <a href="/meetup/february-2019-meetup/" class="list-group-item">Meetup 02-2019 Minutes</a>
+                    
+                    <a href="/meetup/february-2019-meetup/" class="list-group-item">Meetup 02-2019 Minutes</a>
+                    
+                    <a href="/meetup/201611_minutes/" class="list-group-item">Meetup 11-2016 Minutes</a>
+                    
+                    <a href="/meetup/201610_minutes/" class="list-group-item">Meetup 10-2016 Minutes</a>
+                    
+                    <a href="/meetup/201609_minutes/" class="list-group-item">Meetup 09-2016 Minutes</a>
+                    
+                    <a href="/2016/08/24/igraph-applications-for-transportation-networks/" class="list-group-item">igraph Applications for Transportation Networks</a>
+                    
+                    <a href="/2016/08/24/igraph-applications-for-transportation-networks/" class="list-group-item">igraph Applications for Transportation Networks</a>
+                    
+                    <a href="/meetup/201606_minutes/" class="list-group-item">Meetup 06-2016 Minutes</a>
+                    
+                    <a href="/meetup/201605_minutes/" class="list-group-item">Meetup 05-2016 Minutes</a>
+                    
+                    <a href="/meetup/201604_minutes/" class="list-group-item">Meetup 04-2016 Minutes</a>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-4 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Tags</h2>
+                </div>
+                <div class="list-group">
+                    
+                    
+                    
+                    <a href="//tags/igraph" class="list-group-item">
+                        <span class="badge">1</span>
+                        igraph
+                    </a>
+                    
+                    
+                    <a href="//tags/meetup" class="list-group-item">
+                        <span class="badge">12</span>
+                        meetup
+                    </a>
+                    
+                    
+                    <a href="//tags/opengovernmentvienna" class="list-group-item">
+                        <span class="badge">2</span>
+                        opengovernmentvienna
+                    </a>
+                    
+                    
+                    <a href="//tags/rstudy" class="list-group-item">
+                        <span class="badge">4</span>
+                        rstudy
+                    </a>
+                    
+                    
+                    <a href="//tags/serverless" class="list-group-item">
+                        <span class="badge">2</span>
+                        serverless
+                    </a>
+                    
+                    
+                    <a href="//tags/text-mining" class="list-group-item">
+                        <span class="badge">1</span>
+                        text-mining
+                    </a>
+                    
+                    
+                    <a href="//tags/tools" class="list-group-item">
+                        <span class="badge">2</span>
+                        tools
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+</aside>
+
+    </div>
+</div>
+
+</div>
+<hr>
+
+<footer class="container copy">
+    <p>&copy; 2019  Vienna R User Group </p>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="//yandex.st/highlightjs/8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'Your ID.', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+<script>
+document.write('<script src="//sharebutton.net/plugin/sharebutton.php?type=horizontal&u=' + encodeURIComponent(document.location.href) + '"></scr' + 'ipt>');
+</script>
+

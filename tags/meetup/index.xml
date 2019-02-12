@@ -1,575 +1,139 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Vienna R User Group </title>
-    <link>http://www.viennar.org/tags/meetup/index.xml</link>
+    <title>Meetup on Vienna R User Group</title>
+    <link>/tags/meetup/</link>
+    <description>Recent content in Meetup on Vienna R User Group</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Vienna-R</author>
-    <rights>(C) 2016</rights>
-    <updated>0001-01-01 00:00:00 &#43;0000 UTC</updated>
-
+    <lastBuildDate>Tue, 22 Nov 2016 13:00:00 +0200</lastBuildDate>
     
+	<atom:link href="/tags/meetup/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Meetup 11-2016 Minutes</title>
+      <link>/blog/2016/11/22/meetup-11-2016-minutes/</link>
+      <pubDate>Tue, 22 Nov 2016 13:00:00 +0200</pubDate>
       
-        <item>
-          <title>Meetup 11-2016 Minutes</title>
-          <link>http://www.viennar.org/blog/2016/11/22/meetup-11-2016-minutes/</link>
-          <pubDate>Tue, 22 Nov 2016 13:00:00 &#43;0200</pubDate>
-          <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2016/11/22/meetup-11-2016-minutes/</guid>
-          <description>&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/deepnet.png&#34; title=&#34;**Deep Neural Network**&#34; \
+      <guid>/blog/2016/11/22/meetup-11-2016-minutes/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;/img/deepnet.png&#34; title=&#34;**Deep Neural Network**&#34; \
 alt=&#34;**Deep Neural Network**&#34; border=&#34;0&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Deep learning with R using &lt;strong&gt;mxnet&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;During the November ViennaR Meetup Klaudius Kalcher gave an excellent talk about the &lt;strong&gt;mxnet&lt;/strong&gt; package. After covering some theoretical background he included examples to build deep neural networks from scratch.
-Finally, Mario showed some time series forecasting examples already discussing during the October Meetup using the &lt;strong&gt;forecast&lt;/strong&gt; package.&lt;/p&gt;
-
-&lt;h2 id=&#34;links&#34;&gt;Links&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;mxnet&lt;/strong&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.viennar.org/slides/kalcher_deeplearning.pdf&#34;&gt;Slides&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;mxnet&lt;/strong&gt; R-package: &lt;a href=&#34;https://github.com/dmlc/mxnet/tree/master/R-package&#34;&gt;https://github.com/dmlc/mxnet/tree/master/R-package&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;dmlc mxnet for Deep Learning: &lt;a href=&#34;http://mxnet.io&#34;&gt;http://mxnet.io&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;forecast&lt;/strong&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.viennar.org/slides/forecast_intro2.html&#34;&gt;Forecasting Crashcourse&lt;/a&gt; (&lt;a href=&#34;http://www.viennar.org/slides/forecast_intro2.Rmd&#34;&gt;src&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;forecast&lt;/strong&gt; package: &lt;a href=&#34;https://CRAN.R-project.org/package=forecast&#34;&gt;https://CRAN.R-project.org/package=forecast&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Forecasting: principles and practice book: &lt;a href=&#34;https://www.otexts.org/fpp&#34;&gt;https://www.otexts.org/fpp&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Merry Christmas and a happy new coding year!&lt;/p&gt;
-
-&lt;p&gt;Yours,&lt;/p&gt;
-
-&lt;p&gt;ViennaR&lt;/p&gt;</description>
-        </item>
-      
+&lt;p&gt;Deep learning with R using &lt;strong&gt;mxnet&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
     
+    <item>
+      <title>Meetup 10-2016 Minutes</title>
+      <link>/blog/2016/10/19/meetup-10-2016-minutes/</link>
+      <pubDate>Wed, 19 Oct 2016 13:00:00 +0200</pubDate>
       
-        <item>
-          <title>Meetup 10-2016 Minutes</title>
-          <link>http://www.viennar.org/blog/2016/10/19/meetup-10-2016-minutes/</link>
-          <pubDate>Wed, 19 Oct 2016 13:00:00 &#43;0200</pubDate>
-          <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2016/10/19/meetup-10-2016-minutes/</guid>
-          <description>&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/meetup_201610_small.jpg&#34; title=&#34;**sparklyr**&#34; \
-alt=&#34;**sparklyr**&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
+      <guid>/blog/2016/10/19/meetup-10-2016-minutes/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;/img/meetup_201610_small.jpg&#34; title=&#34;**sparklyr**&#34; \
+alt=&#34;**sparklyr**&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;A &lt;strong&gt;sparklyr&lt;/strong&gt; introduction by Roland Boubela.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;The October Meetup was hosted by Roland Boubela who gave an excellent talk about the new &lt;strong&gt;sparklyr&lt;/strong&gt; package. &lt;strong&gt;sparklyr&lt;/strong&gt; provides an easy-to-use interface to Apache Spark and can even be accessed using the latest and greatest version of RStudio (&lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/preview&#34;&gt;preview release&lt;/a&gt;). It also covered a comparison with the existing &lt;strong&gt;SparkR&lt;/strong&gt; package.&lt;/p&gt;
-
-&lt;h2 id=&#34;links&#34;&gt;Links&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.viennar.org/slides/boubela_sparklyr.pdf&#34;&gt;Slides&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;sparklyr&lt;/strong&gt;: &lt;a href=&#34;http://spark.rstudio.com&#34;&gt;http://spark.rstudio.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;SparkR&lt;/strong&gt;: &lt;a href=&#34;http://spark.apache.org/docs/latest/sparkr.html&#34;&gt;http://spark.apache.org/docs/latest/sparkr.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;RStudio Preview: &lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/preview&#34;&gt;https://www.rstudio.com/products/rstudio/download/preview&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Apache Spark: &lt;a href=&#34;http://spark.apache.org&#34;&gt;http://spark.apache.org&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Best,&lt;/p&gt;
-
-&lt;p&gt;-ViennaR&lt;/p&gt;</description>
-        </item>
-      
+&lt;p&gt;A &lt;strong&gt;sparklyr&lt;/strong&gt; introduction by Roland Boubela.&lt;/p&gt;</description>
+    </item>
     
+    <item>
+      <title>Meetup 09-2016 Minutes</title>
+      <link>/blog/2016/09/27/meetup-09-2016-minutes/</link>
+      <pubDate>Tue, 27 Sep 2016 13:00:00 +0200</pubDate>
       
-        <item>
-          <title>Meetup 09-2016 Minutes</title>
-          <link>http://www.viennar.org/blog/2016/09/27/meetup-09-2016-minutes/</link>
-          <pubDate>Tue, 27 Sep 2016 13:00:00 &#43;0200</pubDate>
-          <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2016/09/27/meetup-09-2016-minutes/</guid>
-          <description>&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/meetup_201609_small.jpg&#34; title=&#34;**Brainstorm Forecasting**&#34; \
-alt=&#34;**Brainstorm Forecasting**&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
+      <guid>/blog/2016/09/27/meetup-09-2016-minutes/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;/img/meetup_201609_small.jpg&#34; title=&#34;**Brainstorm Forecasting**&#34; \
+alt=&#34;**Brainstorm Forecasting**&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;A brainstorming session about forecasting time series in R.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;First we discussed the topic data structures. Regular time series data can be represented using the &lt;em&gt;ts&lt;/em&gt; class which is already included in the basic R installation (as part of the &lt;strong&gt;stats&lt;/strong&gt; package). By contrast, irregular time series data can be represented by the popular &lt;strong&gt;zoo&lt;/strong&gt; objects (or &lt;strong&gt;xts&lt;/strong&gt;). Most (ARIMA-)forecasting methods require regular time series.&lt;/p&gt;
-
-&lt;p&gt;The following R packages have been identified to support time series forecasting:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=forecast&#34;&gt;&lt;strong&gt;forecast&lt;/strong&gt;&lt;/a&gt;: Excellent package by Rob Hyndman supporting all kinds of ARIMA models; even includes an automatic forecasting function (&lt;em&gt;auto.arima&lt;/em&gt;).&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=tseries&#34;&gt;&lt;strong&gt;tseries&lt;/strong&gt;&lt;/a&gt;: Package supporting basic ARIMA model but also includes GARCH for volatility forecasting.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://cran.r-project.org/package=x12&#34;&gt;&lt;strong&gt;x12&lt;/strong&gt;&lt;/a&gt;: Interface package to the X12-ARIMA program for sesonal adjustment&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://cran.r-project.org/package=seasonal&#34;&gt;&lt;strong&gt;seasonal&lt;/strong&gt;&lt;/a&gt;: Interface package to the X-13-ARIMA-SEATS program for sesonal adjustment.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;projects&#34;&gt;Projects&lt;/h2&gt;
-
-&lt;p&gt;The following potential projects covering simple time series forecasting examples have been discussed/requested:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Google Trends data (e.g. &lt;em&gt;Influenza&lt;/em&gt;)&lt;/li&gt;
-&lt;li&gt;Company data, e.g. Revenues&lt;/li&gt;
-&lt;li&gt;Bike Traffic in Vienna&lt;/li&gt;
-&lt;li&gt;Stock Prices, Volatility (GARCH)&lt;/li&gt;
-&lt;li&gt;Birdlife data, see data for Bavaria e.g.
-&lt;a href=&#34;http://www.stunde-der-wintervoegel.de/index.php?id=auswertung&amp;amp;land=Bayern&#34;&gt;2016&lt;/a&gt;,
-&lt;a href=&#34;http://sdw2015.lbv.de/index.php?id=auswertung&amp;amp;land=Bayern&#34;&gt;2015&lt;/a&gt;,
-&lt;a href=&#34;http://sdw2014.lbv.de/index.php?id=auswertung&amp;amp;land=Bayern&#34;&gt;2014&lt;/a&gt;,
-&lt;a href=&#34;http://sdw2013.lbv.de/index.php?id=auswertung&amp;amp;land=Bayern&#34;&gt;2013&lt;/a&gt;,
-&lt;a href=&#34;http://sdw2012.lbv.de/index.php?id=auswertung&amp;amp;land=Bayern&#34;&gt;2012&lt;/a&gt;,
-&lt;a href=&#34;http://sdw2011.lbv.de/index.php?id=auswertung&amp;amp;land=Bayern&#34;&gt;2011&lt;/a&gt;,
-&lt;a href=&#34;http://sdw2010.lbv.de/index.php?id=auswertung&amp;amp;land=Bayern&#34;&gt;2010&lt;/a&gt;,
-&lt;a href=&#34;http://sdw2009.lbv.de/index.php?id=auswertung&amp;amp;land=Bayern&#34;&gt;2009&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The projects will be presented during the November R-Meetup (contributions welcome!).&lt;/p&gt;
-
-&lt;h2 id=&#34;announcements&#34;&gt;Announcements&lt;/h2&gt;
-
-&lt;p&gt;The next meetup will cover the &lt;a href=&#34;http://spark.rstudio.com&#34;&gt;&lt;strong&gt;sparklyr&lt;/strong&gt;&lt;/a&gt; package presented by Roland Boubela.&lt;/p&gt;
-
-&lt;p&gt;Best,&lt;/p&gt;
-
-&lt;p&gt;-ViennaR&lt;/p&gt;</description>
-        </item>
-      
+&lt;p&gt;A brainstorming session about forecasting time series in R.&lt;/p&gt;</description>
+    </item>
     
+    <item>
+      <title>Meetup 06-2016 Minutes</title>
+      <link>/blog/2016/06/28/meetup-06-2016-minutes/</link>
+      <pubDate>Tue, 28 Jun 2016 13:00:00 +0200</pubDate>
       
-        <item>
-          <title>Meetup 06-2016 Minutes</title>
-          <link>http://www.viennar.org/blog/2016/06/28/meetup-06-2016-minutes/</link>
-          <pubDate>Tue, 28 Jun 2016 13:00:00 &#43;0200</pubDate>
-          <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2016/06/28/meetup-06-2016-minutes/</guid>
-          <description>&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/sun.png&#34; alt=&#34;SummerOfCode&#34; /&gt;&lt;/p&gt;
+      <guid>/blog/2016/06/28/meetup-06-2016-minutes/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;/img/sun.png&#34; alt=&#34;SummerOfCode&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;The last meetup before the summer break concluded the igraph session with a talk by Rainer. Mario summed up his impressions from the R/Finance 2016 conference.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;rainer-stuetz-igraph-applications&#34;&gt;Rainer Stuetz: igraph Applications&lt;/h2&gt;
-
-&lt;p&gt;Rainer presented interesting &lt;a href=&#34;https://cran.r-project.org/web/packages/igraph/index.html&#34;&gt;igraph&lt;/a&gt; applications with an example to extract (clean) subnetworks, e.g. motorways, from the Austrian &lt;a href=&#34;http://gip.gv.at&#34;&gt;graph integration platform&lt;/a&gt;. The routing graph was parsed using the &lt;a href=&#34;https://cran.r-project.org/web/packages/readr/index.html&#34;&gt;readr&lt;/a&gt; package and pre-processed with &lt;a href=&#34;https://cran.r-project.org/web/packages/dplyr/index.html&#34;&gt;dplyr&lt;/a&gt;. For the extraction of the subnetworks, shortest path algorithms from igraph were used.&lt;/p&gt;
-
-&lt;h2 id=&#34;mario-annau-r-finance-2016-impressions&#34;&gt;Mario Annau: R/Finance 2016 Impressions&lt;/h2&gt;
-
-&lt;p&gt;Mario summed up his impressions on the last &lt;a href=&#34;http://www.rinfinance.com/agenda&#34;&gt;R/Finance conference&lt;/a&gt; including a small &lt;em&gt;mashup&lt;/em&gt; &lt;a href=&#34;http://www.viennar.org/slides/rfinance2016_mashup.pdf&#34;&gt;presentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;organizational&#34;&gt;Organizational&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Next Meetup: September 27th, check &lt;a href=&#34;http://www.meetup.com/ViennaR&#34;&gt;meetup page&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Ideas for projects / talks:
-
-&lt;ul&gt;
-&lt;li&gt;Finance related, forecasting&lt;/li&gt;
-&lt;li&gt;Fraud detection, e.g. Panama papers (&lt;a href=&#34;https://github.com/dgrtwo/rpanama&#34;&gt;https://github.com/dgrtwo/rpanama&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Company database&lt;/li&gt;
-&lt;li&gt;Visualization tutorial covering &lt;a href=&#34;https://cran.r-project.org/web/packages/ggplot2/index.html&#34;&gt;ggplot2&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;For further comments and suggestions for projects and talks just drop a mail at &lt;a href=&#34;mailto:host@viennar.org&#34;&gt;host@viennar.org&lt;/a&gt;!
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;announcements&#34;&gt;Announcements&lt;/h2&gt;
-
-&lt;p&gt;The first &lt;a href=&#34;http://budapest.satrdays.org&#34;&gt;satRday&lt;/a&gt; conference is taking place in Budapest on September 3rd 2016. Thanks to sponsor support (e.g. &lt;a href=&#34;R Consortium&#34;&gt;https://www.r-consortium.org/&lt;/a&gt;) the conference is quite cheap (10-30€).&lt;/p&gt;
-
-&lt;p&gt;Best,&lt;/p&gt;
-
-&lt;p&gt;-ViennaR&lt;/p&gt;</description>
-        </item>
-      
+&lt;p&gt;The last meetup before the summer break concluded the igraph session with a talk by Rainer. Mario summed up his impressions from the R/Finance 2016 conference.&lt;/p&gt;</description>
+    </item>
     
+    <item>
+      <title>Meetup 05-2016 Minutes</title>
+      <link>/blog/2016/05/24/meetup-05-2016-minutes/</link>
+      <pubDate>Tue, 24 May 2016 13:00:00 +0200</pubDate>
       
-        <item>
-          <title>Meetup 05-2016 Minutes</title>
-          <link>http://www.viennar.org/blog/2016/05/24/meetup-05-2016-minutes/</link>
-          <pubDate>Tue, 24 May 2016 13:00:00 &#43;0200</pubDate>
-          <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2016/05/24/meetup-05-2016-minutes/</guid>
-          <description>&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/igraph.jpeg&#34; alt=&#34;IGraph&#34; /&gt;&lt;/p&gt;
+      <guid>/blog/2016/05/24/meetup-05-2016-minutes/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;/img/igraph.jpeg&#34; alt=&#34;IGraph&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;This meetup extensively covered the &lt;strong&gt;igraph&lt;/strong&gt; package with talks by Florian Sobieczky and Max Leodolter.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;florian-sobieczky-igraph-visualising-random-walks-on-graphs&#34;&gt;Florian Sobieczky: igraph - Visualising Random Walks on Graphs.&lt;/h2&gt;
-
-&lt;p&gt;The igraph package for examples from the theory of randomly generated graphs. Questions from percolation theory and random walks such as connectivity, isoperimetry, amenability and phase transitions have been discussed in the framework of the routines from igraph. Examples from social network theory, traffic networks, and production environments have been presented.&lt;/p&gt;
-
-&lt;p&gt;You can check out the code &lt;a href=&#34;http://www.viennar.org/code/igraph_randomwalks.R&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;max-leodolter-igraph-applications-for-transportation-networks&#34;&gt;Max Leodolter: igraph Applications for Transportation Networks&lt;/h2&gt;
-
-&lt;p&gt;Max gave an introduction to the &lt;strong&gt;igraph&lt;/strong&gt; package including real-world applications (slides follow asap).&lt;/p&gt;
-
-&lt;p&gt;Best,&lt;/p&gt;
-
-&lt;p&gt;-ViennaR&lt;/p&gt;</description>
-        </item>
-      
+&lt;p&gt;This meetup extensively covered the &lt;strong&gt;igraph&lt;/strong&gt; package with talks by Florian Sobieczky and Max Leodolter.&lt;/p&gt;</description>
+    </item>
     
+    <item>
+      <title>Meetup 04-2016 Minutes</title>
+      <link>/blog/2016/05/06/meetup-04-2016-minutes/</link>
+      <pubDate>Fri, 06 May 2016 13:00:00 +0200</pubDate>
       
-        <item>
-          <title>Meetup 04-2016 Minutes</title>
-          <link>http://www.viennar.org/blog/2016/05/06/meetup-04-2016-minutes/</link>
-          <pubDate>Fri, 06 May 2016 13:00:00 &#43;0200</pubDate>
-          <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2016/05/06/meetup-04-2016-minutes/</guid>
-          <description>&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/wordcloudtm.png&#34; alt=&#34;Wordcloud&#34; /&gt;&lt;/p&gt;
+      <guid>/blog/2016/05/06/meetup-04-2016-minutes/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;/img/wordcloudtm.png&#34; alt=&#34;Wordcloud&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;This meetup included an extensive Text Mining in R session with an &lt;em&gt;Introduction to&lt;/em&gt; &lt;strong&gt;tm&lt;/strong&gt;  by Ingo Feinerer and a talk about &lt;em&gt;Text Mining with Hadoop&lt;/em&gt; by Stefan Theussl.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;After a creative break for the last month Ingo and Stefan gave great talks covering &lt;strong&gt;tm&lt;/strong&gt; in greater detail after the brief introduction in February.&lt;/p&gt;
-
-&lt;h2 id=&#34;ingo-feinerer-introduction-to-tm&#34;&gt;Ingo Feinerer: Introduction to &lt;strong&gt;tm&lt;/strong&gt;&lt;/h2&gt;
-
-&lt;p&gt;Ingo started right away with a nice bottom-up introduction covering &lt;strong&gt;tm&lt;/strong&gt;&amp;rsquo;s building blocks like Sources, Readers and Corpora. The creation of Document-TermMatrices was also motivated with a small clustering example for 3 documents.&lt;/p&gt;
-
-&lt;p&gt;CRAN Package &lt;a href=&#34;https://cran.r-project.org/web/packages/tm/index.html&#34;&gt;Link&lt;/a&gt;
-Package &lt;a href=&#34;https://cran.r-project.org/web/packages/tm/vignettes/tm.pdf&#34;&gt;Vignette&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The word cloud shown above was created from the &lt;strong&gt;tm&lt;/strong&gt; package vignette as follows:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(tm)
-library(wordcloud)
-uri &amp;lt;- sprintf(&amp;quot;file://%s&amp;quot;, system.file(file.path(&amp;quot;doc&amp;quot;, &amp;quot;tm.pdf&amp;quot;), package = &amp;quot;tm&amp;quot;))
-stopifnot(all(file.exists(Sys.which(c(&amp;quot;pdfinfo&amp;quot;, &amp;quot;pdftotext&amp;quot;)))))
-corp &amp;lt;- Corpus(URISource(uri), readerControl = list(reader = readPDF))  
-tmvignette &amp;lt;- paste(content(corp[[1]]), collapse = &amp;quot;\n&amp;quot;)
-vigclean &amp;lt;- stripWhitespace(removePunctuation(removeNumbers(tmvignette)))
-vigclean &amp;lt;- removeWords(vigclean, stopwords())
-wordcloud(vigclean)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;stefan-theussl-text-mining-with-hadoop&#34;&gt;Stefan Theussl: Text Mining with Hadoop&lt;/h2&gt;
-
-&lt;p&gt;Stefan gave a solution to the problem when things (i.e. text corpora) get big using a set of Hadoop R-packages he created in collaboration with Ingo.&lt;/p&gt;
-
-&lt;p&gt;CRAN packages:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://cran.r-project.org/web/packages/DSL/index.html&#34;&gt;&lt;strong&gt;DSL&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://cran.r-project.org/web/packages/tm.plugin.dc/index.html&#34;&gt;&lt;strong&gt;tm.plugin.dc&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://cran.r-project.org/web/packages/hive/index.html&#34;&gt;&lt;strong&gt;hive&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Documentation:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://cran.r-project.org/web/packages/DSL/vignettes/DSL.pdf&#34;&gt;&lt;strong&gt;DSL&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.jstatsoft.org/v51/i05&#34;&gt;A tm Plug-In for Distributed Text Mining in R&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Best,&lt;/p&gt;
-
-&lt;p&gt;-ViennaR&lt;/p&gt;</description>
-        </item>
-      
+&lt;p&gt;This meetup included an extensive Text Mining in R session with an &lt;em&gt;Introduction to&lt;/em&gt; &lt;strong&gt;tm&lt;/strong&gt;  by Ingo Feinerer and a talk about &lt;em&gt;Text Mining with Hadoop&lt;/em&gt; by Stefan Theussl.&lt;/p&gt;</description>
+    </item>
     
+    <item>
+      <title>Meetup 02-2016 Minutes</title>
+      <link>/blog/2016/02/22/meetup-02-2016-minutes/</link>
+      <pubDate>Mon, 22 Feb 2016 13:00:00 +0200</pubDate>
       
-        <item>
-          <title>Meetup 02-2016 Minutes</title>
-          <link>http://www.viennar.org/blog/2016/02/22/meetup-02-2016-minutes/</link>
-          <pubDate>Mon, 22 Feb 2016 13:00:00 &#43;0200</pubDate>
-          <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2016/02/22/meetup-02-2016-minutes/</guid>
-          <description>&lt;p&gt;This meeting included an introductory tutorial by Mario covering &lt;strong&gt;tm&lt;/strong&gt; and sentiment anaylsis. The slides are available &lt;a href=&#34;http://www.viennar.org/slides/tm101_slides.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;The &lt;a href=&#34;http://www.viennar.org/slides/tm101_slides.pdf&#34;&gt;tutorial&lt;/a&gt; was structured as follows:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Data Reading&lt;/li&gt;
-&lt;li&gt;Data Structures&lt;/li&gt;
-&lt;li&gt;Preprocessing Pipeline&lt;/li&gt;
-&lt;li&gt;removePunctuation, tolower, removeWords, stripWhitespace, stemDocument&lt;/li&gt;
-&lt;li&gt;Examples&lt;/li&gt;
-&lt;li&gt;Known Weaknesses and Outlook&lt;/li&gt;
-&lt;li&gt;Plans for &lt;strong&gt;SentimentAnalysis&lt;/strong&gt; (tm.plugin.sentiment 2.0)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Further talks covering advanced text mining topics in R are planned for the next meeting(s), so stay tuned&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;Best,&lt;/p&gt;
-
-&lt;p&gt;-ViennaR&lt;/p&gt;</description>
-        </item>
-      
+      <guid>/blog/2016/02/22/meetup-02-2016-minutes/</guid>
+      <description>&lt;p&gt;This meeting included an introductory tutorial by Mario covering &lt;strong&gt;tm&lt;/strong&gt; and sentiment anaylsis. The slides are available &lt;a href=&#34;/slides/tm101_slides.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
     
+    <item>
+      <title>Meetup 01-2016 Minutes</title>
+      <link>/blog/2016/02/03/meetup-01-2016-minutes/</link>
+      <pubDate>Wed, 03 Feb 2016 13:00:00 +0200</pubDate>
       
-        <item>
-          <title>Meetup 01-2016 Minutes</title>
-          <link>http://www.viennar.org/blog/2016/02/03/meetup-01-2016-minutes/</link>
-          <pubDate>Wed, 03 Feb 2016 13:00:00 &#43;0200</pubDate>
-          <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2016/02/03/meetup-01-2016-minutes/</guid>
-          <description>&lt;p&gt;The goal of this tutorial was to demonstrate how to use Apache &lt;a href=&#34;https://spark.apache.org/docs/1.5.2/sparkr.html&#34;&gt;SparkR&lt;/a&gt; for analyzing large-scale datasets in R. For demo purposes data extracted from the Bitcoin blockchain were used to produce a time series plot similar to &lt;a href=&#34;http://www.viennar.org/img/blockchain_transactions.png&#34;&gt;this&lt;/a&gt; one.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;The talk was structured as follows:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Intro + Architecture Spark [Roland]&lt;/li&gt;
-&lt;li&gt;Intro Bitcoin Use Case [Bernhard]&lt;/li&gt;
-&lt;li&gt;Demo Standard R (+ some extra packages) [Bernhard]&lt;/li&gt;
-&lt;li&gt;Demo SparkR [Bernhard]&lt;/li&gt;
-&lt;li&gt;Demo SparkR - Cluster [Roland]&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Materials are available at &lt;a href=&#34;https://github.com/behas/sparkR-tutorial&#34;&gt;https://github.com/behas/sparkR-tutorial&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Best,&lt;/p&gt;
-
-&lt;p&gt;-ViennaR&lt;/p&gt;</description>
-        </item>
-      
+      <guid>/blog/2016/02/03/meetup-01-2016-minutes/</guid>
+      <description>&lt;p&gt;The goal of this tutorial was to demonstrate how to use Apache &lt;a href=&#34;https://spark.apache.org/docs/1.5.2/sparkr.html&#34;&gt;SparkR&lt;/a&gt; for analyzing large-scale datasets in R. For demo purposes data extracted from the Bitcoin blockchain were used to produce a time series plot similar to &lt;a href=&#34;/img/blockchain_transactions.png&#34;&gt;this&lt;/a&gt; one.&lt;/p&gt;</description>
+    </item>
     
+    <item>
+      <title>Meetup 11-2015 Minutes</title>
+      <link>/blog/2015/11/25/meetup-11-2015-minutes/</link>
+      <pubDate>Wed, 25 Nov 2015 21:00:00 +0200</pubDate>
       
-        <item>
-          <title>Meetup 11-2015 Minutes</title>
-          <link>http://www.viennar.org/blog/2015/11/25/meetup-11-2015-minutes/</link>
-          <pubDate>Wed, 25 Nov 2015 21:00:00 &#43;0200</pubDate>
-          <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2015/11/25/meetup-11-2015-minutes/</guid>
-          <description>&lt;p&gt;During the last meetup a few interesting ideas/discussions came up like interactive visualizations of &lt;a href=&#34;https://github.com/ViennaR/OpenGovernmentVienna&#34;&gt;Open Government Data&lt;/a&gt;, Geocoding APIs, derstandard.at datasets and Hadoop vs Spark. During the second part of the meetup Mateuz held a great talk covering R-package creation, Github and CI.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;projects&#34;&gt;Projects&lt;/h2&gt;
-
-&lt;p&gt;Even without my full memory capacity I&amp;rsquo;ll try to sum them up by project ;):&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/ViennaR/OpenGovernmentVienna&#34;&gt;Open Government Data Vienna&lt;/a&gt;
-
-&lt;ul&gt;
-&lt;li&gt;With the nice visualizations from Christian in mind (&lt;a href=&#34;http://www.viennar.org/blog/2015/10/30/population-densities-in-vienna&#34;&gt;Population Densities&lt;/a&gt; and &lt;a href=&#34;http://www.viennar.org/blog/2015/11/08/bike-parking-lots-in-vienna&#34;&gt;Bike Parking Lots&lt;/a&gt;) it would be nice to make up a list of features to be plotted from &lt;a href=&#34;https://www.data.gv.at&#34;&gt;https://www.data.gv.at&lt;/a&gt; and make this visualization interactive (e.g. using &lt;a href=&#34;http://shiny.rstudio.com/&#34;&gt;Shiny&lt;/a&gt;).&lt;/li&gt;
-&lt;li&gt;Mateuz also introduced us to the topic of Geocoding and its numerous APIs (e.g. from &lt;a href=&#34;https://developers.google.com/maps/documentation/geocoding/intro&#34;&gt;Google&lt;/a&gt;) and suggested to write a package for it.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/ViennaR/TextMiningVienna&#34;&gt;Text Mining Vienna&lt;/a&gt;
-
-&lt;ul&gt;
-&lt;li&gt;After the discussion about puclic newspapers in Vienna Bernhard already provided a small &lt;a href=&#34;https://github.com/ViennaR/TextMiningVienna/tree/master/NewspapersAustria&#34;&gt;dataset&lt;/a&gt; to play around with. We&amp;rsquo;ll get our hands dirty and provide ideas (topic modelling, mood index, popular words, etc.) next time!&lt;/li&gt;
-&lt;li&gt;Bernhard &amp;amp; Roland mentioned interest to talk about Hadoop -&amp;gt; Spark -&amp;gt; SparkR. How to set things up, integrate R, etc.
-Sounds like a great topic next years first meetup.&lt;/li&gt;
-&lt;li&gt;Hillary Clintons E-mails: Some ideas are &lt;a href=&#34;https://github.com/ViennaR/TextMiningVienna/tree/master/HillaryClinton&#34;&gt;there&lt;/a&gt; - focus will be on the newspapers project for now.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Fantasy_sport&#34;&gt;Fantasy Sports&lt;/a&gt;, looks abandoned by Daniel?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;talk&#34;&gt;Talk&lt;/h2&gt;
-
-&lt;p&gt;Mateusz covered all important topics about &lt;em&gt;modern&lt;/em&gt; R package creation including the following points:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Setting up Github repo for &lt;a href=&#34;https://github.com/ViennaR/startupPackage&#34;&gt;startup package&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Create R package skeleton&lt;/li&gt;
-&lt;li&gt;Include test cases&lt;/li&gt;
-&lt;li&gt;Include continous integration&lt;/li&gt;
-&lt;li&gt;Include code coverage&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Materials are available at &lt;a href=&#34;http://zozlak.org/Setting_up_a_first_R_project.html&#34;&gt;http://zozlak.org/Setting_up_a_first_R_project.html&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;organisational&#34;&gt;Organisational&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;If you have any questions, ideas and want to share just drop a message on &lt;a href=&#34;http://www.meetup.com/ViennaR&#34;&gt;http://www.meetup.com/ViennaR&lt;/a&gt; or &lt;a href=&#34;mailto:host@viennar.com&#34;&gt;host@viennar.org&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Also just let us know if you need access to a github repo at &lt;a href=&#34;https://github.com/ViennaR&#34;&gt;https://github.com/ViennaR&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;The next R-meetup will take place directly at the &lt;a href=&#34;http://www.artadvent.at&#34;&gt;Christkindlmarkt Karlsplatz&lt;/a&gt; on 22nd December, 7pm. Meeting point will be in front of &lt;del&gt;Karlskirche&lt;/del&gt; &lt;em&gt;Goldenes Lamm&lt;/em&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;See you next time for a punchR!&lt;/p&gt;
-
-&lt;p&gt;Best,&lt;/p&gt;
-
-&lt;p&gt;-ViennaR&lt;/p&gt;</description>
-        </item>
-      
+      <guid>/blog/2015/11/25/meetup-11-2015-minutes/</guid>
+      <description>&lt;p&gt;During the last meetup a few interesting ideas/discussions came up like interactive visualizations of &lt;a href=&#34;https://github.com/ViennaR/OpenGovernmentVienna&#34;&gt;Open Government Data&lt;/a&gt;, Geocoding APIs, derstandard.at datasets and Hadoop vs Spark. During the second part of the meetup Mateuz held a great talk covering R-package creation, Github and CI.&lt;/p&gt;</description>
+    </item>
     
+    <item>
+      <title>Meetup 11-2015</title>
+      <link>/blog/2015/11/22/meetup-11-2015/</link>
+      <pubDate>Sun, 22 Nov 2015 21:00:00 +0200</pubDate>
       
-        <item>
-          <title>Meetup 11-2015</title>
-          <link>http://www.viennar.org/blog/2015/11/22/meetup-11-2015/</link>
-          <pubDate>Sun, 22 Nov 2015 21:00:00 &#43;0200</pubDate>
-          <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2015/11/22/meetup-11-2015/</guid>
-          <description>&lt;p&gt;The next R-meetup is around the corner on Tuesday 24th (currently 6 spots left) at &lt;em&gt;Goldenes Lamm&lt;/em&gt; with a presentation of a few project ideas and first results. Finally we will have a nice talk about setting up R-packages on Github by Mateusz Zoltak.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;projects&#34;&gt;Projects&lt;/h2&gt;
-
-&lt;p&gt;The following project streams have been selected and coordinators assigned:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/ViennaR/OpenGovernmentVienna&#34;&gt;Open Government Data Vienna&lt;/a&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Show &lt;a href=&#34;http://www.viennar.org/blog/2015/10/30/population-densities-in-vienna&#34;&gt;Population Densities&lt;/a&gt; and &lt;a href=&#34;http://www.viennar.org/blog/2015/11/08/bike-parking-lots-in-vienna&#34;&gt;Bike Parking Lots&lt;/a&gt; in Vienna with nice visualisations (Christian).&lt;/li&gt;
-&lt;li&gt;Parliamentary voting results (input from Mateusz)
-
-&lt;ul&gt;
-&lt;li&gt;Harvesting data, e.g. &lt;a href=&#34;https://www.data.gv.at/katalog/dataset/1a3c44a8-7361-4dc7-ac0d-6ec19ddba191&#34;&gt;Beschlüsse des Nationalrats&lt;/a&gt; from &lt;a href=&#34;https://www.data.gv.at&#34;&gt;https://www.data.gv.at&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Visualization&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/ViennaR/TextMiningVienna&#34;&gt;Text Mining Vienna&lt;/a&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Text mining (Mario)
-
-&lt;ul&gt;
-&lt;li&gt;Public newspapers&lt;/li&gt;
-&lt;li&gt;Most popular words in Newspapers&lt;/li&gt;
-&lt;li&gt;HC Strache Posts on Facebook&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Use Kaggle as an Inspiration (Walter, Mario)
-
-&lt;ul&gt;
-&lt;li&gt;Hillary Clintons E-mails&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Fantasy_sport&#34;&gt;Fantasy Sports&lt;/a&gt;, e.g. from Yahoo (short intro/write&amp;ndash;up by Daniel)
-
-&lt;ul&gt;
-&lt;li&gt;Put team together based on statistics, e.g. Baseball&lt;/li&gt;
-&lt;li&gt;References:
-
-&lt;ul&gt;
-&lt;li&gt;Book: &lt;a href=&#34;http://www.amazon.com/Analyzing-Baseball-Data-Chapman-Series/dp/1466570229&#34;&gt;Analyzing Baseball data in R&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://fantasyfootballanalytics.net/2014/06/scraping-fantasy-football-projections.html&#34;&gt;Scraping Fantasy Football Projections from the Web&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;presentation-r-package-setup-on-github&#34;&gt;Presentation R-Package Setup on Github&lt;/h2&gt;
-
-&lt;p&gt;Mateusz will give us an interesting introduction on Git(hub) and how to create and manage R-packages.
-The talk will cover the following points:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;How to set up a git repository.&lt;/li&gt;
-&lt;li&gt;How create a basic R-package (or &lt;code&gt;package.skeleton&lt;/code&gt;).&lt;/li&gt;
-&lt;li&gt;Set up continous integration using platforms like &lt;a href=&#34;https://travis-ci.org/&#34;&gt;Travis&lt;/a&gt;, &lt;a href=&#34;http://www.appveyor.com/&#34;&gt;Appveyor&lt;/a&gt; or &lt;a href=&#34;http://wercker.com/&#34;&gt;Wercker&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Set up code coverage using &lt;a href=&#34;https://codecov.io&#34;&gt;Codecov&lt;/a&gt;, &lt;a href=&#34;https://coveralls.io&#34;&gt;Coveralls&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Explain all those colourful badges ;)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;organisational&#34;&gt;Organisational&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Determine next dates (with Matthias)&lt;/li&gt;
-&lt;li&gt;Manage user access, contributions to Blog&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Like in previous Meetups we are happy to have some presentations of &lt;em&gt;ViennaR&lt;/em&gt; participants. Just drop us a mail that you are planning a presentation during one of the next meetups.
-Any suggestions like fixed discussion topics, e.g. book presentations, new R packages around, etc. are highly welcome.
-Just let us know!&lt;/p&gt;
-
-&lt;p&gt;Best,&lt;/p&gt;
-
-&lt;p&gt;-ViennaR&lt;/p&gt;</description>
-        </item>
-      
+      <guid>/blog/2015/11/22/meetup-11-2015/</guid>
+      <description>&lt;p&gt;The next R-meetup is around the corner on Tuesday 24th (currently 6 spots left) at &lt;em&gt;Goldenes Lamm&lt;/em&gt; with a presentation of a few project ideas and first results. Finally we will have a nice talk about setting up R-packages on Github by Mateusz Zoltak.&lt;/p&gt;</description>
+    </item>
     
+    <item>
+      <title>Meetup 10-2015 Minutes, Kick-Off!</title>
+      <link>/blog/2015/10/21/meetup-10-2015-minutes-kick-off/</link>
+      <pubDate>Wed, 21 Oct 2015 21:00:00 +0200</pubDate>
       
-        <item>
-          <title>Meetup 10-2015 Minutes, Kick-Off!</title>
-          <link>http://www.viennar.org/blog/2015/10/21/meetup-10-2015-minutes-kick-off/</link>
-          <pubDate>Wed, 21 Oct 2015 21:00:00 &#43;0200</pubDate>
-          <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2015/10/21/meetup-10-2015-minutes-kick-off/</guid>
-          <description>&lt;p&gt;&lt;img src=&#34;http://www.viennar.org/img/Kickoff-Charlie-Brown.gif&#34; alt=&#34;Kick-Off&#34; /&gt;&lt;/p&gt;
+      <guid>/blog/2015/10/21/meetup-10-2015-minutes-kick-off/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;/img/Kickoff-Charlie-Brown.gif&#34; alt=&#34;Kick-Off&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;After a fruitful discussion regarding the future direction of the R User Group just a little summary of the &lt;strong&gt;HOT&lt;/strong&gt; topics. The discussion started  with a very nice and detailed introduction of new &lt;em&gt;ViennaR&lt;/em&gt; participants and was followed by an interesting and&amp;mdash;as expected and encouraged&amp;mdash;controversial discussion about project goals, project management and topics.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;organisation&#34;&gt;Organisation&lt;/h2&gt;
-
-&lt;p&gt;Our goal is to have monthly Meetups. Currently they are scheduled by the end of each month, however, this may change depending on the availability of the room. A big thank you to &lt;a href=&#34;http://www.statistik.tuwien.ac.at/public/templ&#34;&gt;Matthias&lt;/a&gt; who makes this Meetup at the Institute of Computational Statistics [1] possible!&lt;/p&gt;
-
-&lt;p&gt;[1] At the legendary &lt;em&gt;Goldenes Lamm&lt;/em&gt;, birthplace at/of &lt;a href=&#34;https://cran.r-project.org/web/packages/e1071/index.html&#34;&gt;e1071&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;presentations&#34;&gt;Presentations&lt;/h2&gt;
-
-&lt;p&gt;Like in previous Meetups we are happy to have some presentations of &lt;em&gt;ViennaR&lt;/em&gt; participants. Just drop us a mail that you are planning a presentation during one of the next meetups. We would also be happy to invite some guest speakers from time to time.&lt;/p&gt;
-
-&lt;h2 id=&#34;projects&#34;&gt;Projects&lt;/h2&gt;
-
-&lt;p&gt;To have an even more collaborative experience during &lt;em&gt;ViennaR&lt;/em&gt; Meetups plan to have different projects on our &lt;a href=&#34;https://github.com/viennar&#34;&gt;Github&lt;/a&gt; page. It should be manageable to have up to 5 people working on specific projects with an expected duration of about 3 Months.
-The following project streams have been selected and coordinators assigned:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Fantasy_sport&#34;&gt;Fantasy Sports&lt;/a&gt;, e.g. from Yahoo (short intro/write&amp;ndash;up by Daniel)
-
-&lt;ul&gt;
-&lt;li&gt;Put team together based on statistics, e.g. Baseball&lt;/li&gt;
-&lt;li&gt;References:
-
-&lt;ul&gt;
-&lt;li&gt;Book: &lt;a href=&#34;http://www.amazon.com/Analyzing-Baseball-Data-Chapman-Series/dp/1466570229&#34;&gt;Analyzing Baseball data in R&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://fantasyfootballanalytics.net/2014/06/scraping-fantasy-football-projections.html&#34;&gt;Scraping Fantasy Football Projections from the Web&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Parliamentary voting results (input from Mateusz)
-
-&lt;ul&gt;
-&lt;li&gt;Harvesting data, e.g. &lt;a href=&#34;https://www.data.gv.at/katalog/dataset/1a3c44a8-7361-4dc7-ac0d-6ec19ddba191&#34;&gt;Beschlüsse des Nationalrats&lt;/a&gt; from &lt;a href=&#34;https://www.data.gv.at&#34;&gt;https://www.data.gv.at&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Visualization&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Text mining (Mario)
-
-&lt;ul&gt;
-&lt;li&gt;Public newspapers&lt;/li&gt;
-&lt;li&gt;Most popular words in Newspapers&lt;/li&gt;
-&lt;li&gt;HC Strache Posts on Facebook&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Use Kaggle as an Inspiration (Walter)
-
-&lt;ul&gt;
-&lt;li&gt;Hillary Clintons E-mails&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;We will use the &lt;a href=&#34;http://www.meetup.com/ViennaR/messages/boards/forum/2693272&#34;&gt;Meetup Discussion Forum&lt;/a&gt; to futher elaborate on &lt;a href=&#34;http://www.meetup.com/ViennaR/messages/boards/thread/49348746&#34;&gt;Project ideas&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;other-topics&#34;&gt;Other Topics&lt;/h2&gt;
-
-&lt;p&gt;We would also be happy to have some other fixed discussion topics, e.g. book presentations, new R packages around, etc&amp;hellip;
-Just let us know!&lt;/p&gt;
-
-&lt;h2 id=&#34;next-steps&#34;&gt;Next Steps&lt;/h2&gt;
-
-&lt;p&gt;For the next meetup we are planning a short Git(hub) and R package dev intro (Mario) and hope that each assigned coordinator can give us a little heads up of her topic.&lt;/p&gt;
-
-&lt;p&gt;Looking forward to see you at the next meetup in November!&lt;/p&gt;</description>
-        </item>
-      
+&lt;p&gt;After a fruitful discussion regarding the future direction of the R User Group just a little summary of the &lt;strong&gt;HOT&lt;/strong&gt; topics. The discussion started  with a very nice and detailed introduction of new &lt;em&gt;ViennaR&lt;/em&gt; participants and was followed by an interesting and&amp;mdash;as expected and encouraged&amp;mdash;controversial discussion about project goals, project management and topics.&lt;/p&gt;</description>
+    </item>
     
+    <item>
+      <title>Meetup 10-2015</title>
+      <link>/blog/2015/10/20/meetup-10-2015/</link>
+      <pubDate>Tue, 20 Oct 2015 21:31:57 +0200</pubDate>
       
-        <item>
-          <title>Meetup 10-2015</title>
-          <link>http://www.viennar.org/blog/2015/10/20/meetup-10-2015/</link>
-          <pubDate>Tue, 20 Oct 2015 21:31:57 &#43;0200</pubDate>
-          <author>Vienna-R</author>
-          <guid>http://www.viennar.org/blog/2015/10/20/meetup-10-2015/</guid>
-          <description>&lt;p&gt;Main focus this time will be to discuss future directions/projects for ViennaR:&lt;/p&gt;
+      <guid>/blog/2015/10/20/meetup-10-2015/</guid>
+      <description>&lt;p&gt;Main focus this time will be to discuss future directions/projects for ViennaR:&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Our goal is to define R-package(s) organized as Github project(s) that can be realised within a timeframe of approx. one year resulting in CRAN release&lt;br /&gt;&lt;/li&gt;
@@ -580,35 +144,8 @@ Just let us know!&lt;/p&gt;
 
 &lt;li&gt;&lt;p&gt;Evaluate interest in active preparation of short analytical topics  (monthly or bi-monthly) to be worked off individually or in groups (alternative: as a hackathon)&lt;br /&gt;
 e.g. run a short analysis on some topic based on publicly available data;  present these @ meetup, compare approaches to project solution.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;Example topics could cover&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Open government data:
-
-&lt;ul&gt;
-&lt;li&gt;Text mine parliamentary votes (by time/topic) (source: &lt;a href=&#34;https://www.data.gv.at/katalog/dataset/1a3c44a8-7361-4dc7-ac0d-6ec19ddba191&#34;&gt;https://www.data.gv.at/katalog/dataset/1a3c44a8-7361-4dc7-ac0d-6ec19ddba191&lt;/a&gt;)&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;Graphically display distribution of specific points of interest like voting booths, public toilets, etc. in Vienna based upon &lt;a href=&#34;https://open.wien.gv.at/site/open-data/)&#34;&gt;https://open.wien.gv.at/site/open-data/)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;News-related data:
-
-&lt;ul&gt;
-&lt;li&gt;Analyze comments for specific topics of derstandard.at&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Price-data
-
-&lt;ul&gt;
-&lt;li&gt;e.g. correlate fuel prices in Austria with crude oil prices&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;We are looking forward to a fruitful/interesting/controversial discussion!&lt;/p&gt;</description>
-        </item>
-      
+&lt;/ol&gt;</description>
+    </item>
     
-
   </channel>
 </rss>

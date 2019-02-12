@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Meetups on Vienna R User Group</title>
+    <link>/meetup/</link>
+    <description>Recent content in Meetups on Vienna R User Group</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 Feb 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/meetup/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Meetup 02-2019 Minutes</title>
+      <link>/meetup/february-2019-meetup/</link>
+      <pubDate>Tue, 12 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/meetup/february-2019-meetup/</guid>
+      <description>Peter Jeitschko: Self Service Data Preparation und Data Science Peter presented Alteryx, a platform built for Business Analysts to master tasks like data management, data cleaning and modelling.
+ Windows only -&amp;gt; will Linux Connect to multiple data sources Problem to deploy models in production…  DEMO  Showing data ingestion Facebook Face API Showing Community Features   Questions:  Do you have scheduling capabilities (for metadata, e.g. Atlas)?</description>
+    </item>
+    
+    <item>
+      <title>Meetup 02-2019 Minutes</title>
+      <link>/meetup/february-2019-meetup/</link>
+      <pubDate>Tue, 12 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/meetup/february-2019-meetup/</guid>
+      <description>Peter Jeitschko: Self Service Data Preparation und Data Science Peter presented Alteryx, a platform built for Business Analysts to master tasks like data management, data cleaning and modelling.
+ Windows only -&amp;gt; will Linux Connect to multiple data sources Problem to deploy models in production…  DEMO  Showing data ingestion Facebook Face API Showing Community Features   Questions:  Do you have scheduling capabilities (for metadata, e.g. Atlas)?</description>
+    </item>
+    
+    <item>
+      <title>Meetup 11-2016 Minutes</title>
+      <link>/meetup/201611_minutes/</link>
+      <pubDate>Tue, 22 Nov 2016 13:00:00 +0200</pubDate>
+      
+      <guid>/meetup/201611_minutes/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;/img/deepnet.png&#34; title=&#34;**Deep Neural Network**&#34; \
+alt=&#34;**Deep Neural Network**&#34; border=&#34;0&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Deep learning with R using &lt;strong&gt;mxnet&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Meetup 10-2016 Minutes</title>
+      <link>/meetup/201610_minutes/</link>
+      <pubDate>Wed, 19 Oct 2016 13:00:00 +0200</pubDate>
+      
+      <guid>/meetup/201610_minutes/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;/img/meetup_201610_small.jpg&#34; title=&#34;**sparklyr**&#34; \
+alt=&#34;**sparklyr**&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A &lt;strong&gt;sparklyr&lt;/strong&gt; introduction by Roland Boubela.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Meetup 09-2016 Minutes</title>
+      <link>/meetup/201609_minutes/</link>
+      <pubDate>Tue, 27 Sep 2016 13:00:00 +0200</pubDate>
+      
+      <guid>/meetup/201609_minutes/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;/img/meetup_201609_small.jpg&#34; title=&#34;**Brainstorm Forecasting**&#34; \
+alt=&#34;**Brainstorm Forecasting**&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A brainstorming session about forecasting time series in R.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Meetup 06-2016 Minutes</title>
+      <link>/meetup/201606_minutes/</link>
+      <pubDate>Tue, 28 Jun 2016 13:00:00 +0200</pubDate>
+      
+      <guid>/meetup/201606_minutes/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;/img/sun.png&#34; alt=&#34;SummerOfCode&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The last meetup before the summer break concluded the igraph session with a talk by Rainer. Mario summed up his impressions from the R/Finance 2016 conference.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Meetup 05-2016 Minutes</title>
+      <link>/meetup/201605_minutes/</link>
+      <pubDate>Tue, 24 May 2016 13:00:00 +0200</pubDate>
+      
+      <guid>/meetup/201605_minutes/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;/img/igraph.jpeg&#34; alt=&#34;IGraph&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This meetup extensively covered the &lt;strong&gt;igraph&lt;/strong&gt; package with talks by Florian Sobieczky and Max Leodolter.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Meetup 04-2016 Minutes</title>
+      <link>/meetup/201604_minutes/</link>
+      <pubDate>Fri, 06 May 2016 13:00:00 +0200</pubDate>
+      
+      <guid>/meetup/201604_minutes/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;/img/wordcloudtm.png&#34; alt=&#34;Wordcloud&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This meetup included an extensive Text Mining in R session with an &lt;em&gt;Introduction to&lt;/em&gt; &lt;strong&gt;tm&lt;/strong&gt;  by Ingo Feinerer and a talk about &lt;em&gt;Text Mining with Hadoop&lt;/em&gt; by Stefan Theussl.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Meetup 02-2016 Minutes</title>
+      <link>/meetup/201602_minutes/</link>
+      <pubDate>Mon, 22 Feb 2016 13:00:00 +0200</pubDate>
+      
+      <guid>/meetup/201602_minutes/</guid>
+      <description>&lt;p&gt;This meeting included an introductory tutorial by Mario covering &lt;strong&gt;tm&lt;/strong&gt; and sentiment anaylsis. The slides are available &lt;a href=&#34;/slides/tm101_slides.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Meetup 01-2016 Minutes</title>
+      <link>/meetup/201601_minutes/</link>
+      <pubDate>Wed, 03 Feb 2016 13:00:00 +0200</pubDate>
+      
+      <guid>/meetup/201601_minutes/</guid>
+      <description>&lt;p&gt;The goal of this tutorial was to demonstrate how to use Apache &lt;a href=&#34;https://spark.apache.org/docs/1.5.2/sparkr.html&#34;&gt;SparkR&lt;/a&gt; for analyzing large-scale datasets in R. For demo purposes data extracted from the Bitcoin blockchain were used to produce a time series plot similar to &lt;a href=&#34;/img/blockchain_transactions.png&#34;&gt;this&lt;/a&gt; one.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Meetup 11-2015 Minutes</title>
+      <link>/meetup/201511_minutes/</link>
+      <pubDate>Wed, 25 Nov 2015 21:00:00 +0200</pubDate>
+      
+      <guid>/meetup/201511_minutes/</guid>
+      <description>&lt;p&gt;During the last meetup a few interesting ideas/discussions came up like interactive visualizations of &lt;a href=&#34;https://github.com/ViennaR/OpenGovernmentVienna&#34;&gt;Open Government Data&lt;/a&gt;, Geocoding APIs, derstandard.at datasets and Hadoop vs Spark. During the second part of the meetup Mateuz held a great talk covering R-package creation, Github and CI.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Meetup 11-2015</title>
+      <link>/meetup/201511_announcement/</link>
+      <pubDate>Sun, 22 Nov 2015 21:00:00 +0200</pubDate>
+      
+      <guid>/meetup/201511_announcement/</guid>
+      <description>&lt;p&gt;The next R-meetup is around the corner on Tuesday 24th (currently 6 spots left) at &lt;em&gt;Goldenes Lamm&lt;/em&gt; with a presentation of a few project ideas and first results. Finally we will have a nice talk about setting up R-packages on Github by Mateusz Zoltak.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Meetup 10-2015 Minutes, Kick-Off!</title>
+      <link>/meetup/201510_minutes/</link>
+      <pubDate>Wed, 21 Oct 2015 21:00:00 +0200</pubDate>
+      
+      <guid>/meetup/201510_minutes/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;/img/Kickoff-Charlie-Brown.gif&#34; alt=&#34;Kick-Off&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;After a fruitful discussion regarding the future direction of the R User Group just a little summary of the &lt;strong&gt;HOT&lt;/strong&gt; topics. The discussion started  with a very nice and detailed introduction of new &lt;em&gt;ViennaR&lt;/em&gt; participants and was followed by an interesting and&amp;mdash;as expected and encouraged&amp;mdash;controversial discussion about project goals, project management and topics.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Meetup 10-2015</title>
+      <link>/meetup/201510_announcement/</link>
+      <pubDate>Tue, 20 Oct 2015 21:31:57 +0200</pubDate>
+      
+      <guid>/meetup/201510_announcement/</guid>
+      <description>&lt;p&gt;Main focus this time will be to discuss future directions/projects for ViennaR:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Our goal is to define R-package(s) organized as Github project(s) that can be realised within a timeframe of approx. one year resulting in CRAN release&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Agree on the main areas (project streams) - not more than 2, max. 3&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Brainstorm on potential project and/or package ideas&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Decide on project leads, team members respectively form of collaboration (fork &amp;amp; pull vs. shared repo), type of license (GPL?), etc.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Evaluate interest in active preparation of short analytical topics  (monthly or bi-monthly) to be worked off individually or in groups (alternative: as a hackathon)&lt;br /&gt;
+e.g. run a short analysis on some topic based on publicly available data;  present these @ meetup, compare approaches to project solution.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

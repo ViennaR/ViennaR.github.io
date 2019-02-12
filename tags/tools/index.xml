@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tools on Vienna R User Group</title>
+    <link>/tags/tools/</link>
+    <description>Recent content in Tools on Vienna R User Group</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 Feb 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Meetup 02-2019 Minutes</title>
+      <link>/blog/2019/02/12/february-2019-meetup/</link>
+      <pubDate>Tue, 12 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2019/02/12/february-2019-meetup/</guid>
+      <description>Self Service Data Preparation und Data Science Peter Jeitschko
+Peter presented Alteryx, a platform built for Business Analysts to master tasks like data management, data cleaning and modelling. The tool is windows only and will be ported to Linux soon. It can connect to multiple data sources and helps Business Analysts to deploy models in production. Finally, Peter also showed a Demo including data ingestion, an example of the Facebook Face API and some community features.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<meta property="og:url" content="/">
+
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Meetup 02-2019 Minutes &middot; Vienna R User Group">
+
+<meta property="og:site_name" content="Vienna R User Group">
+
+<title>
+    
+    Meetup 02-2019 Minutes
+    
+</title>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/github.min.css">
+<link rel="stylesheet" href="//css/styles.css">
+<link rel="stylesheet" href="//css/custom.css">
+
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto' rel='stylesheet' type='text/css'>
+
+
+<link rel="shortcut icon" href="//assets/favicon.ico">
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="//index.xml">
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<div class="container">
+    <header class="nav">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Vienna R User Group</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        
+                        
+                        
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="https://www.meetup.com/viennar" target="_blank">
+                                <i class="fa fa-arrows"></i>
+                                Meetup</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://twitter.com/ViennaR" target="_blank">
+                                <i class="fa fa-twitter-square"></i>
+                                Twitter</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/ViennaR" target="_blank">
+                                <i class="fa fa-github-square"></i>
+                                GitHub
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/viennar" target="_blank">
+                                <i class="fa fa-linkedin-square"></i>
+                                LinkedIn
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.R-bloggers.com" target="_blank">
+                                <i class="fa fa-rss"></i>
+                                R-bloggers
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+<div class="row">
+    <div class="col-md-8">
+        <article class="post">
+
+            <header>
+                <div class="post-date">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                    <time datetime="Tue, Feb 12, 2019">
+                        Tue, Feb 12, 2019
+                    </time>
+                </div>
+                <h1 class="post-title">
+                    <a href="/blog/2019/02/12/february-2019-meetup/">Meetup 02-2019 Minutes</a>
+                </h1>
+            </header>
+
+            <div class="post-content">
+                
+
+<h2 id="self-service-data-preparation-und-data-science">Self Service Data Preparation und Data Science</h2>
+
+<p><a href="https://www.linkedin.com/in/peter-jeitschko-3aa02179"><strong>Peter Jeitschko</strong></a></p>
+
+<p>Peter presented Alteryx, a platform built for Business Analysts to master tasks like data management, data cleaning and modelling. The tool is windows only and will be ported to Linux soon. It can connect to multiple data sources and helps Business Analysts to deploy models in production. Finally, Peter also showed a Demo including data ingestion, an example of the Facebook Face API and some community features.</p>
+
+<p>You can find the <strong>slides</strong> of his presentation <a href="/slides/Alteryx Corporate Intro Presentation.pptx">here</a>.</p>
+
+<h3 id="questions">Questions</h3>
+
+<p><strong>Do you have scheduling capabilities (for metadata, e.g. <a href="https://atlas.apache.org/">Atlas</a>)?</strong><br>
+Yes - Alteryx has scheduling capabilities server side and on the desktop.</p>
+
+<p><strong>Who is the target audience?</strong><br>
+Business Analysts, business users?</p>
+
+<p><strong>How does it scale to millions of rows? Does it run in parallel?</strong><br>
+Yes, to many CPU&rsquo;s -&gt; Large Server</p>
+
+<p><strong>Which language is behind Alteryx/ what is running behind the scenes?</strong><br>
+C++?</p>
+
+<p><strong>How much?</strong><br>
+€5195 per user per year, see also</p>
+
+<p><strong>Who are the competitors?</strong><br>
+Knime (Open Source), Data Iku</p>
+
+<h2 id="grpc-xmlrpc-in-r">grpc + xmlrpc in R</h2>
+
+<p><a href="https://www.wu.ac.at/statmath/faculty-staff/faculty/fschwendinger"><strong>Florian Schwendinger</strong></a></p>
+
+<p>Florian presented the package gRPC to interface the popular RPC framework, see also <a href="https://github.com/nfultz/grpc">https://github.com/nfultz/grpc</a>. The reason to use gRPC instead of REST APIs is performance since messages are sent via <a href="http://dirk.eddelbuettel.com/code/rprotobuf.html">protobuf</a> instead of JSON.</p>
+
+<p>You can find the <strong>slides</strong> <a href="/slides/grpc.pdf">here</a>.</p>
+
+<h2 id="serverless-computing-with-aws-for-data-science">Serverless Computing with AWS for data science</h2>
+
+<p><a href="https://www.linkedin.com/in/christoph-bodner"><strong>Christoph Bodner</strong></a> and <a href="https://www.linkedin.com/in/thomas-laber"><strong>Thomas Laber</strong></a></p>
+
+<p>Christoph and Thomas presented a way to use R within AWS lambda functions for model deployment - thus making R functions serverless. The reasons for using lambda functions is no administration, scalability and pay per user schemes (GB/secs) allowing for fast turnarounds.</p>
+
+<p>However, they also mentioned limitations and challenges deploying R as lambda functions including memory and space limits and suggested using managed container services as alternatives.</p>
+
+<p>Below the materials of their presentation:</p>
+
+<ul>
+<li><strong>Slides</strong>: <a href="/slides/Serverless Computing.pdf">Serverless Computing</a></li>
+<li><strong>Article</strong>: <a href="https://medium.com/bakdata/running-r-on-aws-lambda-9d40643551a6">https://medium.com/bakdata/running-r-on-aws-lambda-9d40643551a6</a></li>
+</ul>
+
+            </div>
+
+            <aside>
+                
+                <ul class="list-inline post-tags">
+                    
+                    <li>
+                        <a href="//tags/serverless">
+                            <i class="fa fa-tags"></i>
+                            serverless
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="//tags/tools">
+                            <i class="fa fa-tags"></i>
+                            tools
+                        </a>
+                    </li>
+                    
+                </ul>
+
+                
+                
+                <h3>Related Post</h3>
+                <ul class="post-rels">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </aside>
+            
+            
+            <footer>
+
+                <nav>
+                    <ul class="pager">
+
+                        
+                        <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
+                        
+
+                        <li><a href="//post">All Posts</a></li>
+
+                        
+                        <li class="next"><a href="/blog/2016/11/22/meetup-11-2016-minutes/">Newer <span aria-hidden="true">&rarr;</span></a></li>
+                        
+
+                    </ul>
+                </nav>
+
+                
+            </footer>
+
+        </article>
+    </div>
+    <div class="col-md-4">
+        
+<aside>
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-4 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Recent Posts</h2>
+                </div>
+                <div class="list-group">
+                    
+                    <a href="/blog/2019/02/12/february-2019-meetup/" class="list-group-item">Meetup 02-2019 Minutes</a>
+                    
+                    <a href="/blog/2016/11/22/meetup-11-2016-minutes/" class="list-group-item">Meetup 11-2016 Minutes</a>
+                    
+                    <a href="/blog/2016/10/19/meetup-10-2016-minutes/" class="list-group-item">Meetup 10-2016 Minutes</a>
+                    
+                    <a href="/blog/2016/09/27/meetup-09-2016-minutes/" class="list-group-item">Meetup 09-2016 Minutes</a>
+                    
+                    <a href="/blog/2016/08/24/igraph-applications-for-transportation-networks/" class="list-group-item">igraph Applications for Transportation Networks</a>
+                    
+                    <a href="/blog/2016/08/24/igraph-applications-for-transportation-networks/" class="list-group-item">igraph Applications for Transportation Networks</a>
+                    
+                    <a href="/blog/2016/06/28/meetup-06-2016-minutes/" class="list-group-item">Meetup 06-2016 Minutes</a>
+                    
+                    <a href="/blog/2016/05/24/meetup-05-2016-minutes/" class="list-group-item">Meetup 05-2016 Minutes</a>
+                    
+                    <a href="/blog/2016/05/06/meetup-04-2016-minutes/" class="list-group-item">Meetup 04-2016 Minutes</a>
+                    
+                    <a href="/about/" class="list-group-item">About</a>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-4 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Tags</h2>
+                </div>
+                <div class="list-group">
+                    
+                    
+                    
+                    <a href="//tags/igraph" class="list-group-item">
+                        <span class="badge">1</span>
+                        igraph
+                    </a>
+                    
+                    
+                    <a href="//tags/meetup" class="list-group-item">
+                        <span class="badge">12</span>
+                        meetup
+                    </a>
+                    
+                    
+                    <a href="//tags/opengovernmentvienna" class="list-group-item">
+                        <span class="badge">2</span>
+                        opengovernmentvienna
+                    </a>
+                    
+                    
+                    <a href="//tags/rstudy" class="list-group-item">
+                        <span class="badge">4</span>
+                        rstudy
+                    </a>
+                    
+                    
+                    <a href="//tags/serverless" class="list-group-item">
+                        <span class="badge">1</span>
+                        serverless
+                    </a>
+                    
+                    
+                    <a href="//tags/text-mining" class="list-group-item">
+                        <span class="badge">1</span>
+                        text-mining
+                    </a>
+                    
+                    
+                    <a href="//tags/tools" class="list-group-item">
+                        <span class="badge">1</span>
+                        tools
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+</aside>
+
+    </div>
+</div>
+
+</div>
+<hr>
+
+<footer class="container copy">
+    <p>&copy; 2019  Vienna R User Group </p>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="//yandex.st/highlightjs/8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-69538956-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+<script>
+document.write('<script src="//sharebutton.net/plugin/sharebutton.php?type=horizontal&u=' + encodeURIComponent(document.location.href) + '"></scr' + 'ipt>');
+</script>
+
